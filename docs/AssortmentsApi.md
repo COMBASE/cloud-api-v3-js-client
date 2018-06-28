@@ -4,15 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAssortment**](AssortmentsApi.md#getAssortment) | **GET** /accounts/{accountId}/assortments/{assortmentIdOrNumber} | lists the assortment
-[**getAssortments**](AssortmentsApi.md#getAssortments) | **GET** /accounts/{accountId}/assortments | lists all assortments
-[**getCommodityGroup**](AssortmentsApi.md#getCommodityGroup) | **GET** /accounts/{accountId}/commodityGroups/{commodityGroupIdOrNumber} | lists the commodity group
-[**getCommodityGroups**](AssortmentsApi.md#getCommodityGroups) | **GET** /accounts/{accountId}/commodityGroups | lists all commodity groups
+[**getAssortment**](AssortmentsApi.md#getAssortment) | **GET** /accounts/{koronaAccountId}/assortments/{assortmentId} | lists the assortment
+[**getAssortments**](AssortmentsApi.md#getAssortments) | **GET** /accounts/{koronaAccountId}/assortments | lists all assortments
 
 
 <a name="getAssortment"></a>
 # **getAssortment**
-> Assortment getAssortment(accountId, assortmentIdOrNumber)
+> Assortment getAssortment(koronaAccountId, assortmentId)
 
 lists the assortment
 
@@ -30,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.AssortmentsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var assortmentIdOrNumber = "assortmentIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var assortmentId = "assortmentId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -42,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAssortment(accountId, assortmentIdOrNumber, callback);
+apiInstance.getAssortment(koronaAccountId, assortmentId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **assortmentIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **assortmentId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -67,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getAssortments"></a>
 # **getAssortments**
-> ResultListAssortment getAssortments(accountId, opts)
+> ResultListAssortment getAssortments(koronaAccountId, opts)
 
 lists all assortments
 
@@ -85,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.AssortmentsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -102,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAssortments(accountId, opts, callback);
+apiInstance.getAssortments(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -119,125 +117,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResultListAssortment**](ResultListAssortment.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getCommodityGroup"></a>
-# **getCommodityGroup**
-> CommodityGroupResource getCommodityGroup(accountId, commodityGroupIdOrNumber)
-
-lists the commodity group
-
-
-
-### Example
-```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
-
-// Configure HTTP basic authorization: basicAuth
-var basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-var apiInstance = new KoronacloudApiV3.AssortmentsApi();
-
-var accountId = "accountId_example"; // String | the account id
-
-var commodityGroupIdOrNumber = "commodityGroupIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCommodityGroup(accountId, commodityGroupIdOrNumber, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **commodityGroupIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
-
-### Return type
-
-[**CommodityGroupResource**](CommodityGroupResource.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getCommodityGroups"></a>
-# **getCommodityGroups**
-> ResultListCommodityGroupResource getCommodityGroups(accountId, opts)
-
-lists all commodity groups
-
-
-
-### Example
-```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
-
-// Configure HTTP basic authorization: basicAuth
-var basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-var apiInstance = new KoronacloudApiV3.AssortmentsApi();
-
-var accountId = "accountId_example"; // String | the account id
-
-var opts = { 
-  'page': 56, // Number | number of the page to fetch
-  'size': 56, // Number | amount of objects to return per page
-  'sort': "sort_example", // String | attribute to sort by (multiple separated by comma; max. 5)
-  'revision': 789, // Number | last revision number, objects with a greater revision than this will be returned
-  'includeDeleted': true // Boolean | indicates deleted objects should be loaded or not (default: false)
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCommodityGroups(accountId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **page** | **Number**| number of the page to fetch | [optional] 
- **size** | **Number**| amount of objects to return per page | [optional] 
- **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
- **revision** | **Number**| last revision number, objects with a greater revision than this will be returned | [optional] 
- **includeDeleted** | **Boolean**| indicates deleted objects should be loaded or not (default: false) | [optional] 
-
-### Return type
-
-[**ResultListCommodityGroupResource**](ResultListCommodityGroupResource.md)
 
 ### Authorization
 

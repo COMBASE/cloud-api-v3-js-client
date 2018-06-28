@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** /accounts/{accountId}/currencies | lists all currencies
-[**getCurrency**](CurrenciesApi.md#getCurrency) | **GET** /accounts/{accountId}/currencies/{currencyIdOrNumber} | lists the currency
+[**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** /accounts/{koronaAccountId}/currencies | lists all currencies
+[**getCurrency**](CurrenciesApi.md#getCurrency) | **GET** /accounts/{koronaAccountId}/currencies/{currencyId} | lists the currency
 
 
 <a name="getCurrencies"></a>
 # **getCurrencies**
-> ResultListCurrency getCurrencies(accountId, opts)
+> ResultListCurrency getCurrencies(koronaAccountId, opts)
 
 lists all currencies
 
@@ -28,7 +28,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CurrenciesApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -45,14 +45,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCurrencies(accountId, opts, callback);
+apiInstance.getCurrencies(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="getCurrency"></a>
 # **getCurrency**
-> Currency getCurrency(accountId, currencyIdOrNumber)
+> Currency getCurrency(koronaAccountId, currencyId)
 
 lists the currency
 
@@ -92,9 +92,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CurrenciesApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var currencyIdOrNumber = "currencyIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var currencyId = "currencyId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -104,15 +104,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCurrency(accountId, currencyIdOrNumber, callback);
+apiInstance.getCurrency(koronaAccountId, currencyId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **currencyIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **currencyId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 

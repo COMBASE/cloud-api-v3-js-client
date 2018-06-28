@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPriceGroup**](PriceGroupsApi.md#getPriceGroup) | **GET** /accounts/{accountId}/priceGroups/{priceGroupIdOrNumber} | lists the price group
-[**getPriceGroups**](PriceGroupsApi.md#getPriceGroups) | **GET** /accounts/{accountId}/priceGroups | lists all price groups
+[**getPriceGroup**](PriceGroupsApi.md#getPriceGroup) | **GET** /accounts/{koronaAccountId}/priceGroups/{priceGroupId} | lists the price group
+[**getPriceGroups**](PriceGroupsApi.md#getPriceGroups) | **GET** /accounts/{koronaAccountId}/priceGroups | lists all price groups
 
 
 <a name="getPriceGroup"></a>
 # **getPriceGroup**
-> PriceGroup getPriceGroup(accountId, priceGroupIdOrNumber)
+> PriceGroup getPriceGroup(koronaAccountId, priceGroupId)
 
 lists the price group
 
@@ -28,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.PriceGroupsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var priceGroupIdOrNumber = "priceGroupIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var priceGroupId = "priceGroupId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPriceGroup(accountId, priceGroupIdOrNumber, callback);
+apiInstance.getPriceGroup(koronaAccountId, priceGroupId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **priceGroupIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **priceGroupId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getPriceGroups"></a>
 # **getPriceGroups**
-> ResultListPriceGroup getPriceGroups(accountId, opts)
+> ResultListPriceGroup getPriceGroups(koronaAccountId, opts)
 
 lists all price groups
 
@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.PriceGroupsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -100,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPriceGroups(accountId, opts, callback);
+apiInstance.getPriceGroups(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

@@ -4,17 +4,17 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCustomerOrders**](CustomerOrdersApi.md#addCustomerOrders) | **POST** /accounts/{accountId}/customerOrders | adds a batch of new customer orders
-[**deleteCustomerOrder**](CustomerOrdersApi.md#deleteCustomerOrder) | **DELETE** /accounts/{accountId}/customerOrders/{customerOrderIdOrNumber} | deletes the customer order
-[**getCustomerOrder**](CustomerOrdersApi.md#getCustomerOrder) | **GET** /accounts/{accountId}/customerOrders/{customerOrderIdOrNumber} | lists the customer order
-[**getCustomerOrders**](CustomerOrdersApi.md#getCustomerOrders) | **GET** /accounts/{accountId}/customerOrders | lists all customer orders
-[**updateCustomerOrder**](CustomerOrdersApi.md#updateCustomerOrder) | **PATCH** /accounts/{accountId}/customerOrders/{customerOrderIdOrNumber} | changes the customer order
-[**updateCustomerOrders**](CustomerOrdersApi.md#updateCustomerOrders) | **PATCH** /accounts/{accountId}/customerOrders | changes a batch of customer orders
+[**addCustomerOrders**](CustomerOrdersApi.md#addCustomerOrders) | **POST** /accounts/{koronaAccountId}/customerOrders | adds a batch of new customer orders
+[**deleteCustomerOrder**](CustomerOrdersApi.md#deleteCustomerOrder) | **DELETE** /accounts/{koronaAccountId}/customerOrders/{customerOrderId} | deletes the customer order
+[**getCustomerOrder**](CustomerOrdersApi.md#getCustomerOrder) | **GET** /accounts/{koronaAccountId}/customerOrders/{customerOrderId} | lists the customer order
+[**getCustomerOrders**](CustomerOrdersApi.md#getCustomerOrders) | **GET** /accounts/{koronaAccountId}/customerOrders | lists all customer orders
+[**updateCustomerOrder**](CustomerOrdersApi.md#updateCustomerOrder) | **PATCH** /accounts/{koronaAccountId}/customerOrders/{customerOrderId} | changes the customer order
+[**updateCustomerOrders**](CustomerOrdersApi.md#updateCustomerOrders) | **PATCH** /accounts/{koronaAccountId}/customerOrders | changes a batch of customer orders
 
 
 <a name="addCustomerOrders"></a>
 # **addCustomerOrders**
-> [AddOrUpdateResult] addCustomerOrders(accountId, body)
+> [AddOrUpdateResult] addCustomerOrders(koronaAccountId, body)
 
 adds a batch of new customer orders
 
@@ -32,7 +32,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.CustomerOrder()]; // [CustomerOrder] | a array of new customer orders
 
@@ -44,14 +44,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addCustomerOrders(accountId, body, callback);
+apiInstance.addCustomerOrders(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[CustomerOrder]**](CustomerOrder.md)| a array of new customer orders | 
 
 ### Return type
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCustomerOrder"></a>
 # **deleteCustomerOrder**
-> deleteCustomerOrder(accountId, customerOrderIdOrNumber)
+> deleteCustomerOrder(koronaAccountId, customerOrderId)
 
 deletes the customer order
 
@@ -87,9 +87,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var customerOrderIdOrNumber = "customerOrderIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var customerOrderId = "customerOrderId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -99,15 +99,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCustomerOrder(accountId, customerOrderIdOrNumber, callback);
+apiInstance.deleteCustomerOrder(koronaAccountId, customerOrderId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **customerOrderIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **customerOrderId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -124,7 +124,7 @@ null (empty response body)
 
 <a name="getCustomerOrder"></a>
 # **getCustomerOrder**
-> CustomerOrder getCustomerOrder(accountId, customerOrderIdOrNumber)
+> CustomerOrder getCustomerOrder(koronaAccountId, customerOrderId)
 
 lists the customer order
 
@@ -142,9 +142,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var customerOrderIdOrNumber = "customerOrderIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var customerOrderId = "customerOrderId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -154,15 +154,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCustomerOrder(accountId, customerOrderIdOrNumber, callback);
+apiInstance.getCustomerOrder(koronaAccountId, customerOrderId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **customerOrderIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **customerOrderId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerOrders"></a>
 # **getCustomerOrders**
-> ResultListCustomerOrder getCustomerOrders(accountId, opts)
+> ResultListCustomerOrder getCustomerOrders(koronaAccountId, opts)
 
 lists all customer orders
 
@@ -197,7 +197,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -218,14 +218,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCustomerOrders(accountId, opts, callback);
+apiInstance.getCustomerOrders(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCustomerOrder"></a>
 # **updateCustomerOrder**
-> updateCustomerOrder(accountId, customerOrderIdOrNumber, body)
+> updateCustomerOrder(koronaAccountId, customerOrderId, body)
 
 changes the customer order
 
@@ -269,9 +269,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var customerOrderIdOrNumber = "customerOrderIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var customerOrderId = "customerOrderId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = new KoronacloudApiV3.CustomerOrder(); // CustomerOrder | the properties to update of the customer order
 
@@ -283,15 +283,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateCustomerOrder(accountId, customerOrderIdOrNumber, body, callback);
+apiInstance.updateCustomerOrder(koronaAccountId, customerOrderId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **customerOrderIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **customerOrderId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**CustomerOrder**](CustomerOrder.md)| the properties to update of the customer order | 
 
 ### Return type
@@ -309,7 +309,7 @@ null (empty response body)
 
 <a name="updateCustomerOrders"></a>
 # **updateCustomerOrders**
-> [AddOrUpdateResult] updateCustomerOrders(accountId, body)
+> [AddOrUpdateResult] updateCustomerOrders(koronaAccountId, body)
 
 changes a batch of customer orders
 
@@ -327,7 +327,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.CustomerOrder()]; // [CustomerOrder] | a array of existing customer orders
 
@@ -339,14 +339,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCustomerOrders(accountId, body, callback);
+apiInstance.updateCustomerOrders(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[CustomerOrder]**](CustomerOrder.md)| a array of existing customer orders | 
 
 ### Return type

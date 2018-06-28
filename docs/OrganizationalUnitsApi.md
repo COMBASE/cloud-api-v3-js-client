@@ -4,22 +4,22 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#addOrganizationalUnitDayRatings) | **POST** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/dayRatings | adds a batch of new day ratings
-[**deleteOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#deleteOrganizationalUnitDayRating) | **DELETE** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/dayRatings/{dayRatingIdOrDate} | deletes the day rating by its id or date
-[**getOrganizationalUnit**](OrganizationalUnitsApi.md#getOrganizationalUnit) | **GET** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber} | lists the organizational unit
-[**getOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRating) | **GET** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/dayRatings/{dayRatingIdOrDate} | lists the day rating by its id or date
-[**getOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRatings) | **GET** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/dayRatings | lists all organizational unit related day ratings
-[**getOrganizationalUnitInventoryLists**](OrganizationalUnitsApi.md#getOrganizationalUnitInventoryLists) | **GET** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/inventoryLists | lists the inventory lists belonging to the organizational unit (KORONA.retail required)
-[**getOrganizationalUnitProductStocks**](OrganizationalUnitsApi.md#getOrganizationalUnitProductStocks) | **GET** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/productStocks | lists the product stocks of the organizational unit, in case it contains a warehouse (KORONA.retail required)
-[**getOrganizationalUnitStockReceipts**](OrganizationalUnitsApi.md#getOrganizationalUnitStockReceipts) | **GET** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/stockReceipts | lists the stock receipts belonging to the organizational unit (KORONA.retail required)
-[**getOrganizationalUnits**](OrganizationalUnitsApi.md#getOrganizationalUnits) | **GET** /accounts/{accountId}/organizationalUnits | lists all organizational units
-[**updateOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRating) | **PATCH** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/dayRatings/{dayRatingIdOrDate} | updates the day rating by its id or date
-[**updateOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRatings) | **PATCH** /accounts/{accountId}/organizationalUnits/{organizationalUnitIdOrNumber}/dayRatings | updated a batch of new day ratings
+[**addOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#addOrganizationalUnitDayRatings) | **POST** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | adds a batch of new day ratings
+[**deleteOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#deleteOrganizationalUnitDayRating) | **DELETE** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | deletes the day rating by its id or date
+[**getOrganizationalUnit**](OrganizationalUnitsApi.md#getOrganizationalUnit) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId} | lists the organizational unit
+[**getOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRating) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | lists the day rating by its id or date
+[**getOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRatings) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | lists all organizational unit related day ratings
+[**getOrganizationalUnitInventoryLists**](OrganizationalUnitsApi.md#getOrganizationalUnitInventoryLists) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/inventoryLists | lists the inventory lists belonging to the organizational unit (KORONA.retail required)
+[**getOrganizationalUnitProductStocks**](OrganizationalUnitsApi.md#getOrganizationalUnitProductStocks) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/productStocks | lists the product stocks of the organizational unit, in case it contains a warehouse (KORONA.retail required)
+[**getOrganizationalUnitStockReceipts**](OrganizationalUnitsApi.md#getOrganizationalUnitStockReceipts) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/stockReceipts | lists the stock receipts belonging to the organizational unit (KORONA.retail required)
+[**getOrganizationalUnits**](OrganizationalUnitsApi.md#getOrganizationalUnits) | **GET** /accounts/{koronaAccountId}/organizationalUnits | lists all organizational units
+[**updateOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRating) | **PATCH** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | updates the day rating by its id or date
+[**updateOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRatings) | **PATCH** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | updated a batch of new day ratings
 
 
 <a name="addOrganizationalUnitDayRatings"></a>
 # **addOrganizationalUnitDayRatings**
-> [AddOrUpdateResult] addOrganizationalUnitDayRatings(accountId, organizationalUnitIdOrNumber, body)
+> [AddOrUpdateResult] addOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body)
 
 adds a batch of new day ratings
 
@@ -37,9 +37,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
 
@@ -51,15 +51,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addOrganizationalUnitDayRatings(accountId, organizationalUnitIdOrNumber, body, callback);
+apiInstance.addOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**[DayRating]**](DayRating.md)| a array of new day ratings | 
 
 ### Return type
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganizationalUnitDayRating"></a>
 # **deleteOrganizationalUnitDayRating**
-> deleteOrganizationalUnitDayRating(accountId, organizationalUnitIdOrNumber, dayRatingIdOrDate)
+> deleteOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate)
 
 deletes the day rating by its id or date
 
@@ -95,9 +95,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
 
@@ -109,15 +109,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteOrganizationalUnitDayRating(accountId, organizationalUnitIdOrNumber, dayRatingIdOrDate, callback);
+apiInstance.deleteOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **dayRatingIdOrDate** | **String**| the id or date (YYYY-MM-DD) of the day rating | 
 
 ### Return type
@@ -135,7 +135,7 @@ null (empty response body)
 
 <a name="getOrganizationalUnit"></a>
 # **getOrganizationalUnit**
-> OrganizationalUnit getOrganizationalUnit(accountId, organizationalUnitIdOrNumber)
+> OrganizationalUnit getOrganizationalUnit(koronaAccountId, organizationalUnitId)
 
 lists the organizational unit
 
@@ -153,9 +153,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -165,15 +165,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnit(accountId, organizationalUnitIdOrNumber, callback);
+apiInstance.getOrganizationalUnit(koronaAccountId, organizationalUnitId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitDayRating"></a>
 # **getOrganizationalUnitDayRating**
-> DayRating getOrganizationalUnitDayRating(accountId, organizationalUnitIdOrNumber, dayRatingIdOrDate)
+> DayRating getOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate)
 
 lists the day rating by its id or date
 
@@ -208,9 +208,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
 
@@ -222,15 +222,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitDayRating(accountId, organizationalUnitIdOrNumber, dayRatingIdOrDate, callback);
+apiInstance.getOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **dayRatingIdOrDate** | **String**| the id or date (YYYY-MM-DD) of the day rating | 
 
 ### Return type
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitDayRatings"></a>
 # **getOrganizationalUnitDayRatings**
-> ResultListDayRating getOrganizationalUnitDayRatings(accountId, organizationalUnitIdOrNumber, opts)
+> ResultListDayRating getOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, opts)
 
 lists all organizational unit related day ratings
 
@@ -266,9 +266,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -283,15 +283,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitDayRatings(accountId, organizationalUnitIdOrNumber, opts, callback);
+apiInstance.getOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitInventoryLists"></a>
 # **getOrganizationalUnitInventoryLists**
-> ResultListInventoryList getOrganizationalUnitInventoryLists(accountId, organizationalUnitIdOrNumber, opts)
+> ResultListInventoryList getOrganizationalUnitInventoryLists(koronaAccountId, organizationalUnitId, opts)
 
 lists the inventory lists belonging to the organizational unit (KORONA.retail required)
 
@@ -329,9 +329,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -339,6 +339,10 @@ var opts = {
   'sort': "sort_example", // String | attribute to sort by (multiple separated by comma; max. 5)
   'revision': 789, // Number | last revision number, objects with a greater revision than this will be returned
   'includeDeleted': true, // Boolean | indicates deleted objects should be loaded or not (default: false)
+  'minCreateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | min (inclusive) create time of the receipt (ISO 8601; date, time and timezone)
+  'maxCreateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | max (inclusive) create time of the receipt (ISO 8601; date, time and timezone)
+  'minBookingTime': new Date("2013-10-20T19:20:30+01:00"), // Date | min (inclusive) booking time of the receipt (ISO 8601; date, time and timezone)
+  'maxBookingTime': new Date("2013-10-20T19:20:30+01:00"), // Date | max (inclusive) booking time of the receipt (ISO 8601; date, time and timezone)
   'bookingStatus': "bookingStatus_example" // String | booking status (possible values: BOOKED, IN_PROGRESS)
 };
 
@@ -349,20 +353,24 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitInventoryLists(accountId, organizationalUnitIdOrNumber, opts, callback);
+apiInstance.getOrganizationalUnitInventoryLists(koronaAccountId, organizationalUnitId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
  **revision** | **Number**| last revision number, objects with a greater revision than this will be returned | [optional] 
  **includeDeleted** | **Boolean**| indicates deleted objects should be loaded or not (default: false) | [optional] 
+ **minCreateTime** | **Date**| min (inclusive) create time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **maxCreateTime** | **Date**| max (inclusive) create time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **minBookingTime** | **Date**| min (inclusive) booking time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **maxBookingTime** | **Date**| max (inclusive) booking time of the receipt (ISO 8601; date, time and timezone) | [optional] 
  **bookingStatus** | **String**| booking status (possible values: BOOKED, IN_PROGRESS) | [optional] 
 
 ### Return type
@@ -380,7 +388,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitProductStocks"></a>
 # **getOrganizationalUnitProductStocks**
-> ResultListProductStock getOrganizationalUnitProductStocks(accountId, organizationalUnitIdOrNumber, opts)
+> ResultListProductStock getOrganizationalUnitProductStocks(koronaAccountId, organizationalUnitId, opts)
 
 lists the product stocks of the organizational unit, in case it contains a warehouse (KORONA.retail required)
 
@@ -398,9 +406,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -416,15 +424,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitProductStocks(accountId, organizationalUnitIdOrNumber, opts, callback);
+apiInstance.getOrganizationalUnitProductStocks(koronaAccountId, organizationalUnitId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -445,7 +453,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitStockReceipts"></a>
 # **getOrganizationalUnitStockReceipts**
-> ResultListStockReceipt getOrganizationalUnitStockReceipts(accountId, organizationalUnitIdOrNumber, opts)
+> ResultListStockReceipt getOrganizationalUnitStockReceipts(koronaAccountId, organizationalUnitId, opts)
 
 lists the stock receipts belonging to the organizational unit (KORONA.retail required)
 
@@ -463,9 +471,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -475,6 +483,8 @@ var opts = {
   'includeDeleted': true, // Boolean | indicates deleted objects should be loaded or not (default: false)
   'minCreateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | min (inclusive) create time of the receipt (ISO 8601; date, time and timezone)
   'maxCreateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | max (inclusive) create time of the receipt (ISO 8601; date, time and timezone)
+  'minBookingTime': new Date("2013-10-20T19:20:30+01:00"), // Date | min (inclusive) booking time of the receipt (ISO 8601; date, time and timezone)
+  'maxBookingTime': new Date("2013-10-20T19:20:30+01:00"), // Date | max (inclusive) booking time of the receipt (ISO 8601; date, time and timezone)
   'sourceOrganizationalUnit': "sourceOrganizationalUnit_example", // String | source organizational unit
   'bookingStatus': "bookingStatus_example" // String | booking status (possible values: BOOKED, IN_PROGRESS)
 };
@@ -486,15 +496,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitStockReceipts(accountId, organizationalUnitIdOrNumber, opts, callback);
+apiInstance.getOrganizationalUnitStockReceipts(koronaAccountId, organizationalUnitId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -502,6 +512,8 @@ Name | Type | Description  | Notes
  **includeDeleted** | **Boolean**| indicates deleted objects should be loaded or not (default: false) | [optional] 
  **minCreateTime** | **Date**| min (inclusive) create time of the receipt (ISO 8601; date, time and timezone) | [optional] 
  **maxCreateTime** | **Date**| max (inclusive) create time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **minBookingTime** | **Date**| min (inclusive) booking time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **maxBookingTime** | **Date**| max (inclusive) booking time of the receipt (ISO 8601; date, time and timezone) | [optional] 
  **sourceOrganizationalUnit** | **String**| source organizational unit | [optional] 
  **bookingStatus** | **String**| booking status (possible values: BOOKED, IN_PROGRESS) | [optional] 
 
@@ -520,7 +532,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnits"></a>
 # **getOrganizationalUnits**
-> ResultListOrganizationalUnit getOrganizationalUnits(accountId, opts)
+> ResultListOrganizationalUnit getOrganizationalUnits(koronaAccountId, opts)
 
 lists all organizational units
 
@@ -538,7 +550,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -555,14 +567,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnits(accountId, opts, callback);
+apiInstance.getOrganizationalUnits(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -584,7 +596,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationalUnitDayRating"></a>
 # **updateOrganizationalUnitDayRating**
-> updateOrganizationalUnitDayRating(accountId, organizationalUnitIdOrNumber, dayRatingIdOrDate, body)
+> updateOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, body)
 
 updates the day rating by its id or date
 
@@ -602,9 +614,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
 
@@ -618,15 +630,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateOrganizationalUnitDayRating(accountId, organizationalUnitIdOrNumber, dayRatingIdOrDate, body, callback);
+apiInstance.updateOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **dayRatingIdOrDate** | **String**| the id or date (YYYY-MM-DD) of the day rating | 
  **body** | [**DayRating**](DayRating.md)| the properties to update of the day rating | 
 
@@ -645,7 +657,7 @@ null (empty response body)
 
 <a name="updateOrganizationalUnitDayRatings"></a>
 # **updateOrganizationalUnitDayRatings**
-> [AddOrUpdateResult] updateOrganizationalUnitDayRatings(accountId, organizationalUnitIdOrNumber, body)
+> [AddOrUpdateResult] updateOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body)
 
 updated a batch of new day ratings
 
@@ -663,9 +675,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var organizationalUnitIdOrNumber = "organizationalUnitIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
 
@@ -677,15 +689,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateOrganizationalUnitDayRatings(accountId, organizationalUnitIdOrNumber, body, callback);
+apiInstance.updateOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **organizationalUnitIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**[DayRating]**](DayRating.md)| a array of new day ratings | 
 
 ### Return type

@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTag**](TagsApi.md#getTag) | **GET** /accounts/{accountId}/tags/{tagId} | lists the info text
-[**getTags**](TagsApi.md#getTags) | **GET** /accounts/{accountId}/tags | lists all info texts
+[**getTag**](TagsApi.md#getTag) | **GET** /accounts/{koronaAccountId}/tags/{tagId} | lists the info text
+[**getTags**](TagsApi.md#getTags) | **GET** /accounts/{koronaAccountId}/tags | lists all info texts
 
 
 <a name="getTag"></a>
 # **getTag**
-> Tag getTag(accountId, tagId)
+> Tag getTag(koronaAccountId, tagId)
 
 lists the info text
 
@@ -28,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TagsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var tagId = "tagId_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTag(accountId, tagId, callback);
+apiInstance.getTag(koronaAccountId, tagId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **tagId** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **tagId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getTags"></a>
 # **getTags**
-> ResultListTag getTags(accountId, opts)
+> ResultListTag getTags(koronaAccountId, opts)
 
 lists all info texts
 
@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TagsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -100,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTags(accountId, opts, callback);
+apiInstance.getTags(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

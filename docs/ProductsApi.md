@@ -4,18 +4,18 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addProducts**](ProductsApi.md#addProducts) | **POST** /accounts/{accountId}/products | adds a batch of new products
-[**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /accounts/{accountId}/products/{productIdOrNumber} | deletes the product
-[**getProduct**](ProductsApi.md#getProduct) | **GET** /accounts/{accountId}/products/{productIdOrNumber} | lists the product
-[**getProductStocks**](ProductsApi.md#getProductStocks) | **GET** /accounts/{accountId}/products/{productIdOrNumber}/stocks | lists the product stocks in different warehouses (KORONA.retail required)
-[**getProducts**](ProductsApi.md#getProducts) | **GET** /accounts/{accountId}/products | lists all products
-[**updateProduct**](ProductsApi.md#updateProduct) | **PATCH** /accounts/{accountId}/products/{productIdOrNumber} | changes the product
-[**updateProducts**](ProductsApi.md#updateProducts) | **PATCH** /accounts/{accountId}/products | changes a batch of products
+[**addProducts**](ProductsApi.md#addProducts) | **POST** /accounts/{koronaAccountId}/products | adds a batch of new products
+[**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /accounts/{koronaAccountId}/products/{productId} | deletes the product
+[**getProduct**](ProductsApi.md#getProduct) | **GET** /accounts/{koronaAccountId}/products/{productId} | lists the product
+[**getProductStocks**](ProductsApi.md#getProductStocks) | **GET** /accounts/{koronaAccountId}/products/{productId}/stocks | lists the product stocks in different warehouses (KORONA.retail required)
+[**getProducts**](ProductsApi.md#getProducts) | **GET** /accounts/{koronaAccountId}/products | lists all products
+[**updateProduct**](ProductsApi.md#updateProduct) | **PATCH** /accounts/{koronaAccountId}/products/{productId} | changes the product
+[**updateProducts**](ProductsApi.md#updateProducts) | **PATCH** /accounts/{koronaAccountId}/products | changes a batch of products
 
 
 <a name="addProducts"></a>
 # **addProducts**
-> [AddOrUpdateResult] addProducts(accountId, body)
+> [AddOrUpdateResult] addProducts(koronaAccountId, body)
 
 adds a batch of new products
 
@@ -33,7 +33,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.Product()]; // [Product] | a array of new products
 
@@ -45,14 +45,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addProducts(accountId, body, callback);
+apiInstance.addProducts(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[Product]**](Product.md)| a array of new products | 
 
 ### Return type
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteProduct"></a>
 # **deleteProduct**
-> deleteProduct(accountId, productIdOrNumber)
+> deleteProduct(koronaAccountId, productId)
 
 deletes the product
 
@@ -88,9 +88,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -100,15 +100,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteProduct(accountId, productIdOrNumber, callback);
+apiInstance.deleteProduct(koronaAccountId, productId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -125,7 +125,7 @@ null (empty response body)
 
 <a name="getProduct"></a>
 # **getProduct**
-> Product getProduct(accountId, productIdOrNumber)
+> Product getProduct(koronaAccountId, productId)
 
 lists the product
 
@@ -143,9 +143,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -155,15 +155,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProduct(accountId, productIdOrNumber, callback);
+apiInstance.getProduct(koronaAccountId, productId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductStocks"></a>
 # **getProductStocks**
-> ResultListProductStock getProductStocks(accountId, productIdOrNumber, opts)
+> ResultListProductStock getProductStocks(koronaAccountId, productId, opts)
 
 lists the product stocks in different warehouses (KORONA.retail required)
 
@@ -198,9 +198,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -216,15 +216,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProductStocks(accountId, productIdOrNumber, opts, callback);
+apiInstance.getProductStocks(koronaAccountId, productId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 <a name="getProducts"></a>
 # **getProducts**
-> ResultListProduct getProducts(accountId, opts)
+> ResultListProduct getProducts(koronaAccountId, opts)
 
 lists all products
 
@@ -263,7 +263,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -272,9 +272,9 @@ var opts = {
   'revision': 789, // Number | last revision number, objects with a greater revision than this will be returned
   'includeDeleted': true, // Boolean | indicates deleted objects should be loaded or not (default: false)
   'productCodes': "productCodes_example", // String | at least one product code to filter by (multiple separated by comma; max. 10)
-  'commodityGroup': "commodityGroup_example", // String | commodity group id or number to filter by
-  'assortment': "assortment_example", // String | assortment id or number to filter by
-  'tag': "tag_example" // String | tag id or number to filter by
+  'commodityGroup': "commodityGroup_example", // String | commodity group id  to filter by
+  'assortment': "assortment_example", // String | assortment id to filter by
+  'tag': "tag_example" // String | tag id to filter by
 };
 
 var callback = function(error, data, response) {
@@ -284,23 +284,23 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProducts(accountId, opts, callback);
+apiInstance.getProducts(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
  **revision** | **Number**| last revision number, objects with a greater revision than this will be returned | [optional] 
  **includeDeleted** | **Boolean**| indicates deleted objects should be loaded or not (default: false) | [optional] 
  **productCodes** | **String**| at least one product code to filter by (multiple separated by comma; max. 10) | [optional] 
- **commodityGroup** | **String**| commodity group id or number to filter by | [optional] 
- **assortment** | **String**| assortment id or number to filter by | [optional] 
- **tag** | **String**| tag id or number to filter by | [optional] 
+ **commodityGroup** | **String**| commodity group id  to filter by | [optional] 
+ **assortment** | **String**| assortment id to filter by | [optional] 
+ **tag** | **String**| tag id to filter by | [optional] 
 
 ### Return type
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProduct"></a>
 # **updateProduct**
-> updateProduct(accountId, productIdOrNumber, body)
+> updateProduct(koronaAccountId, productId, body)
 
 changes the product
 
@@ -335,9 +335,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = new KoronacloudApiV3.Product(); // Product | the properties to update of the product
 
@@ -349,15 +349,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateProduct(accountId, productIdOrNumber, body, callback);
+apiInstance.updateProduct(koronaAccountId, productId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**Product**](Product.md)| the properties to update of the product | 
 
 ### Return type
@@ -375,7 +375,7 @@ null (empty response body)
 
 <a name="updateProducts"></a>
 # **updateProducts**
-> [AddOrUpdateResult] updateProducts(accountId, body)
+> [AddOrUpdateResult] updateProducts(koronaAccountId, body)
 
 changes a batch of products
 
@@ -393,7 +393,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.Product()]; // [Product] | a array of existing products
 
@@ -405,14 +405,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateProducts(accountId, body, callback);
+apiInstance.updateProducts(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[Product]**](Product.md)| a array of existing products | 
 
 ### Return type

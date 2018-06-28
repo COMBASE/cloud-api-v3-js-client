@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSalesTax**](SalesTaxesApi.md#getSalesTax) | **GET** /accounts/{accountId}/salesTaxes/{salesTaxIdOrNumber} | lists the sales tax
-[**getSalesTaxes**](SalesTaxesApi.md#getSalesTaxes) | **GET** /accounts/{accountId}/salesTaxes | lists all sales taxes
+[**getSalesTax**](SalesTaxesApi.md#getSalesTax) | **GET** /accounts/{koronaAccountId}/salesTaxes/{salesTaxId} | lists the sales tax
+[**getSalesTaxes**](SalesTaxesApi.md#getSalesTaxes) | **GET** /accounts/{koronaAccountId}/salesTaxes | lists all sales taxes
 
 
 <a name="getSalesTax"></a>
 # **getSalesTax**
-> SalesTax getSalesTax(accountId, salesTaxIdOrNumber)
+> SalesTax getSalesTax(koronaAccountId, salesTaxId)
 
 lists the sales tax
 
@@ -28,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.SalesTaxesApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var salesTaxIdOrNumber = "salesTaxIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var salesTaxId = "salesTaxId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSalesTax(accountId, salesTaxIdOrNumber, callback);
+apiInstance.getSalesTax(koronaAccountId, salesTaxId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **salesTaxIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **salesTaxId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getSalesTaxes"></a>
 # **getSalesTaxes**
-> ResultListSalesTax getSalesTaxes(accountId, opts)
+> ResultListSalesTax getSalesTaxes(koronaAccountId, opts)
 
 lists all sales taxes
 
@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.SalesTaxesApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -100,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSalesTaxes(accountId, opts, callback);
+apiInstance.getSalesTaxes(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

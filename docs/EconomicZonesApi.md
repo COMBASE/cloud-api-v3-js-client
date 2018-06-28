@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEconomicZone**](EconomicZonesApi.md#getEconomicZone) | **GET** /accounts/{accountId}/economicZones/{economicZoneIdOrNumber} | lists the economic zone
-[**getEconomicZones**](EconomicZonesApi.md#getEconomicZones) | **GET** /accounts/{accountId}/economicZones | lists all economic zones
+[**getEconomicZone**](EconomicZonesApi.md#getEconomicZone) | **GET** /accounts/{koronaAccountId}/economicZones/{economicZoneId} | lists the economic zone
+[**getEconomicZones**](EconomicZonesApi.md#getEconomicZones) | **GET** /accounts/{koronaAccountId}/economicZones | lists all economic zones
 
 
 <a name="getEconomicZone"></a>
 # **getEconomicZone**
-> EconomicZone getEconomicZone(accountId, economicZoneIdOrNumber)
+> EconomicZone getEconomicZone(koronaAccountId, economicZoneId)
 
 lists the economic zone
 
@@ -28,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.EconomicZonesApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var economicZoneIdOrNumber = "economicZoneIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var economicZoneId = "economicZoneId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEconomicZone(accountId, economicZoneIdOrNumber, callback);
+apiInstance.getEconomicZone(koronaAccountId, economicZoneId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **economicZoneIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **economicZoneId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getEconomicZones"></a>
 # **getEconomicZones**
-> ResultListEconomicZone getEconomicZones(accountId, opts)
+> ResultListEconomicZone getEconomicZones(koronaAccountId, opts)
 
 lists all economic zones
 
@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.EconomicZonesApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -100,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEconomicZones(accountId, opts, callback);
+apiInstance.getEconomicZones(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSupplier**](SuppliersApi.md#getSupplier) | **GET** /accounts/{accountId}/suppliers/{supplierIdOrNumber} | lists the supplier
-[**getSuppliers**](SuppliersApi.md#getSuppliers) | **GET** /accounts/{accountId}/suppliers | lists all suppliers
+[**getSupplier**](SuppliersApi.md#getSupplier) | **GET** /accounts/{koronaAccountId}/suppliers/{supplierIdOrNumber} | lists the supplier
+[**getSuppliers**](SuppliersApi.md#getSuppliers) | **GET** /accounts/{koronaAccountId}/suppliers | lists all suppliers
 
 
 <a name="getSupplier"></a>
 # **getSupplier**
-> Supplier getSupplier(accountId, supplierIdOrNumber)
+> Supplier getSupplier(koronaAccountId, supplierIdOrNumber)
 
 lists the supplier
 
@@ -28,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.SuppliersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var supplierIdOrNumber = "supplierIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var supplierIdOrNumber = "supplierIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSupplier(accountId, supplierIdOrNumber, callback);
+apiInstance.getSupplier(koronaAccountId, supplierIdOrNumber, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **supplierIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **supplierIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getSuppliers"></a>
 # **getSuppliers**
-> ResultListSupplier getSuppliers(accountId, opts)
+> ResultListSupplier getSuppliers(koronaAccountId, opts)
 
 lists all suppliers
 
@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.SuppliersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -100,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSuppliers(accountId, opts, callback);
+apiInstance.getSuppliers(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

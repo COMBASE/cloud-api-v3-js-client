@@ -4,17 +4,17 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEntryGate**](TicketingApi.md#getEntryGate) | **GET** /accounts/{accountId}/entryGates/{entryGateIdOrNumber} | lists the entry gate
-[**getEntryGates**](TicketingApi.md#getEntryGates) | **GET** /accounts/{accountId}/entryGates | lists all entry gates
-[**getEvent**](TicketingApi.md#getEvent) | **GET** /accounts/{accountId}/events/{eventIdOrNumber} | lists the event
-[**getEvents**](TicketingApi.md#getEvents) | **GET** /accounts/{accountId}/events | lists all events
-[**getTicketDefinition**](TicketingApi.md#getTicketDefinition) | **GET** /accounts/{accountId}/ticketDefinitions/{ticketDefinitionIdOrNumber} | lists the ticket definition
-[**getTicketDefinitions**](TicketingApi.md#getTicketDefinitions) | **GET** /accounts/{accountId}/ticketDefinitions | lists all ticket definitions
+[**getEntryGate**](TicketingApi.md#getEntryGate) | **GET** /accounts/{koronaAccountId}/entryGates/{entryGateId} | lists the entry gate
+[**getEntryGates**](TicketingApi.md#getEntryGates) | **GET** /accounts/{koronaAccountId}/entryGates | lists all entry gates
+[**getEvent**](TicketingApi.md#getEvent) | **GET** /accounts/{koronaAccountId}/events/{eventId} | lists the event
+[**getEvents**](TicketingApi.md#getEvents) | **GET** /accounts/{koronaAccountId}/events | lists all events
+[**getTicketDefinition**](TicketingApi.md#getTicketDefinition) | **GET** /accounts/{koronaAccountId}/ticketDefinitions/{ticketDefinitionId} | lists the ticket definition
+[**getTicketDefinitions**](TicketingApi.md#getTicketDefinitions) | **GET** /accounts/{koronaAccountId}/ticketDefinitions | lists all ticket definitions
 
 
 <a name="getEntryGate"></a>
 # **getEntryGate**
-> EntryGate getEntryGate(accountId, entryGateIdOrNumber)
+> EntryGate getEntryGate(koronaAccountId, entryGateId)
 
 lists the entry gate
 
@@ -32,9 +32,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TicketingApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var entryGateIdOrNumber = "entryGateIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var entryGateId = "entryGateId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -44,15 +44,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEntryGate(accountId, entryGateIdOrNumber, callback);
+apiInstance.getEntryGate(koronaAccountId, entryGateId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **entryGateIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **entryGateId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 <a name="getEntryGates"></a>
 # **getEntryGates**
-> ResultListEntryGate getEntryGates(accountId, opts)
+> ResultListEntryGate getEntryGates(koronaAccountId, opts)
 
 lists all entry gates
 
@@ -87,7 +87,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TicketingApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -104,14 +104,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEntryGates(accountId, opts, callback);
+apiInstance.getEntryGates(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 <a name="getEvent"></a>
 # **getEvent**
-> Event getEvent(accountId, eventIdOrNumber)
+> Event getEvent(koronaAccountId, eventId)
 
 lists the event
 
@@ -151,9 +151,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TicketingApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var eventIdOrNumber = "eventIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var eventId = "eventId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -163,15 +163,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEvent(accountId, eventIdOrNumber, callback);
+apiInstance.getEvent(koronaAccountId, eventId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **eventIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **eventId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 <a name="getEvents"></a>
 # **getEvents**
-> ResultListEvent getEvents(accountId, opts)
+> ResultListEvent getEvents(koronaAccountId, opts)
 
 lists all events
 
@@ -206,7 +206,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TicketingApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -223,14 +223,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEvents(accountId, opts, callback);
+apiInstance.getEvents(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 <a name="getTicketDefinition"></a>
 # **getTicketDefinition**
-> TicketDefinition getTicketDefinition(accountId, ticketDefinitionIdOrNumber)
+> TicketDefinition getTicketDefinition(koronaAccountId, ticketDefinitionId)
 
 lists the ticket definition
 
@@ -270,9 +270,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TicketingApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var ticketDefinitionIdOrNumber = "ticketDefinitionIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var ticketDefinitionId = "ticketDefinitionId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -282,15 +282,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTicketDefinition(accountId, ticketDefinitionIdOrNumber, callback);
+apiInstance.getTicketDefinition(koronaAccountId, ticketDefinitionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **ticketDefinitionIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **ticketDefinitionId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 <a name="getTicketDefinitions"></a>
 # **getTicketDefinitions**
-> ResultListTicketDefinition getTicketDefinitions(accountId, opts)
+> ResultListTicketDefinition getTicketDefinitions(koronaAccountId, opts)
 
 lists all ticket definitions
 
@@ -325,7 +325,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.TicketingApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -342,14 +342,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTicketDefinitions(accountId, opts, callback);
+apiInstance.getTicketDefinitions(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

@@ -4,25 +4,25 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addInventories**](InventoriesKORONARetailApi.md#addInventories) | **POST** /accounts/{accountId}/inventories | adds a batch of new inventories
-[**addInventoryInventoryListItems**](InventoriesKORONARetailApi.md#addInventoryInventoryListItems) | **POST** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber}/items | adds inventory list items
-[**deleteInventory**](InventoriesKORONARetailApi.md#deleteInventory) | **DELETE** /accounts/{accountId}/inventories/{inventoryIdOrNumber} | deletes the inventory; only possible if hasBookedReceipts&#x3D;false
-[**deleteInventoryInventoryListItem**](InventoriesKORONARetailApi.md#deleteInventoryInventoryListItem) | **DELETE** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber}/items/{productIdOrNumber} | deletes the inventory list item
-[**getInventories**](InventoriesKORONARetailApi.md#getInventories) | **GET** /accounts/{accountId}/inventories | lists all inventories
-[**getInventory**](InventoriesKORONARetailApi.md#getInventory) | **GET** /accounts/{accountId}/inventories/{inventoryIdOrNumber} | lists the inventory
-[**getInventoryInventoryList**](InventoriesKORONARetailApi.md#getInventoryInventoryList) | **GET** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber} | lists the inventory list
-[**getInventoryInventoryListItem**](InventoriesKORONARetailApi.md#getInventoryInventoryListItem) | **GET** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber}/items/{productIdOrNumber} | lists the inventory list item with the specified product
-[**getInventoryInventoryListItems**](InventoriesKORONARetailApi.md#getInventoryInventoryListItems) | **GET** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber}/items | lists all inventory list items
-[**getInventoryInventoryLists**](InventoriesKORONARetailApi.md#getInventoryInventoryLists) | **GET** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists | lists all inventory lists
-[**updateInventory**](InventoriesKORONARetailApi.md#updateInventory) | **PATCH** /accounts/{accountId}/inventories/{inventoryIdOrNumber} | changes the inventory
-[**updateInventoryInventoryList**](InventoriesKORONARetailApi.md#updateInventoryInventoryList) | **PATCH** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber} | updates the inventory list
-[**updateInventoryInventoryListItem**](InventoriesKORONARetailApi.md#updateInventoryInventoryListItem) | **PATCH** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber}/items/{productIdOrNumber} | updates the inventory list item
-[**updateInventoryInventoryListItems**](InventoriesKORONARetailApi.md#updateInventoryInventoryListItems) | **PATCH** /accounts/{accountId}/inventories/{inventoryIdOrNumber}/inventoryLists/{inventoryListIdOrNumber}/items | updates inventory list items (property [product] required))
+[**addInventories**](InventoriesKORONARetailApi.md#addInventories) | **POST** /accounts/{koronaAccountId}/inventories | adds a batch of new inventories
+[**addInventoryInventoryListItems**](InventoriesKORONARetailApi.md#addInventoryInventoryListItems) | **POST** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId}/items | adds inventory list items
+[**deleteInventory**](InventoriesKORONARetailApi.md#deleteInventory) | **DELETE** /accounts/{koronaAccountId}/inventories/{inventoryId} | deletes the inventory; only possible if hasBookedReceipts&#x3D;false
+[**deleteInventoryInventoryListItem**](InventoriesKORONARetailApi.md#deleteInventoryInventoryListItem) | **DELETE** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId}/items/{productId} | deletes the inventory list item
+[**getInventories**](InventoriesKORONARetailApi.md#getInventories) | **GET** /accounts/{koronaAccountId}/inventories | lists all inventories
+[**getInventory**](InventoriesKORONARetailApi.md#getInventory) | **GET** /accounts/{koronaAccountId}/inventories/{inventoryId} | lists the inventory
+[**getInventoryInventoryList**](InventoriesKORONARetailApi.md#getInventoryInventoryList) | **GET** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId} | lists the inventory list
+[**getInventoryInventoryListItem**](InventoriesKORONARetailApi.md#getInventoryInventoryListItem) | **GET** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId}/items/{productId} | lists the inventory list item with the specified product
+[**getInventoryInventoryListItems**](InventoriesKORONARetailApi.md#getInventoryInventoryListItems) | **GET** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId}/items | lists all inventory list items
+[**getInventoryInventoryLists**](InventoriesKORONARetailApi.md#getInventoryInventoryLists) | **GET** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists | lists all inventory lists
+[**updateInventory**](InventoriesKORONARetailApi.md#updateInventory) | **PATCH** /accounts/{koronaAccountId}/inventories/{inventoryId} | changes the inventory
+[**updateInventoryInventoryList**](InventoriesKORONARetailApi.md#updateInventoryInventoryList) | **PATCH** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId} | updates the inventory list
+[**updateInventoryInventoryListItem**](InventoriesKORONARetailApi.md#updateInventoryInventoryListItem) | **PATCH** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId}/items/{productId} | updates the inventory list item
+[**updateInventoryInventoryListItems**](InventoriesKORONARetailApi.md#updateInventoryInventoryListItems) | **PATCH** /accounts/{koronaAccountId}/inventories/{inventoryId}/inventoryLists/{inventoryListId}/items | updates inventory list items (property [product] required))
 
 
 <a name="addInventories"></a>
 # **addInventories**
-> [AddOrUpdateResult] addInventories(accountId, body)
+> [AddOrUpdateResult] addInventories(koronaAccountId, body)
 
 adds a batch of new inventories
 
@@ -40,7 +40,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.Inventory()]; // [Inventory] | a array of new inventories
 
@@ -52,14 +52,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addInventories(accountId, body, callback);
+apiInstance.addInventories(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[Inventory]**](Inventory.md)| a array of new inventories | 
 
 ### Return type
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 <a name="addInventoryInventoryListItems"></a>
 # **addInventoryInventoryListItems**
-> [AddOrUpdateResult] addInventoryInventoryListItems(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, body)
+> [AddOrUpdateResult] addInventoryInventoryListItems(koronaAccountId, inventoryId, inventoryListId, body)
 
 adds inventory list items
 
@@ -95,11 +95,11 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = [new KoronacloudApiV3.InventoryListItem()]; // [InventoryListItem] | data to update
 
@@ -111,16 +111,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addInventoryInventoryListItems(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, body, callback);
+apiInstance.addInventoryInventoryListItems(koronaAccountId, inventoryId, inventoryListId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**[InventoryListItem]**](InventoryListItem.md)| data to update | 
 
 ### Return type
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInventory"></a>
 # **deleteInventory**
-> deleteInventory(accountId, inventoryIdOrNumber)
+> deleteInventory(koronaAccountId, inventoryId)
 
 deletes the inventory; only possible if hasBookedReceipts&#x3D;false
 
@@ -156,9 +156,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -168,15 +168,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteInventory(accountId, inventoryIdOrNumber, callback);
+apiInstance.deleteInventory(koronaAccountId, inventoryId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -193,7 +193,7 @@ null (empty response body)
 
 <a name="deleteInventoryInventoryListItem"></a>
 # **deleteInventoryInventoryListItem**
-> deleteInventoryInventoryListItem(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, productIdOrNumber)
+> deleteInventoryInventoryListItem(koronaAccountId, inventoryId, inventoryListId, productId)
 
 deletes the inventory list item
 
@@ -211,13 +211,13 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -227,17 +227,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteInventoryInventoryListItem(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, productIdOrNumber, callback);
+apiInstance.deleteInventoryInventoryListItem(koronaAccountId, inventoryId, inventoryListId, productId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -254,7 +254,7 @@ null (empty response body)
 
 <a name="getInventories"></a>
 # **getInventories**
-> ResultListInventory getInventories(accountId, opts)
+> ResultListInventory getInventories(koronaAccountId, opts)
 
 lists all inventories
 
@@ -272,7 +272,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -289,14 +289,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInventories(accountId, opts, callback);
+apiInstance.getInventories(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 <a name="getInventory"></a>
 # **getInventory**
-> Inventory getInventory(accountId, inventoryIdOrNumber)
+> Inventory getInventory(koronaAccountId, inventoryId)
 
 lists the inventory
 
@@ -336,9 +336,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -348,15 +348,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInventory(accountId, inventoryIdOrNumber, callback);
+apiInstance.getInventory(koronaAccountId, inventoryId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 <a name="getInventoryInventoryList"></a>
 # **getInventoryInventoryList**
-> InventoryList getInventoryInventoryList(accountId, inventoryIdOrNumber, inventoryListIdOrNumber)
+> InventoryList getInventoryInventoryList(koronaAccountId, inventoryId, inventoryListId)
 
 lists the inventory list
 
@@ -391,11 +391,11 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -405,16 +405,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInventoryInventoryList(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, callback);
+apiInstance.getInventoryInventoryList(koronaAccountId, inventoryId, inventoryListId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 <a name="getInventoryInventoryListItem"></a>
 # **getInventoryInventoryListItem**
-> InventoryListItem getInventoryInventoryListItem(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, productIdOrNumber)
+> InventoryListItem getInventoryInventoryListItem(koronaAccountId, inventoryId, inventoryListId, productId)
 
 lists the inventory list item with the specified product
 
@@ -449,13 +449,13 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -465,17 +465,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInventoryInventoryListItem(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, productIdOrNumber, callback);
+apiInstance.getInventoryInventoryListItem(koronaAccountId, inventoryId, inventoryListId, productId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 <a name="getInventoryInventoryListItems"></a>
 # **getInventoryInventoryListItems**
-> ResultListInventoryListItem getInventoryInventoryListItems(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, opts)
+> ResultListInventoryListItem getInventoryInventoryListItems(koronaAccountId, inventoryId, inventoryListId, opts)
 
 lists all inventory list items
 
@@ -510,11 +510,11 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -530,16 +530,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInventoryInventoryListItems(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, opts, callback);
+apiInstance.getInventoryInventoryListItems(koronaAccountId, inventoryId, inventoryListId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 <a name="getInventoryInventoryLists"></a>
 # **getInventoryInventoryLists**
-> ResultListInventoryList getInventoryInventoryLists(accountId, inventoryIdOrNumber, opts)
+> ResultListInventoryList getInventoryInventoryLists(koronaAccountId, inventoryId, opts)
 
 lists all inventory lists
 
@@ -578,9 +578,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -588,6 +588,10 @@ var opts = {
   'sort': "sort_example", // String | attribute to sort by (multiple separated by comma; max. 5)
   'revision': 789, // Number | last revision number, objects with a greater revision than this will be returned
   'includeDeleted': true, // Boolean | indicates deleted objects should be loaded or not (default: false)
+  'minCreateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | min (inclusive) create time of the receipt (ISO 8601; date, time and timezone)
+  'maxCreateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | max (inclusive) create time of the receipt (ISO 8601; date, time and timezone)
+  'minBookingTime': new Date("2013-10-20T19:20:30+01:00"), // Date | min (inclusive) booking time of the receipt (ISO 8601; date, time and timezone)
+  'maxBookingTime': new Date("2013-10-20T19:20:30+01:00"), // Date | max (inclusive) booking time of the receipt (ISO 8601; date, time and timezone)
   'bookingStatus': "bookingStatus_example" // String | booking status (possible values: BOOKED, IN_PROGRESS)
 };
 
@@ -598,20 +602,24 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInventoryInventoryLists(accountId, inventoryIdOrNumber, opts, callback);
+apiInstance.getInventoryInventoryLists(koronaAccountId, inventoryId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
  **revision** | **Number**| last revision number, objects with a greater revision than this will be returned | [optional] 
  **includeDeleted** | **Boolean**| indicates deleted objects should be loaded or not (default: false) | [optional] 
+ **minCreateTime** | **Date**| min (inclusive) create time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **maxCreateTime** | **Date**| max (inclusive) create time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **minBookingTime** | **Date**| min (inclusive) booking time of the receipt (ISO 8601; date, time and timezone) | [optional] 
+ **maxBookingTime** | **Date**| max (inclusive) booking time of the receipt (ISO 8601; date, time and timezone) | [optional] 
  **bookingStatus** | **String**| booking status (possible values: BOOKED, IN_PROGRESS) | [optional] 
 
 ### Return type
@@ -629,7 +637,7 @@ Name | Type | Description  | Notes
 
 <a name="updateInventory"></a>
 # **updateInventory**
-> updateInventory(accountId, inventoryIdOrNumber, body)
+> updateInventory(koronaAccountId, inventoryId, body)
 
 changes the inventory
 
@@ -647,9 +655,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = new KoronacloudApiV3.Inventory(); // Inventory | the properties to update of the inventory
 
@@ -661,15 +669,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateInventory(accountId, inventoryIdOrNumber, body, callback);
+apiInstance.updateInventory(koronaAccountId, inventoryId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**Inventory**](Inventory.md)| the properties to update of the inventory | 
 
 ### Return type
@@ -687,7 +695,7 @@ null (empty response body)
 
 <a name="updateInventoryInventoryList"></a>
 # **updateInventoryInventoryList**
-> updateInventoryInventoryList(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, body)
+> updateInventoryInventoryList(koronaAccountId, inventoryId, inventoryListId, body)
 
 updates the inventory list
 
@@ -705,11 +713,11 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = new KoronacloudApiV3.InventoryList(); // InventoryList | data to update
 
@@ -721,16 +729,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateInventoryInventoryList(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, body, callback);
+apiInstance.updateInventoryInventoryList(koronaAccountId, inventoryId, inventoryListId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**InventoryList**](InventoryList.md)| data to update | 
 
 ### Return type
@@ -748,7 +756,7 @@ null (empty response body)
 
 <a name="updateInventoryInventoryListItem"></a>
 # **updateInventoryInventoryListItem**
-> updateInventoryInventoryListItem(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, productIdOrNumber, body)
+> updateInventoryInventoryListItem(koronaAccountId, inventoryId, inventoryListId, productId, body)
 
 updates the inventory list item
 
@@ -766,13 +774,13 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var productIdOrNumber = "productIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = new KoronacloudApiV3.InventoryListItem(); // InventoryListItem | data to update
 
@@ -784,17 +792,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateInventoryInventoryListItem(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, productIdOrNumber, body, callback);
+apiInstance.updateInventoryInventoryListItem(koronaAccountId, inventoryId, inventoryListId, productId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **productIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**InventoryListItem**](InventoryListItem.md)| data to update | 
 
 ### Return type
@@ -812,7 +820,7 @@ null (empty response body)
 
 <a name="updateInventoryInventoryListItems"></a>
 # **updateInventoryInventoryListItems**
-> [AddOrUpdateResult] updateInventoryInventoryListItems(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, body)
+> [AddOrUpdateResult] updateInventoryInventoryListItems(koronaAccountId, inventoryId, inventoryListId, body)
 
 updates inventory list items (property [product] required))
 
@@ -830,11 +838,11 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesKORONARetailApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var inventoryIdOrNumber = "inventoryIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryId = "inventoryId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var inventoryListIdOrNumber = "inventoryListIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = [new KoronacloudApiV3.InventoryListItem()]; // [InventoryListItem] | a array of inventory list items to update
 
@@ -846,16 +854,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateInventoryInventoryListItems(accountId, inventoryIdOrNumber, inventoryListIdOrNumber, body, callback);
+apiInstance.updateInventoryInventoryListItems(koronaAccountId, inventoryId, inventoryListId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **inventoryIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
- **inventoryListIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**[InventoryListItem]**](InventoryListItem.md)| a array of inventory list items to update | 
 
 ### Return type

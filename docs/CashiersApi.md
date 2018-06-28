@@ -4,13 +4,13 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCashier**](CashiersApi.md#getCashier) | **GET** /accounts/{accountId}/cashiers/{cashierIdOrNumber} | lists the cashier
-[**getCashiers**](CashiersApi.md#getCashiers) | **GET** /accounts/{accountId}/cashiers | lists all cashiers
+[**getCashier**](CashiersApi.md#getCashier) | **GET** /accounts/{koronaAccountId}/cashiers/{cashierIdOrNumber} | lists the cashier
+[**getCashiers**](CashiersApi.md#getCashiers) | **GET** /accounts/{koronaAccountId}/cashiers | lists all cashiers
 
 
 <a name="getCashier"></a>
 # **getCashier**
-> Cashier getCashier(accountId, cashierIdOrNumber)
+> Cashier getCashier(koronaAccountId, cashierIdOrNumber)
 
 lists the cashier
 
@@ -28,9 +28,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CashiersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var cashierIdOrNumber = "cashierIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var cashierIdOrNumber = "cashierIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCashier(accountId, cashierIdOrNumber, callback);
+apiInstance.getCashier(koronaAccountId, cashierIdOrNumber, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **cashierIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **cashierIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getCashiers"></a>
 # **getCashiers**
-> ResultListCashier getCashiers(accountId, opts)
+> ResultListCashier getCashiers(koronaAccountId, opts)
 
 lists all cashiers
 
@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CashiersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -100,14 +100,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCashiers(accountId, opts, callback);
+apiInstance.getCashiers(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

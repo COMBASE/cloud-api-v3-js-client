@@ -4,15 +4,15 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRevenue**](StatisticsApi.md#getRevenue) | **GET** /accounts/{accountId}/statistics/revenueData | lists information about the revenue in the given period
-[**getRevenueForCustomerGroups**](StatisticsApi.md#getRevenueForCustomerGroups) | **GET** /accounts/{accountId}/statistics/revenueDataForCustomerGroups | lists the turnover per customer group during the given period
-[**getRevenueHourly**](StatisticsApi.md#getRevenueHourly) | **GET** /accounts/{accountId}/statistics/revenueDataHourly | lists the turnover per hour during the given period
-[**getTopSeller**](StatisticsApi.md#getTopSeller) | **GET** /accounts/{accountId}/statistics/topSeller | lists the top-seller
+[**getRevenue**](StatisticsApi.md#getRevenue) | **GET** /accounts/{koronaAccountId}/statistics/revenueData | lists information about the revenue in the given period
+[**getRevenueForCustomerGroups**](StatisticsApi.md#getRevenueForCustomerGroups) | **GET** /accounts/{koronaAccountId}/statistics/revenueDataForCustomerGroups | lists the turnover per customer group during the given period
+[**getRevenueHourly**](StatisticsApi.md#getRevenueHourly) | **GET** /accounts/{koronaAccountId}/statistics/revenueDataHourly | lists the turnover per hour during the given period
+[**getTopSeller**](StatisticsApi.md#getTopSeller) | **GET** /accounts/{koronaAccountId}/statistics/topSeller | lists the top-seller
 
 
 <a name="getRevenue"></a>
 # **getRevenue**
-> StatisticRevenueData getRevenue(accountId, opts)
+> StatisticRevenueData getRevenue(koronaAccountId, opts)
 
 lists information about the revenue in the given period
 
@@ -30,7 +30,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.StatisticsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -44,14 +44,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRevenue(accountId, opts, callback);
+apiInstance.getRevenue(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="getRevenueForCustomerGroups"></a>
 # **getRevenueForCustomerGroups**
-> StatisticMapStringRevenueData getRevenueForCustomerGroups(accountId, opts)
+> StatisticMapStringRevenueData getRevenueForCustomerGroups(koronaAccountId, opts)
 
 lists the turnover per customer group during the given period
 
@@ -88,7 +88,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.StatisticsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -102,14 +102,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRevenueForCustomerGroups(accountId, opts, callback);
+apiInstance.getRevenueForCustomerGroups(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 <a name="getRevenueHourly"></a>
 # **getRevenueHourly**
-> StatisticMapStringRevenueData getRevenueHourly(accountId, opts)
+> StatisticMapStringRevenueData getRevenueHourly(koronaAccountId, opts)
 
 lists the turnover per hour during the given period
 
@@ -146,7 +146,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.StatisticsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -160,14 +160,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRevenueHourly(accountId, opts, callback);
+apiInstance.getRevenueHourly(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 <a name="getTopSeller"></a>
 # **getTopSeller**
-> StatisticListTopSeller getTopSeller(accountId, opts)
+> StatisticListTopSeller getTopSeller(koronaAccountId, opts)
 
 lists the top-seller
 
@@ -204,7 +204,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.StatisticsApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -219,14 +219,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTopSeller(accountId, opts, callback);
+apiInstance.getTopSeller(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
  **limit** | **Number**| maximum number of products to show | [optional] 

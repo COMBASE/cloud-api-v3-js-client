@@ -1,17 +1,17 @@
-# KoronacloudApiV3.AccountApi
+# KoronacloudApiV3.KoronaAccountApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAccount**](AccountApi.md#getAccount) | **GET** /accounts/{accountId} | lists the account
+[**getKoronaAccount**](KoronaAccountApi.md#getKoronaAccount) | **GET** /accounts/{koronaAccountId} | lists the korona account
 
 
-<a name="getAccount"></a>
-# **getAccount**
-> Account getAccount(accountId)
+<a name="getKoronaAccount"></a>
+# **getKoronaAccount**
+> KoronaAccount getKoronaAccount(koronaAccountId)
 
-lists the account
+lists the korona account
 
 
 
@@ -25,9 +25,9 @@ var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.AccountApi();
+var apiInstance = new KoronacloudApiV3.KoronaAccountApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 
 var callback = function(error, data, response) {
@@ -37,18 +37,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAccount(accountId, callback);
+apiInstance.getKoronaAccount(koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
 
 ### Return type
 
-[**Account**](Account.md)
+[**KoronaAccount**](KoronaAccount.md)
 
 ### Authorization
 

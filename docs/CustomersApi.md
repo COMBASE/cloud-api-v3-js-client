@@ -4,17 +4,17 @@ All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCustomers**](CustomersApi.md#addCustomers) | **POST** /accounts/{accountId}/customers | adds a batch of new customers
-[**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /accounts/{accountId}/customers/{customerIdOrNumber} | deletes the customer
-[**getCustomer**](CustomersApi.md#getCustomer) | **GET** /accounts/{accountId}/customers/{customerIdOrNumber} | lists the customer
-[**getCustomers**](CustomersApi.md#getCustomers) | **GET** /accounts/{accountId}/customers | lists all customers
-[**updateCustomer**](CustomersApi.md#updateCustomer) | **PATCH** /accounts/{accountId}/customers/{customerIdOrNumber} | updates the customer
-[**updateCustomers**](CustomersApi.md#updateCustomers) | **PATCH** /accounts/{accountId}/customers | changes a batch of customers
+[**addCustomers**](CustomersApi.md#addCustomers) | **POST** /accounts/{koronaAccountId}/customers | adds a batch of new customers
+[**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /accounts/{koronaAccountId}/customers/{customerId} | deletes the customer
+[**getCustomer**](CustomersApi.md#getCustomer) | **GET** /accounts/{koronaAccountId}/customers/{customerId} | lists the customer
+[**getCustomers**](CustomersApi.md#getCustomers) | **GET** /accounts/{koronaAccountId}/customers | lists all customers
+[**updateCustomer**](CustomersApi.md#updateCustomer) | **PATCH** /accounts/{koronaAccountId}/customers/{customerId} | updates the customer
+[**updateCustomers**](CustomersApi.md#updateCustomers) | **PATCH** /accounts/{koronaAccountId}/customers | changes a batch of customers
 
 
 <a name="addCustomers"></a>
 # **addCustomers**
-> [AddOrUpdateResult] addCustomers(accountId, body)
+> [AddOrUpdateResult] addCustomers(koronaAccountId, body)
 
 adds a batch of new customers
 
@@ -32,7 +32,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.Customer()]; // [Customer] | a array of new customers
 
@@ -44,14 +44,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addCustomers(accountId, body, callback);
+apiInstance.addCustomers(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[Customer]**](Customer.md)| a array of new customers | 
 
 ### Return type
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCustomer"></a>
 # **deleteCustomer**
-> deleteCustomer(accountId, customerIdOrNumber)
+> deleteCustomer(koronaAccountId, customerId)
 
 deletes the customer
 
@@ -87,9 +87,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var customerIdOrNumber = "customerIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var customerId = "customerId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -99,15 +99,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCustomer(accountId, customerIdOrNumber, callback);
+apiInstance.deleteCustomer(koronaAccountId, customerId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **customerIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **customerId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -124,7 +124,7 @@ null (empty response body)
 
 <a name="getCustomer"></a>
 # **getCustomer**
-> Customer getCustomer(accountId, customerIdOrNumber)
+> Customer getCustomer(koronaAccountId, customerId)
 
 lists the customer
 
@@ -142,9 +142,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var customerIdOrNumber = "customerIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var customerId = "customerId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 
 var callback = function(error, data, response) {
@@ -154,15 +154,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCustomer(accountId, customerIdOrNumber, callback);
+apiInstance.getCustomer(koronaAccountId, customerId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **customerIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **customerId** | **String**| id of the related object (important: id should match the uuid-format) | 
 
 ### Return type
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomers"></a>
 # **getCustomers**
-> ResultListCustomer getCustomers(accountId, opts)
+> ResultListCustomer getCustomers(koronaAccountId, opts)
 
 lists all customers
 
@@ -197,7 +197,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -214,14 +214,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCustomers(accountId, opts, callback);
+apiInstance.getCustomers(koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCustomer"></a>
 # **updateCustomer**
-> updateCustomer(accountId, customerIdOrNumber, body)
+> updateCustomer(koronaAccountId, customerId, body)
 
 updates the customer
 
@@ -261,9 +261,9 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
-var customerIdOrNumber = "customerIdOrNumber_example"; // String | id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number)
+var customerId = "customerId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var body = new KoronacloudApiV3.Customer(); // Customer | the properties to update of the customer
 
@@ -275,15 +275,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateCustomer(accountId, customerIdOrNumber, body, callback);
+apiInstance.updateCustomer(koronaAccountId, customerId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
- **customerIdOrNumber** | **String**| id or number of the related object (important: if a number should match the uuid-format, the system will lookup for an id instead of a number) | 
+ **koronaAccountId** | **String**| the account id | 
+ **customerId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**Customer**](Customer.md)| the properties to update of the customer | 
 
 ### Return type
@@ -301,7 +301,7 @@ null (empty response body)
 
 <a name="updateCustomers"></a>
 # **updateCustomers**
-> [AddOrUpdateResult] updateCustomers(accountId, body)
+> [AddOrUpdateResult] updateCustomers(koronaAccountId, body)
 
 changes a batch of customers
 
@@ -319,7 +319,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var accountId = "accountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | the account id
 
 var body = [new KoronacloudApiV3.Customer()]; // [Customer] | a array of existing customers
 
@@ -331,14 +331,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCustomers(accountId, body, callback);
+apiInstance.updateCustomers(koronaAccountId, body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| the account id | 
  **body** | [**[Customer]**](Customer.md)| a array of existing customers | 
 
 ### Return type

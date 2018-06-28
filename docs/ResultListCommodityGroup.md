@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListCommodityGroupResource
+# KoronacloudApiV3.ResultListCommodityGroup
 
 ## Properties
 Name | Type | Description | Notes
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **currentPage** | **Number** | number of the current page, starting from 1 | 
 **links** | **{String: String}** | navigation links (previous, self, next) | 
 **pagesTotal** | **Number** | pages count total | 
-**results** | [**[CommodityGroupResource]**](CommodityGroupResource.md) | result list | 
+**results** | [**[CommodityGroup]**](CommodityGroup.md) | result list | 
 **resultsOfPage** | **Number** | result count of the current page | 
 **resultsTotal** | **Number** | result count total | 
 
