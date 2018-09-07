@@ -3,3 +3,4 @@ swaggy-c --api-spec 'https://128.koronacloud.com/web/api/v3/swagger.yaml' --conf
 yarn install
 yarn upgrade --latest
 yarn add --dev grunt grunt-cli grunt-bump
+git add .
