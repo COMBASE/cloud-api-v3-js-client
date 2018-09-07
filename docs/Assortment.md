@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Assortment
+# CloudApiV3JsClient.Assortment
 
 ## Properties
 Name | Type | Description | Notes

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/DayRating'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/OrganizationalUnit'), require('../model/ResultListDayRating'), require('../model/ResultListInventoryList'), require('../model/ResultListOrganizationalUnit'), require('../model/ResultListProductStock'), require('../model/ResultListStockReceipt'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.OrganizationalUnitsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.DayRating, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.OrganizationalUnit, root.KoronacloudApiV3.ResultListDayRating, root.KoronacloudApiV3.ResultListInventoryList, root.KoronacloudApiV3.ResultListOrganizationalUnit, root.KoronacloudApiV3.ResultListProductStock, root.KoronacloudApiV3.ResultListStockReceipt, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.OrganizationalUnitsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.DayRating, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.OrganizationalUnit, root.CloudApiV3JsClient.ResultListDayRating, root.CloudApiV3JsClient.ResultListInventoryList, root.CloudApiV3JsClient.ResultListOrganizationalUnit, root.CloudApiV3JsClient.ResultListProductStock, root.CloudApiV3JsClient.ResultListStockReceipt, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, DayRating, ForbiddenError, NotFoundError, OrganizationalUnit, ResultListDayRating, ResultListInventoryList, ResultListOrganizationalUnit, ResultListProductStock, ResultListStockReceipt, TooManyRequestsError) {
   'use strict';
@@ -58,19 +58,14 @@
     /**
      * adds a batch of new day ratings
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
      * @param {Array.<module:model/DayRating>} body a array of new day ratings
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~addOrganizationalUnitDayRatingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.addOrganizationalUnitDayRatings = function(koronaAccountId, organizationalUnitId, body, callback) {
+    this.addOrganizationalUnitDayRatings = function(organizationalUnitId, body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling addOrganizationalUnitDayRatings");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
@@ -82,10 +77,15 @@
         throw new Error("Missing the required parameter 'body' when calling addOrganizationalUnitDayRatings");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling addOrganizationalUnitDayRatings");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -117,20 +117,15 @@
      */
 
     /**
-     * deletes the day rating by its id or date
+     * deletes the single day rating by its id or date
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
      * @param {String} dayRatingIdOrDate the id or date (YYYY-MM-DD) of the day rating
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~deleteOrganizationalUnitDayRatingCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteOrganizationalUnitDayRating = function(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, callback) {
+    this.deleteOrganizationalUnitDayRating = function(organizationalUnitId, dayRatingIdOrDate, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling deleteOrganizationalUnitDayRating");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
@@ -142,11 +137,16 @@
         throw new Error("Missing the required parameter 'dayRatingIdOrDate' when calling deleteOrganizationalUnitDayRating");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling deleteOrganizationalUnitDayRating");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
         'organizationalUnitId': organizationalUnitId,
-        'dayRatingIdOrDate': dayRatingIdOrDate
+        'dayRatingIdOrDate': dayRatingIdOrDate,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -178,30 +178,30 @@
      */
 
     /**
-     * lists the organizational unit
+     * returns the single organizational unit
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~getOrganizationalUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrganizationalUnit}
      */
-    this.getOrganizationalUnit = function(koronaAccountId, organizationalUnitId, callback) {
+    this.getOrganizationalUnit = function(organizationalUnitId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnit");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
         throw new Error("Missing the required parameter 'organizationalUnitId' when calling getOrganizationalUnit");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnit");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -233,21 +233,16 @@
      */
 
     /**
-     * lists the day rating by its id or date
+     * returns the single day rating by its id or date
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
      * @param {String} dayRatingIdOrDate the id or date (YYYY-MM-DD) of the day rating
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~getOrganizationalUnitDayRatingCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DayRating}
      */
-    this.getOrganizationalUnitDayRating = function(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, callback) {
+    this.getOrganizationalUnitDayRating = function(organizationalUnitId, dayRatingIdOrDate, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitDayRating");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
@@ -259,11 +254,16 @@
         throw new Error("Missing the required parameter 'dayRatingIdOrDate' when calling getOrganizationalUnitDayRating");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitDayRating");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
         'organizationalUnitId': organizationalUnitId,
-        'dayRatingIdOrDate': dayRatingIdOrDate
+        'dayRatingIdOrDate': dayRatingIdOrDate,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -297,8 +297,8 @@
     /**
      * lists all organizational unit related day ratings
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -306,24 +306,24 @@
      * @param {module:api/OrganizationalUnitsApi~getOrganizationalUnitDayRatingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResultListDayRating}
      */
-    this.getOrganizationalUnitDayRatings = function(koronaAccountId, organizationalUnitId, opts, callback) {
+    this.getOrganizationalUnitDayRatings = function(organizationalUnitId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitDayRatings");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
         throw new Error("Missing the required parameter 'organizationalUnitId' when calling getOrganizationalUnitDayRatings");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitDayRatings");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'page': opts['page'],
@@ -360,8 +360,8 @@
     /**
      * lists the inventory lists belonging to the organizational unit (KORONA.retail required)
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -376,24 +376,24 @@
      * @param {module:api/OrganizationalUnitsApi~getOrganizationalUnitInventoryListsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResultListInventoryList}
      */
-    this.getOrganizationalUnitInventoryLists = function(koronaAccountId, organizationalUnitId, opts, callback) {
+    this.getOrganizationalUnitInventoryLists = function(organizationalUnitId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitInventoryLists");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
         throw new Error("Missing the required parameter 'organizationalUnitId' when calling getOrganizationalUnitInventoryLists");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitInventoryLists");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'page': opts['page'],
@@ -437,8 +437,8 @@
     /**
      * lists the product stocks of the organizational unit, in case it contains a warehouse (KORONA.retail required)
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -447,24 +447,24 @@
      * @param {module:api/OrganizationalUnitsApi~getOrganizationalUnitProductStocksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResultListProductStock}
      */
-    this.getOrganizationalUnitProductStocks = function(koronaAccountId, organizationalUnitId, opts, callback) {
+    this.getOrganizationalUnitProductStocks = function(organizationalUnitId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitProductStocks");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
         throw new Error("Missing the required parameter 'organizationalUnitId' when calling getOrganizationalUnitProductStocks");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitProductStocks");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'page': opts['page'],
@@ -502,8 +502,8 @@
     /**
      * lists the stock receipts belonging to the organizational unit (KORONA.retail required)
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -519,24 +519,24 @@
      * @param {module:api/OrganizationalUnitsApi~getOrganizationalUnitStockReceiptsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResultListStockReceipt}
      */
-    this.getOrganizationalUnitStockReceipts = function(koronaAccountId, organizationalUnitId, opts, callback) {
+    this.getOrganizationalUnitStockReceipts = function(organizationalUnitId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitStockReceipts");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
         throw new Error("Missing the required parameter 'organizationalUnitId' when calling getOrganizationalUnitStockReceipts");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getOrganizationalUnitStockReceipts");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'page': opts['page'],
@@ -581,7 +581,7 @@
     /**
      * lists all organizational units
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -641,19 +641,14 @@
     /**
      * updates the day rating by its id or date
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
      * @param {String} dayRatingIdOrDate the id or date (YYYY-MM-DD) of the day rating
      * @param {module:model/DayRating} body the properties to update of the day rating
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~updateOrganizationalUnitDayRatingCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateOrganizationalUnitDayRating = function(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, body, callback) {
+    this.updateOrganizationalUnitDayRating = function(organizationalUnitId, dayRatingIdOrDate, body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateOrganizationalUnitDayRating");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
@@ -670,11 +665,16 @@
         throw new Error("Missing the required parameter 'body' when calling updateOrganizationalUnitDayRating");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateOrganizationalUnitDayRating");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
         'organizationalUnitId': organizationalUnitId,
-        'dayRatingIdOrDate': dayRatingIdOrDate
+        'dayRatingIdOrDate': dayRatingIdOrDate,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -706,21 +706,16 @@
      */
 
     /**
-     * updated a batch of new day ratings
+     * updates a batch of day ratings
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
      * @param {Array.<module:model/DayRating>} body a array of new day ratings
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~updateOrganizationalUnitDayRatingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.updateOrganizationalUnitDayRatings = function(koronaAccountId, organizationalUnitId, body, callback) {
+    this.updateOrganizationalUnitDayRatings = function(organizationalUnitId, body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateOrganizationalUnitDayRatings");
-      }
 
       // verify the required parameter 'organizationalUnitId' is set
       if (organizationalUnitId === undefined || organizationalUnitId === null) {
@@ -732,10 +727,15 @@
         throw new Error("Missing the required parameter 'body' when calling updateOrganizationalUnitDayRatings");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateOrganizationalUnitDayRatings");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'organizationalUnitId': organizationalUnitId
+        'organizationalUnitId': organizationalUnitId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };

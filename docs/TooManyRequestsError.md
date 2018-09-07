@@ -1,4 +1,4 @@
-# KoronacloudApiV3.TooManyRequestsError
+# CloudApiV3JsClient.TooManyRequestsError
 
 ## Properties
 Name | Type | Description | Notes

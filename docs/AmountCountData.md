@@ -1,4 +1,4 @@
-# KoronacloudApiV3.AmountCountData
+# CloudApiV3JsClient.AmountCountData
 
 ## Properties
 Name | Type | Description | Notes

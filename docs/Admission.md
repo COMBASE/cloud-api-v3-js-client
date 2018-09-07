@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Admission
+# CloudApiV3JsClient.Admission
 
 ## Properties
 Name | Type | Description | Notes

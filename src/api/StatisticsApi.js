@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/StatisticListTopSeller'), require('../model/StatisticMapStringRevenueData'), require('../model/StatisticRevenueData'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.StatisticsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.StatisticListTopSeller, root.KoronacloudApiV3.StatisticMapStringRevenueData, root.KoronacloudApiV3.StatisticRevenueData, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.StatisticsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.StatisticListTopSeller, root.CloudApiV3JsClient.StatisticMapStringRevenueData, root.CloudApiV3JsClient.StatisticRevenueData, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, StatisticListTopSeller, StatisticMapStringRevenueData, StatisticRevenueData, TooManyRequestsError) {
   'use strict';
@@ -56,9 +56,9 @@
      */
 
     /**
-     * lists information about the revenue in the given period
+     * returns information about the revenue in the given period
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationalUnit number of the organizational unit
      * @param {module:model/String} opts.period time period for comparison
@@ -110,9 +110,9 @@
      */
 
     /**
-     * lists the turnover per customer group during the given period
+     * returns the turnover per customer group during the given period
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationalUnit number of the organizational unit
      * @param {module:model/String} opts.period time period for comparison
@@ -164,9 +164,9 @@
      */
 
     /**
-     * lists the turnover per hour during the given period
+     * returns the turnover per hour during the given period
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationalUnit number of the organizational unit
      * @param {module:model/String} opts.period time period for comparison
@@ -218,9 +218,9 @@
      */
 
     /**
-     * lists the top-seller
+     * returns the top-seller
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationalUnit number of the organizational unit
      * @param {module:model/String} opts.period time period for comparison

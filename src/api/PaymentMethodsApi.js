@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/PaymentMethod'), require('../model/ResultListPaymentMethod'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.PaymentMethodsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.PaymentMethod, root.KoronacloudApiV3.ResultListPaymentMethod, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.PaymentMethodsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.PaymentMethod, root.CloudApiV3JsClient.ResultListPaymentMethod, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, PaymentMethod, ResultListPaymentMethod, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the payment method
+     * returns the single payment method
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} paymentMethodId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/PaymentMethodsApi~getPaymentMethodCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentMethod}
      */
-    this.getPaymentMethod = function(koronaAccountId, paymentMethodId, callback) {
+    this.getPaymentMethod = function(paymentMethodId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPaymentMethod");
-      }
 
       // verify the required parameter 'paymentMethodId' is set
       if (paymentMethodId === undefined || paymentMethodId === null) {
         throw new Error("Missing the required parameter 'paymentMethodId' when calling getPaymentMethod");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPaymentMethod");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'paymentMethodId': paymentMethodId
+        'paymentMethodId': paymentMethodId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all payment methods
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

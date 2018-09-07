@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./SalesTax'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ResultListSalesTax = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.SalesTax);
+    root.CloudApiV3JsClient.ResultListSalesTax = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.SalesTax);
   }
 }(this, function(ApiClient, SalesTax) {
   'use strict';

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/CustomerGroup'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCustomerGroup'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.CustomerGroupsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.CustomerGroup, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCustomerGroup, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.CustomerGroupsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.CustomerGroup, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCustomerGroup, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, CustomerGroup, ForbiddenError, NotFoundError, ResultListCustomerGroup, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the customer group
+     * returns the single customer group
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} customerGroupId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerGroupsApi~getCustomerGroupCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomerGroup}
      */
-    this.getCustomerGroup = function(koronaAccountId, customerGroupId, callback) {
+    this.getCustomerGroup = function(customerGroupId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getCustomerGroup");
-      }
 
       // verify the required parameter 'customerGroupId' is set
       if (customerGroupId === undefined || customerGroupId === null) {
         throw new Error("Missing the required parameter 'customerGroupId' when calling getCustomerGroup");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getCustomerGroup");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'customerGroupId': customerGroupId
+        'customerGroupId': customerGroupId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all customer groups
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

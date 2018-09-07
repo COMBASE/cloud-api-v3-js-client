@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListTicketDefinition
+# CloudApiV3JsClient.ResultListTicketDefinition
 
 ## Properties
 Name | Type | Description | Notes

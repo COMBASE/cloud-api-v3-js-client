@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Capacity
+# CloudApiV3JsClient.Capacity
 
 ## Properties
 Name | Type | Description | Notes

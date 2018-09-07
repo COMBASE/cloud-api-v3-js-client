@@ -1,11 +1,11 @@
-# KoronacloudApiV3.CurrenciesApi
+# CloudApiV3JsClient.CurrenciesApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** /accounts/{koronaAccountId}/currencies | lists all currencies
-[**getCurrency**](CurrenciesApi.md#getCurrency) | **GET** /accounts/{koronaAccountId}/currencies/{currencyId} | lists the currency
+[**getCurrency**](CurrenciesApi.md#getCurrency) | **GET** /accounts/{koronaAccountId}/currencies/{currencyId} | returns the single currency
 
 
 <a name="getCurrencies"></a>
@@ -18,17 +18,17 @@ lists all currencies
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CurrenciesApi();
+var apiInstance = new CloudApiV3JsClient.CurrenciesApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -52,7 +52,7 @@ apiInstance.getCurrencies(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -74,27 +74,27 @@ Name | Type | Description  | Notes
 
 <a name="getCurrency"></a>
 # **getCurrency**
-> Currency getCurrency(koronaAccountId, currencyId)
+> Currency getCurrency(currencyId, koronaAccountId)
 
-lists the currency
+returns the single currency
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CurrenciesApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.CurrenciesApi();
 
 var currencyId = "currencyId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -104,15 +104,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCurrency(koronaAccountId, currencyId, callback);
+apiInstance.getCurrency(currencyId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **currencyId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 

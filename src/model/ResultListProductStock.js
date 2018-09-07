@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./ProductStock'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ResultListProductStock = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.ProductStock);
+    root.CloudApiV3JsClient.ResultListProductStock = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.ProductStock);
   }
 }(this, function(ApiClient, ProductStock) {
   'use strict';

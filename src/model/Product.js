@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./ModelReference'), require('./ProductCode'), require('./ProductDescription'), require('./ProductPrice'), require('./ProductSubproduct'), require('./ProductSupplierPrice'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.Product = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.ModelReference, root.KoronacloudApiV3.ProductCode, root.KoronacloudApiV3.ProductDescription, root.KoronacloudApiV3.ProductPrice, root.KoronacloudApiV3.ProductSubproduct, root.KoronacloudApiV3.ProductSupplierPrice);
+    root.CloudApiV3JsClient.Product = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.ModelReference, root.CloudApiV3JsClient.ProductCode, root.CloudApiV3JsClient.ProductDescription, root.CloudApiV3JsClient.ProductPrice, root.CloudApiV3JsClient.ProductSubproduct, root.CloudApiV3JsClient.ProductSupplierPrice);
   }
 }(this, function(ApiClient, ModelReference, ProductCode, ProductDescription, ProductPrice, ProductSubproduct, ProductSupplierPrice) {
   'use strict';

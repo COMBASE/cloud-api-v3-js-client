@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./Admission'), require('./Interval'), require('./ModelReference'), require('./TimePeriod'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.TicketDefinition = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.Admission, root.KoronacloudApiV3.Interval, root.KoronacloudApiV3.ModelReference, root.KoronacloudApiV3.TimePeriod);
+    root.CloudApiV3JsClient.TicketDefinition = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.Admission, root.CloudApiV3JsClient.Interval, root.CloudApiV3JsClient.ModelReference, root.CloudApiV3JsClient.TimePeriod);
   }
 }(this, function(ApiClient, Admission, Interval, ModelReference, TimePeriod) {
   'use strict';

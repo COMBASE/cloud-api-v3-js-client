@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./RevenueData'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.PeriodMapStringRevenueData = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.RevenueData);
+    root.CloudApiV3JsClient.PeriodMapStringRevenueData = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.RevenueData);
   }
 }(this, function(ApiClient, RevenueData) {
   'use strict';

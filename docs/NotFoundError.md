@@ -1,4 +1,4 @@
-# KoronacloudApiV3.NotFoundError
+# CloudApiV3JsClient.NotFoundError
 
 ## Properties
 Name | Type | Description | Notes

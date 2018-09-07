@@ -1,25 +1,25 @@
-# KoronacloudApiV3.OrganizationalUnitsApi
+# CloudApiV3JsClient.OrganizationalUnitsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#addOrganizationalUnitDayRatings) | **POST** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | adds a batch of new day ratings
-[**deleteOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#deleteOrganizationalUnitDayRating) | **DELETE** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | deletes the day rating by its id or date
-[**getOrganizationalUnit**](OrganizationalUnitsApi.md#getOrganizationalUnit) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId} | lists the organizational unit
-[**getOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRating) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | lists the day rating by its id or date
+[**deleteOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#deleteOrganizationalUnitDayRating) | **DELETE** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | deletes the single day rating by its id or date
+[**getOrganizationalUnit**](OrganizationalUnitsApi.md#getOrganizationalUnit) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId} | returns the single organizational unit
+[**getOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRating) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | returns the single day rating by its id or date
 [**getOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#getOrganizationalUnitDayRatings) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | lists all organizational unit related day ratings
 [**getOrganizationalUnitInventoryLists**](OrganizationalUnitsApi.md#getOrganizationalUnitInventoryLists) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/inventoryLists | lists the inventory lists belonging to the organizational unit (KORONA.retail required)
 [**getOrganizationalUnitProductStocks**](OrganizationalUnitsApi.md#getOrganizationalUnitProductStocks) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/productStocks | lists the product stocks of the organizational unit, in case it contains a warehouse (KORONA.retail required)
 [**getOrganizationalUnitStockReceipts**](OrganizationalUnitsApi.md#getOrganizationalUnitStockReceipts) | **GET** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/stockReceipts | lists the stock receipts belonging to the organizational unit (KORONA.retail required)
 [**getOrganizationalUnits**](OrganizationalUnitsApi.md#getOrganizationalUnits) | **GET** /accounts/{koronaAccountId}/organizationalUnits | lists all organizational units
 [**updateOrganizationalUnitDayRating**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRating) | **PATCH** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings/{dayRatingIdOrDate} | updates the day rating by its id or date
-[**updateOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRatings) | **PATCH** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | updated a batch of new day ratings
+[**updateOrganizationalUnitDayRatings**](OrganizationalUnitsApi.md#updateOrganizationalUnitDayRatings) | **PATCH** /accounts/{koronaAccountId}/organizationalUnits/{organizationalUnitId}/dayRatings | updates a batch of day ratings
 
 
 <a name="addOrganizationalUnitDayRatings"></a>
 # **addOrganizationalUnitDayRatings**
-> [AddOrUpdateResult] addOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body)
+> [AddOrUpdateResult] addOrganizationalUnitDayRatings(organizationalUnitId, body, koronaAccountId)
 
 adds a batch of new day ratings
 
@@ -27,21 +27,21 @@ adds a batch of new day ratings
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
+var body = [new CloudApiV3JsClient.DayRating()]; // [DayRating] | a array of new day ratings
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -51,16 +51,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body, callback);
+apiInstance.addOrganizationalUnitDayRatings(organizationalUnitId, body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**[DayRating]**](DayRating.md)| a array of new day ratings | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -77,29 +77,29 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganizationalUnitDayRating"></a>
 # **deleteOrganizationalUnitDayRating**
-> deleteOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate)
+> deleteOrganizationalUnitDayRating(organizationalUnitId, dayRatingIdOrDate, koronaAccountId)
 
-deletes the day rating by its id or date
+deletes the single day rating by its id or date
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -109,16 +109,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, callback);
+apiInstance.deleteOrganizationalUnitDayRating(organizationalUnitId, dayRatingIdOrDate, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **dayRatingIdOrDate** | **String**| the id or date (YYYY-MM-DD) of the day rating | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -135,27 +135,27 @@ null (empty response body)
 
 <a name="getOrganizationalUnit"></a>
 # **getOrganizationalUnit**
-> OrganizationalUnit getOrganizationalUnit(koronaAccountId, organizationalUnitId)
+> OrganizationalUnit getOrganizationalUnit(organizationalUnitId, koronaAccountId)
 
-lists the organizational unit
+returns the single organizational unit
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -165,15 +165,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnit(koronaAccountId, organizationalUnitId, callback);
+apiInstance.getOrganizationalUnit(organizationalUnitId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -190,29 +190,29 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitDayRating"></a>
 # **getOrganizationalUnitDayRating**
-> DayRating getOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate)
+> DayRating getOrganizationalUnitDayRating(organizationalUnitId, dayRatingIdOrDate, koronaAccountId)
 
-lists the day rating by its id or date
+returns the single day rating by its id or date
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -222,16 +222,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, callback);
+apiInstance.getOrganizationalUnitDayRating(organizationalUnitId, dayRatingIdOrDate, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **dayRatingIdOrDate** | **String**| the id or date (YYYY-MM-DD) of the day rating | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitDayRatings"></a>
 # **getOrganizationalUnitDayRatings**
-> ResultListDayRating getOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, opts)
+> ResultListDayRating getOrganizationalUnitDayRatings(organizationalUnitId, koronaAccountId, opts)
 
 lists all organizational unit related day ratings
 
@@ -256,19 +256,19 @@ lists all organizational unit related day ratings
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -283,15 +283,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, opts, callback);
+apiInstance.getOrganizationalUnitDayRatings(organizationalUnitId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitInventoryLists"></a>
 # **getOrganizationalUnitInventoryLists**
-> ResultListInventoryList getOrganizationalUnitInventoryLists(koronaAccountId, organizationalUnitId, opts)
+> ResultListInventoryList getOrganizationalUnitInventoryLists(organizationalUnitId, koronaAccountId, opts)
 
 lists the inventory lists belonging to the organizational unit (KORONA.retail required)
 
@@ -319,19 +319,19 @@ lists the inventory lists belonging to the organizational unit (KORONA.retail re
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -353,15 +353,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitInventoryLists(koronaAccountId, organizationalUnitId, opts, callback);
+apiInstance.getOrganizationalUnitInventoryLists(organizationalUnitId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitProductStocks"></a>
 # **getOrganizationalUnitProductStocks**
-> ResultListProductStock getOrganizationalUnitProductStocks(koronaAccountId, organizationalUnitId, opts)
+> ResultListProductStock getOrganizationalUnitProductStocks(organizationalUnitId, koronaAccountId, opts)
 
 lists the product stocks of the organizational unit, in case it contains a warehouse (KORONA.retail required)
 
@@ -396,19 +396,19 @@ lists the product stocks of the organizational unit, in case it contains a wareh
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -424,15 +424,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitProductStocks(koronaAccountId, organizationalUnitId, opts, callback);
+apiInstance.getOrganizationalUnitProductStocks(organizationalUnitId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationalUnitStockReceipts"></a>
 # **getOrganizationalUnitStockReceipts**
-> ResultListStockReceipt getOrganizationalUnitStockReceipts(koronaAccountId, organizationalUnitId, opts)
+> ResultListStockReceipt getOrganizationalUnitStockReceipts(organizationalUnitId, koronaAccountId, opts)
 
 lists the stock receipts belonging to the organizational unit (KORONA.retail required)
 
@@ -461,19 +461,19 @@ lists the stock receipts belonging to the organizational unit (KORONA.retail req
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -496,15 +496,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationalUnitStockReceipts(koronaAccountId, organizationalUnitId, opts, callback);
+apiInstance.getOrganizationalUnitStockReceipts(organizationalUnitId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -540,17 +540,17 @@ lists all organizational units
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -574,7 +574,7 @@ apiInstance.getOrganizationalUnits(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationalUnitDayRating"></a>
 # **updateOrganizationalUnitDayRating**
-> updateOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, body)
+> updateOrganizationalUnitDayRating(organizationalUnitId, dayRatingIdOrDate, body, koronaAccountId)
 
 updates the day rating by its id or date
 
@@ -604,23 +604,23 @@ updates the day rating by its id or date
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
 
-var body = new KoronacloudApiV3.DayRating(); // DayRating | the properties to update of the day rating
+var body = new CloudApiV3JsClient.DayRating(); // DayRating | the properties to update of the day rating
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -630,17 +630,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateOrganizationalUnitDayRating(koronaAccountId, organizationalUnitId, dayRatingIdOrDate, body, callback);
+apiInstance.updateOrganizationalUnitDayRating(organizationalUnitId, dayRatingIdOrDate, body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **dayRatingIdOrDate** | **String**| the id or date (YYYY-MM-DD) of the day rating | 
  **body** | [**DayRating**](DayRating.md)| the properties to update of the day rating | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -657,29 +657,29 @@ null (empty response body)
 
 <a name="updateOrganizationalUnitDayRatings"></a>
 # **updateOrganizationalUnitDayRatings**
-> [AddOrUpdateResult] updateOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body)
+> [AddOrUpdateResult] updateOrganizationalUnitDayRatings(organizationalUnitId, body, koronaAccountId)
 
-updated a batch of new day ratings
+updates a batch of day ratings
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
+var body = [new CloudApiV3JsClient.DayRating()]; // [DayRating] | a array of new day ratings
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -689,16 +689,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateOrganizationalUnitDayRatings(koronaAccountId, organizationalUnitId, body, callback);
+apiInstance.updateOrganizationalUnitDayRatings(organizationalUnitId, body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**[DayRating]**](DayRating.md)| a array of new day ratings | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 

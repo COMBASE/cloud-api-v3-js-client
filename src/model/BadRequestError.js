@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.BadRequestError = factory(root.KoronacloudApiV3.ApiClient);
+    root.CloudApiV3JsClient.BadRequestError = factory(root.CloudApiV3JsClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -125,6 +125,11 @@
      * @const
      */
     "MISSING_MODEL": "MISSING_MODEL",
+    /**
+     * value: "MISSING_QUERY_PARAMETER"
+     * @const
+     */
+    "MISSING_QUERY_PARAMETER": "MISSING_QUERY_PARAMETER",
     /**
      * value: "NUMBER_ALREADY_IN_USE"
      * @const

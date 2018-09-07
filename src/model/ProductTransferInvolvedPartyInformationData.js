@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./AddressInformation'), require('./CompanyIdentification'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ProductTransferInvolvedPartyInformationData = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddressInformation, root.KoronacloudApiV3.CompanyIdentification);
+    root.CloudApiV3JsClient.ProductTransferInvolvedPartyInformationData = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddressInformation, root.CloudApiV3JsClient.CompanyIdentification);
   }
 }(this, function(ApiClient, AddressInformation, CompanyIdentification) {
   'use strict';

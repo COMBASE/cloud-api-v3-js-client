@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Cashier
+# CloudApiV3JsClient.Cashier
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **_number** | **String** | number of the object, like it is set in backoffice; will be removed when active&#x3D;false | [optional] 
 **revision** | **Number** | the revision number of the object. revision numbers are unique per object-type. there is is no object of the same type with identical revision numbers. | [optional] 
 **alias** | **String** |  | [optional] 
+**deactivated** | **Boolean** |  | [optional] 
 **email** | **String** |  | [optional] 
 **firstname** | **String** |  | [optional] 
 **gender** | **String** |  | [optional] 
@@ -46,6 +47,8 @@ Name | Type | Description | Notes
 * `EXTERNAL_POINT_OF_SALE` (value: `"EXTERNAL_POINT_OF_SALE"`)
 
 * `FOREIGN_RECEIPT` (value: `"FOREIGN_RECEIPT"`)
+
+* `MDE_ADMIN` (value: `"MDE_ADMIN"`)
 
 * `PRICE` (value: `"PRICE"`)
 

@@ -1,4 +1,4 @@
-# KoronacloudApiV3.PaymentSummary
+# CloudApiV3JsClient.PaymentSummary
 
 ## Properties
 Name | Type | Description | Notes

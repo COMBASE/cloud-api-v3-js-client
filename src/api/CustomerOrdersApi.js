@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/CustomerOrder'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCustomerOrder'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.CustomerOrdersApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.CustomerOrder, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCustomerOrder, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.CustomerOrdersApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.CustomerOrder, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCustomerOrder, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, CustomerOrder, ForbiddenError, NotFoundError, ResultListCustomerOrder, TooManyRequestsError) {
   'use strict';
@@ -58,22 +58,22 @@
     /**
      * adds a batch of new customer orders
      * 
-     * @param {String} koronaAccountId the account id
      * @param {Array.<module:model/CustomerOrder>} body a array of new customer orders
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerOrdersApi~addCustomerOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.addCustomerOrders = function(koronaAccountId, body, callback) {
+    this.addCustomerOrders = function(body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling addCustomerOrders");
-      }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling addCustomerOrders");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling addCustomerOrders");
       }
 
 
@@ -110,31 +110,35 @@
      */
 
     /**
-     * deletes the customer order
+     * deletes the single customer order
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} customerOrderId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
+     * @param {Object} opts Optional parameters
+     * @param {String} opts._number number of the related object
      * @param {module:api/CustomerOrdersApi~deleteCustomerOrderCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomerOrder = function(koronaAccountId, customerOrderId, callback) {
+    this.deleteCustomerOrder = function(customerOrderId, koronaAccountId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling deleteCustomerOrder");
-      }
 
       // verify the required parameter 'customerOrderId' is set
       if (customerOrderId === undefined || customerOrderId === null) {
         throw new Error("Missing the required parameter 'customerOrderId' when calling deleteCustomerOrder");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling deleteCustomerOrder");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'customerOrderId': customerOrderId
+        'customerOrderId': customerOrderId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
+        'number': opts['_number'],
       };
       var collectionQueryParams = {
       };
@@ -164,30 +168,30 @@
      */
 
     /**
-     * lists the customer order
+     * returns the single customer order
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} customerOrderId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerOrdersApi~getCustomerOrderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomerOrder}
      */
-    this.getCustomerOrder = function(koronaAccountId, customerOrderId, callback) {
+    this.getCustomerOrder = function(customerOrderId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getCustomerOrder");
-      }
 
       // verify the required parameter 'customerOrderId' is set
       if (customerOrderId === undefined || customerOrderId === null) {
         throw new Error("Missing the required parameter 'customerOrderId' when calling getCustomerOrder");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getCustomerOrder");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'customerOrderId': customerOrderId
+        'customerOrderId': customerOrderId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -221,7 +225,7 @@
     /**
      * lists all customer orders
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -287,20 +291,15 @@
      */
 
     /**
-     * changes the customer order
-     * if [number] is set, the number of the object will change and the resource location as well
-     * @param {String} koronaAccountId the account id
+     * updates the single customer order
+     * 
      * @param {String} customerOrderId id of the related object (important: id should match the uuid-format)
      * @param {module:model/CustomerOrder} body the properties to update of the customer order
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerOrdersApi~updateCustomerOrderCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateCustomerOrder = function(koronaAccountId, customerOrderId, body, callback) {
+    this.updateCustomerOrder = function(customerOrderId, body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCustomerOrder");
-      }
 
       // verify the required parameter 'customerOrderId' is set
       if (customerOrderId === undefined || customerOrderId === null) {
@@ -312,10 +311,15 @@
         throw new Error("Missing the required parameter 'body' when calling updateCustomerOrder");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCustomerOrder");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'customerOrderId': customerOrderId
+        'customerOrderId': customerOrderId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -347,24 +351,24 @@
      */
 
     /**
-     * changes a batch of customer orders
+     * updates a batch of customer orders
      * [number] must be set in the objects, otherwise the object cannot be updated
-     * @param {String} koronaAccountId the account id
      * @param {Array.<module:model/CustomerOrder>} body a array of existing customer orders
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerOrdersApi~updateCustomerOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.updateCustomerOrders = function(koronaAccountId, body, callback) {
+    this.updateCustomerOrders = function(body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCustomerOrders");
-      }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateCustomerOrders");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCustomerOrders");
       }
 
 

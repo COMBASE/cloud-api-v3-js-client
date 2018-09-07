@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListSalesTax
+# CloudApiV3JsClient.ResultListSalesTax
 
 ## Properties
 Name | Type | Description | Notes

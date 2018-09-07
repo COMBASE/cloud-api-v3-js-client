@@ -1,4 +1,4 @@
-# KoronacloudApiV3.BadRequestError
+# CloudApiV3JsClient.BadRequestError
 
 ## Properties
 Name | Type | Description | Notes
@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 * `MALFORMED_MODEL_ID_OR_NUMBER` (value: `"MALFORMED_MODEL_ID_OR_NUMBER"`)
 
 * `MISSING_MODEL` (value: `"MISSING_MODEL"`)
+
+* `MISSING_QUERY_PARAMETER` (value: `"MISSING_QUERY_PARAMETER"`)
 
 * `NUMBER_ALREADY_IN_USE` (value: `"NUMBER_ALREADY_IN_USE"`)
 

@@ -1,21 +1,21 @@
-# KoronacloudApiV3.ProductsApi
+# CloudApiV3JsClient.ProductsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addProducts**](ProductsApi.md#addProducts) | **POST** /accounts/{koronaAccountId}/products | adds a batch of new products
-[**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /accounts/{koronaAccountId}/products/{productId} | deletes the product
-[**getProduct**](ProductsApi.md#getProduct) | **GET** /accounts/{koronaAccountId}/products/{productId} | lists the product
+[**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /accounts/{koronaAccountId}/products/{productId} | deletes the single product
+[**getProduct**](ProductsApi.md#getProduct) | **GET** /accounts/{koronaAccountId}/products/{productId} | returns the single product
 [**getProductStocks**](ProductsApi.md#getProductStocks) | **GET** /accounts/{koronaAccountId}/products/{productId}/stocks | lists the product stocks in different warehouses (KORONA.retail required)
 [**getProducts**](ProductsApi.md#getProducts) | **GET** /accounts/{koronaAccountId}/products | lists all products
-[**updateProduct**](ProductsApi.md#updateProduct) | **PATCH** /accounts/{koronaAccountId}/products/{productId} | changes the product
-[**updateProducts**](ProductsApi.md#updateProducts) | **PATCH** /accounts/{koronaAccountId}/products | changes a batch of products
+[**updateProduct**](ProductsApi.md#updateProduct) | **PATCH** /accounts/{koronaAccountId}/products/{productId} | updates the single product
+[**updateProducts**](ProductsApi.md#updateProducts) | **PATCH** /accounts/{koronaAccountId}/products | updates a batch of products
 
 
 <a name="addProducts"></a>
 # **addProducts**
-> [AddOrUpdateResult] addProducts(koronaAccountId, body)
+> [AddOrUpdateResult] addProducts(body, koronaAccountId)
 
 adds a batch of new products
 
@@ -23,19 +23,19 @@ adds a batch of new products
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var body = [new CloudApiV3JsClient.Product()]; // [Product] | array of new products
 
-var body = [new KoronacloudApiV3.Product()]; // [Product] | a array of new products
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -45,15 +45,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addProducts(koronaAccountId, body, callback);
+apiInstance.addProducts(body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **body** | [**[Product]**](Product.md)| a array of new products | 
+ **body** | [**[Product]**](Product.md)| array of new products | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -70,27 +70,27 @@ Name | Type | Description  | Notes
 
 <a name="deleteProduct"></a>
 # **deleteProduct**
-> deleteProduct(koronaAccountId, productId)
+> deleteProduct(productId, koronaAccountId)
 
-deletes the product
+deletes the single product
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
 var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -100,15 +100,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteProduct(koronaAccountId, productId, callback);
+apiInstance.deleteProduct(productId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -125,27 +125,27 @@ null (empty response body)
 
 <a name="getProduct"></a>
 # **getProduct**
-> Product getProduct(koronaAccountId, productId)
+> Product getProduct(productId, koronaAccountId)
 
-lists the product
+returns the single product
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
 var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -155,15 +155,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProduct(koronaAccountId, productId, callback);
+apiInstance.getProduct(productId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductStocks"></a>
 # **getProductStocks**
-> ResultListProductStock getProductStocks(koronaAccountId, productId, opts)
+> ResultListProductStock getProductStocks(productId, koronaAccountId, opts)
 
 lists the product stocks in different warehouses (KORONA.retail required)
 
@@ -188,19 +188,19 @@ lists the product stocks in different warehouses (KORONA.retail required)
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
 var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -216,15 +216,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProductStocks(koronaAccountId, productId, opts, callback);
+apiInstance.getProductStocks(productId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -253,17 +253,17 @@ lists all products
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -291,7 +291,7 @@ apiInstance.getProducts(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -317,29 +317,29 @@ Name | Type | Description  | Notes
 
 <a name="updateProduct"></a>
 # **updateProduct**
-> updateProduct(koronaAccountId, productId, body)
+> updateProduct(productId, body, koronaAccountId)
 
-changes the product
+updates the single product
 
 if [number] is set, the number of the object will change and the resource location as well
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
 var productId = "productId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new KoronacloudApiV3.Product(); // Product | the properties to update of the product
+var body = new CloudApiV3JsClient.Product(); // Product | the properties to update of the product
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -349,16 +349,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateProduct(koronaAccountId, productId, body, callback);
+apiInstance.updateProduct(productId, body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **productId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**Product**](Product.md)| the properties to update of the product | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -375,27 +375,27 @@ null (empty response body)
 
 <a name="updateProducts"></a>
 # **updateProducts**
-> [AddOrUpdateResult] updateProducts(koronaAccountId, body)
+> [AddOrUpdateResult] updateProducts(body, koronaAccountId)
 
-changes a batch of products
+updates a batch of products
 
 [number] must be set in the objects, otherwise the object cannot be updated
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.ProductsApi();
+var apiInstance = new CloudApiV3JsClient.ProductsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var body = [new CloudApiV3JsClient.Product()]; // [Product] | a array of existing products
 
-var body = [new KoronacloudApiV3.Product()]; // [Product] | a array of existing products
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -405,15 +405,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateProducts(koronaAccountId, body, callback);
+apiInstance.updateProducts(body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **body** | [**[Product]**](Product.md)| a array of existing products | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 

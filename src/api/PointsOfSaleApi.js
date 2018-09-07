@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/EndOfDayStatement'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/Pos'), require('../model/Receipt'), require('../model/ResultListEndOfDayStatement'), require('../model/ResultListPos'), require('../model/ResultListReceipt'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.PointsOfSaleApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.EndOfDayStatement, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.Pos, root.KoronacloudApiV3.Receipt, root.KoronacloudApiV3.ResultListEndOfDayStatement, root.KoronacloudApiV3.ResultListPos, root.KoronacloudApiV3.ResultListReceipt, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.PointsOfSaleApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.EndOfDayStatement, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.Pos, root.CloudApiV3JsClient.Receipt, root.CloudApiV3JsClient.ResultListEndOfDayStatement, root.CloudApiV3JsClient.ResultListPos, root.CloudApiV3JsClient.ResultListReceipt, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, EndOfDayStatement, ForbiddenError, NotFoundError, Pos, Receipt, ResultListEndOfDayStatement, ResultListPos, ResultListReceipt, TooManyRequestsError) {
   'use strict';
@@ -58,26 +58,21 @@
     /**
      * adds a batch of point of sale-related end-of-day-statements
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} pointOfSaleId id of the related object (important: id should match the uuid-format)
      * @param {String} couplingId the coupling-id of the device
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/EndOfDayStatement>} opts.body the end-of-day-statements to add
      * @param {module:api/PointsOfSaleApi~addPointOfSaleEndOfDayStatementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.addPointOfSaleEndOfDayStatements = function(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts, callback) {
+    this.addPointOfSaleEndOfDayStatements = function(pointOfSaleId, couplingId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = opts['body'];
 
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling addPointOfSaleEndOfDayStatements");
-      }
-
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling addPointOfSaleEndOfDayStatements");
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling addPointOfSaleEndOfDayStatements");
       }
 
       // verify the required parameter 'couplingId' is set
@@ -85,10 +80,15 @@
         throw new Error("Missing the required parameter 'couplingId' when calling addPointOfSaleEndOfDayStatements");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling addPointOfSaleEndOfDayStatements");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber
+        'pointOfSaleId': pointOfSaleId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': couplingId,
@@ -106,7 +106,7 @@
       var returnType = [AddOrUpdateResult];
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/endOfDayStatements', 'POST',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/endOfDayStatements', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -123,26 +123,21 @@
     /**
      * adds a batch of point of sale-related receipts
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} pointOfSaleId id of the related object (important: id should match the uuid-format)
      * @param {String} couplingId the coupling-id of the device
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/Receipt>} opts.body the receipts to add
      * @param {module:api/PointsOfSaleApi~addPointOfSaleReceiptsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.addPointOfSaleReceipts = function(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts, callback) {
+    this.addPointOfSaleReceipts = function(pointOfSaleId, couplingId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = opts['body'];
 
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling addPointOfSaleReceipts");
-      }
-
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling addPointOfSaleReceipts");
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling addPointOfSaleReceipts");
       }
 
       // verify the required parameter 'couplingId' is set
@@ -150,10 +145,15 @@
         throw new Error("Missing the required parameter 'couplingId' when calling addPointOfSaleReceipts");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling addPointOfSaleReceipts");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber
+        'pointOfSaleId': pointOfSaleId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': couplingId,
@@ -171,7 +171,7 @@
       var returnType = [AddOrUpdateResult];
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/receipts', 'POST',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/receipts', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -186,33 +186,33 @@
      */
 
     /**
-     * lists the point of sale
+     * returns the single point of sale
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber the number of the point of sale
+     * @param {String} pointOfSaleId the number of the point of sale
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.couplingId the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external).
      * @param {module:api/PointsOfSaleApi~getPointOfSaleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Pos}
      */
-    this.getPointOfSale = function(koronaAccountId, pointOfSaleIdOrNumber, opts, callback) {
+    this.getPointOfSale = function(pointOfSaleId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling getPointOfSale");
+      }
 
       // verify the required parameter 'koronaAccountId' is set
       if (koronaAccountId === undefined || koronaAccountId === null) {
         throw new Error("Missing the required parameter 'koronaAccountId' when calling getPointOfSale");
       }
 
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling getPointOfSale");
-      }
-
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber
+        'pointOfSaleId': pointOfSaleId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': opts['couplingId'],
@@ -230,7 +230,7 @@
       var returnType = Pos;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}', 'GET',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -247,9 +247,9 @@
     /**
      * lists all point of sale-related end-of-day-statements
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} pointOfSaleId id of the related object (important: id should match the uuid-format)
      * @param {String} couplingId the coupling-id of the device
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -258,18 +258,13 @@
      * @param {module:api/PointsOfSaleApi~getPointOfSaleEndOfDayStatementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResultListEndOfDayStatement}
      */
-    this.getPointOfSaleEndOfDayStatements = function(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts, callback) {
+    this.getPointOfSaleEndOfDayStatements = function(pointOfSaleId, couplingId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPointOfSaleEndOfDayStatements");
-      }
-
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling getPointOfSaleEndOfDayStatements");
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling getPointOfSaleEndOfDayStatements");
       }
 
       // verify the required parameter 'couplingId' is set
@@ -277,10 +272,15 @@
         throw new Error("Missing the required parameter 'couplingId' when calling getPointOfSaleEndOfDayStatements");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPointOfSaleEndOfDayStatements");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber
+        'pointOfSaleId': pointOfSaleId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': couplingId,
@@ -302,7 +302,7 @@
       var returnType = ResultListEndOfDayStatement;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/endOfDayStatements', 'GET',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/endOfDayStatements', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -317,28 +317,23 @@
      */
 
     /**
-     * lists a single point of sale-related receipt
+     * returns the single point of sale-related receipt
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} pointOfSaleId id of the related object (important: id should match the uuid-format)
      * @param {String} receiptId the id of the receipt
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.couplingId the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external).
      * @param {module:api/PointsOfSaleApi~getPointOfSaleReceiptCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Receipt}
      */
-    this.getPointOfSaleReceipt = function(koronaAccountId, pointOfSaleIdOrNumber, receiptId, opts, callback) {
+    this.getPointOfSaleReceipt = function(pointOfSaleId, receiptId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPointOfSaleReceipt");
-      }
-
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling getPointOfSaleReceipt");
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling getPointOfSaleReceipt");
       }
 
       // verify the required parameter 'receiptId' is set
@@ -346,11 +341,16 @@
         throw new Error("Missing the required parameter 'receiptId' when calling getPointOfSaleReceipt");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPointOfSaleReceipt");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber,
-        'receiptId': receiptId
+        'pointOfSaleId': pointOfSaleId,
+        'receiptId': receiptId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': opts['couplingId'],
@@ -368,7 +368,7 @@
       var returnType = Receipt;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/receipts/{receiptId}', 'GET',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/receipts/{receiptId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -385,8 +385,8 @@
     /**
      * lists all point of sale-related receipts
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} pointOfSaleId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.couplingId the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external).
      * @param {Number} opts.page number of the page to fetch
@@ -399,24 +399,24 @@
      * @param {module:api/PointsOfSaleApi~getPointOfSaleReceiptsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResultListReceipt}
      */
-    this.getPointOfSaleReceipts = function(koronaAccountId, pointOfSaleIdOrNumber, opts, callback) {
+    this.getPointOfSaleReceipts = function(pointOfSaleId, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling getPointOfSaleReceipts");
+      }
 
       // verify the required parameter 'koronaAccountId' is set
       if (koronaAccountId === undefined || koronaAccountId === null) {
         throw new Error("Missing the required parameter 'koronaAccountId' when calling getPointOfSaleReceipts");
       }
 
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling getPointOfSaleReceipts");
-      }
-
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber
+        'pointOfSaleId': pointOfSaleId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': opts['couplingId'],
@@ -441,7 +441,7 @@
       var returnType = ResultListReceipt;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/receipts', 'GET',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/receipts', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -456,9 +456,9 @@
      */
 
     /**
-     * lists all point of sales
+     * lists all points of sale
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -518,26 +518,21 @@
     /**
      * updates a point of sale (works only for coupling (attribute &#39;couplingId&#39;) or updating device information (attribute &#39;deviceInformation&#39;))
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} pointOfSaleIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} pointOfSaleId id of the related object (important: id should match the uuid-format)
      * @param {module:model/Pos} body the properties to update of the point of sale (&#39;couplingId&#39; only)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {String} opts.couplingId the coupling-id of the device (required if already coupled)
      * @param {Boolean} opts.decouple executes uncoupling, if set to true, device will be uncoupled if point of sale is already coupled
      * @param {module:api/PointsOfSaleApi~updatePointOfSaleCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updatePointOfSale = function(koronaAccountId, pointOfSaleIdOrNumber, body, opts, callback) {
+    this.updatePointOfSale = function(pointOfSaleId, body, koronaAccountId, opts, callback) {
       opts = opts || {};
       var postBody = body;
 
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updatePointOfSale");
-      }
-
-      // verify the required parameter 'pointOfSaleIdOrNumber' is set
-      if (pointOfSaleIdOrNumber === undefined || pointOfSaleIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'pointOfSaleIdOrNumber' when calling updatePointOfSale");
+      // verify the required parameter 'pointOfSaleId' is set
+      if (pointOfSaleId === undefined || pointOfSaleId === null) {
+        throw new Error("Missing the required parameter 'pointOfSaleId' when calling updatePointOfSale");
       }
 
       // verify the required parameter 'body' is set
@@ -545,10 +540,15 @@
         throw new Error("Missing the required parameter 'body' when calling updatePointOfSale");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updatePointOfSale");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'pointOfSaleIdOrNumber': pointOfSaleIdOrNumber
+        'pointOfSaleId': pointOfSaleId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
         'couplingId': opts['couplingId'],
@@ -567,7 +567,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}', 'PATCH',
+        '/accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

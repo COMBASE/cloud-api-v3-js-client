@@ -1,4 +1,4 @@
-# KoronacloudApiV3.GeoLocation
+# CloudApiV3JsClient.GeoLocation
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Sector
+# CloudApiV3JsClient.Sector
 
 ## Properties
 Name | Type | Description | Notes

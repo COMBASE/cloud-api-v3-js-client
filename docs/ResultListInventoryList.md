@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListInventoryList
+# CloudApiV3JsClient.ResultListInventoryList
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,36 +1,36 @@
-# KoronacloudApiV3.InfoTextsApi
+# CloudApiV3JsClient.InfoTextsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getInfoText**](InfoTextsApi.md#getInfoText) | **GET** /accounts/{koronaAccountId}/infoTexts/{infoTextId} | lists the info text
+[**getInfoText**](InfoTextsApi.md#getInfoText) | **GET** /accounts/{koronaAccountId}/infoTexts/{infoTextId} | returns the single info text
 [**getInfoTexts**](InfoTextsApi.md#getInfoTexts) | **GET** /accounts/{koronaAccountId}/infoTexts | lists all info texts
 
 
 <a name="getInfoText"></a>
 # **getInfoText**
-> InfoText getInfoText(koronaAccountId, infoTextId)
+> InfoText getInfoText(infoTextId, koronaAccountId)
 
-lists the info text
+returns the single info text
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.InfoTextsApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.InfoTextsApi();
 
 var infoTextId = "infoTextId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -40,15 +40,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInfoText(koronaAccountId, infoTextId, callback);
+apiInstance.getInfoText(infoTextId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **infoTextId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -73,17 +73,17 @@ lists all info texts
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.InfoTextsApi();
+var apiInstance = new CloudApiV3JsClient.InfoTextsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -107,7 +107,7 @@ apiInstance.getInfoTexts(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 

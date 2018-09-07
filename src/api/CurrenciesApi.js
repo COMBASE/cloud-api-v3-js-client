@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/Currency'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCurrency'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.CurrenciesApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.Currency, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCurrency, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.CurrenciesApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.Currency, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCurrency, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, Currency, ForbiddenError, NotFoundError, ResultListCurrency, TooManyRequestsError) {
   'use strict';
@@ -58,7 +58,7 @@
     /**
      * lists all currencies
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -116,30 +116,30 @@
      */
 
     /**
-     * lists the currency
+     * returns the single currency
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} currencyId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CurrenciesApi~getCurrencyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Currency}
      */
-    this.getCurrency = function(koronaAccountId, currencyId, callback) {
+    this.getCurrency = function(currencyId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getCurrency");
-      }
 
       // verify the required parameter 'currencyId' is set
       if (currencyId === undefined || currencyId === null) {
         throw new Error("Missing the required parameter 'currencyId' when calling getCurrency");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getCurrency");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'currencyId': currencyId
+        'currencyId': currencyId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };

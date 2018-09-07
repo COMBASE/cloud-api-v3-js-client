@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListEconomicZone
+# CloudApiV3JsClient.ResultListEconomicZone
 
 ## Properties
 Name | Type | Description | Notes

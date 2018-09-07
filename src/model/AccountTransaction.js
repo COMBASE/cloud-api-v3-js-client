@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./ModelReference'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.AccountTransaction = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.ModelReference);
+    root.CloudApiV3JsClient.AccountTransaction = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.ModelReference);
   }
 }(this, function(ApiClient, ModelReference) {
   'use strict';

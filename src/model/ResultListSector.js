@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./Sector'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ResultListSector = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.Sector);
+    root.CloudApiV3JsClient.ResultListSector = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.Sector);
   }
 }(this, function(ApiClient, Sector) {
   'use strict';

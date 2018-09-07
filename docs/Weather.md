@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Weather
+# CloudApiV3JsClient.Weather
 
 ## Properties
 Name | Type | Description | Notes

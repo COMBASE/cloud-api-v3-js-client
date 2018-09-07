@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Receipt
+# CloudApiV3JsClient.Receipt
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **_number** | **String** | number of the object, like it is set in backoffice; will be removed when active&#x3D;false | [optional] 
 **revision** | **Number** | the revision number of the object. revision numbers are unique per object-type. there is is no object of the same type with identical revision numbers. | [optional] 
 **accountTransactions** | [**[AccountTransaction]**](AccountTransaction.md) |  | [optional] 
+**additionalInfo** | [**[AdditionalInfo]**](AdditionalInfo.md) |  | [optional] 
 **bookingTime** | **Date** |  | [optional] 
 **cashier** | [**ModelReference**](ModelReference.md) |  | [optional] 
 **creationTime** | **Date** |  | [optional] 

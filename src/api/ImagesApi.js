@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ImagesApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.ImagesApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, ForbiddenError, NotFoundError, TooManyRequestsError) {
   'use strict';
@@ -58,27 +58,27 @@
     /**
      * displays the image
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} imageId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/ImagesApi~getImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getImage = function(koronaAccountId, imageId, callback) {
+    this.getImage = function(imageId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getImage");
-      }
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling getImage");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getImage");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'imageId': imageId
+        'imageId': imageId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };

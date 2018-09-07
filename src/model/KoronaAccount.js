@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./AddressInformation'), require('./CloudSubscription'), require('./CompanyIdentification'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.KoronaAccount = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddressInformation, root.KoronacloudApiV3.CloudSubscription, root.KoronacloudApiV3.CompanyIdentification);
+    root.CloudApiV3JsClient.KoronaAccount = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddressInformation, root.CloudApiV3JsClient.CloudSubscription, root.CloudApiV3JsClient.CompanyIdentification);
   }
 }(this, function(ApiClient, AddressInformation, CloudSubscription, CompanyIdentification) {
   'use strict';
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('revision')) {
         obj['revision'] = ApiClient.convertToType(data['revision'], 'Number');
+      }
+      if (data.hasOwnProperty('activePackages')) {
+        obj['activePackages'] = ApiClient.convertToType(data['activePackages'], ['String']);
       }
       if (data.hasOwnProperty('address')) {
         obj['address'] = AddressInformation.constructFromObject(data['address']);
@@ -121,6 +125,10 @@
    */
   exports.prototype['revision'] = undefined;
   /**
+   * @member {Array.<module:model/KoronaAccount.ActivePackagesEnum>} activePackages
+   */
+  exports.prototype['activePackages'] = undefined;
+  /**
    * @member {module:model/AddressInformation} address
    */
   exports.prototype['address'] = undefined;
@@ -141,6 +149,53 @@
    */
   exports.prototype['testMode'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>activePackages</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.ActivePackagesEnum = {
+    /**
+     * value: "INVOICING"
+     * @const
+     */
+    "INVOICING": "INVOICING",
+    /**
+     * value: "FOOD"
+     * @const
+     */
+    "FOOD": "FOOD",
+    /**
+     * value: "PLUS"
+     * @const
+     */
+    "PLUS": "PLUS",
+    /**
+     * value: "RETAIL"
+     * @const
+     */
+    "RETAIL": "RETAIL",
+    /**
+     * value: "SUPPORT"
+     * @const
+     */
+    "SUPPORT": "SUPPORT",
+    /**
+     * value: "POS"
+     * @const
+     */
+    "POS": "POS",
+    /**
+     * value: "TICKET"
+     * @const
+     */
+    "TICKET": "TICKET",
+    /**
+     * value: "FRANCHISE"
+     * @const
+     */
+    "FRANCHISE": "FRANCHISE"  };
 
 
   return exports;

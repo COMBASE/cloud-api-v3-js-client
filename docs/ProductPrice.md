@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ProductPrice
+# CloudApiV3JsClient.ProductPrice
 
 ## Properties
 Name | Type | Description | Notes

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/PriceGroup'), require('../model/ResultListPriceGroup'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.PriceGroupsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.PriceGroup, root.KoronacloudApiV3.ResultListPriceGroup, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.PriceGroupsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.PriceGroup, root.CloudApiV3JsClient.ResultListPriceGroup, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, PriceGroup, ResultListPriceGroup, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the price group
+     * returns the single price group
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} priceGroupId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/PriceGroupsApi~getPriceGroupCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PriceGroup}
      */
-    this.getPriceGroup = function(koronaAccountId, priceGroupId, callback) {
+    this.getPriceGroup = function(priceGroupId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPriceGroup");
-      }
 
       // verify the required parameter 'priceGroupId' is set
       if (priceGroupId === undefined || priceGroupId === null) {
         throw new Error("Missing the required parameter 'priceGroupId' when calling getPriceGroup");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getPriceGroup");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'priceGroupId': priceGroupId
+        'priceGroupId': priceGroupId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all price groups
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

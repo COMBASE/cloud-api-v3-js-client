@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListPos
+# CloudApiV3JsClient.ResultListPos
 
 ## Properties
 Name | Type | Description | Notes

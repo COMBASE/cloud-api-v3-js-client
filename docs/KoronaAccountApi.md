@@ -1,33 +1,33 @@
-# KoronacloudApiV3.KoronaAccountApi
+# CloudApiV3JsClient.KoronaAccountApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getKoronaAccount**](KoronaAccountApi.md#getKoronaAccount) | **GET** /accounts/{koronaAccountId} | lists the korona account
+[**getKoronaAccount**](KoronaAccountApi.md#getKoronaAccount) | **GET** /accounts/{koronaAccountId} | returns the single korona account
 
 
 <a name="getKoronaAccount"></a>
 # **getKoronaAccount**
 > KoronaAccount getKoronaAccount(koronaAccountId)
 
-lists the korona account
+returns the single korona account
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.KoronaAccountApi();
+var apiInstance = new CloudApiV3JsClient.KoronaAccountApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -44,7 +44,7 @@ apiInstance.getKoronaAccount(koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 

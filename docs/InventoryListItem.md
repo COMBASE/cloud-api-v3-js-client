@@ -1,4 +1,4 @@
-# KoronacloudApiV3.InventoryListItem
+# CloudApiV3JsClient.InventoryListItem
 
 ## Properties
 Name | Type | Description | Notes

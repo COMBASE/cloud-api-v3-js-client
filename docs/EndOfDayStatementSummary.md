@@ -1,4 +1,4 @@
-# KoronacloudApiV3.EndOfDayStatementSummary
+# CloudApiV3JsClient.EndOfDayStatementSummary
 
 ## Properties
 Name | Type | Description | Notes

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/CommodityGroup'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCommodityGroup'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.CommodityGroupsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.CommodityGroup, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCommodityGroup, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.CommodityGroupsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.CommodityGroup, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCommodityGroup, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, CommodityGroup, ForbiddenError, NotFoundError, ResultListCommodityGroup, TooManyRequestsError) {
   'use strict';
@@ -58,22 +58,22 @@
     /**
      * adds a batch of new commodity groups
      * 
-     * @param {String} koronaAccountId the account id
      * @param {Array.<module:model/CommodityGroup>} body a array of new commodity groups
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CommodityGroupsApi~addCommodityGroupsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.addCommodityGroups = function(koronaAccountId, body, callback) {
+    this.addCommodityGroups = function(body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling addCommodityGroups");
-      }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling addCommodityGroups");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling addCommodityGroups");
       }
 
 
@@ -110,29 +110,29 @@
      */
 
     /**
-     * deletes the commodity group
+     * deletes the single commodity group
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} commodityGroupIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} commodityGroupId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CommodityGroupsApi~deleteCommodityGroupCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCommodityGroup = function(koronaAccountId, commodityGroupIdOrNumber, callback) {
+    this.deleteCommodityGroup = function(commodityGroupId, koronaAccountId, callback) {
       var postBody = null;
+
+      // verify the required parameter 'commodityGroupId' is set
+      if (commodityGroupId === undefined || commodityGroupId === null) {
+        throw new Error("Missing the required parameter 'commodityGroupId' when calling deleteCommodityGroup");
+      }
 
       // verify the required parameter 'koronaAccountId' is set
       if (koronaAccountId === undefined || koronaAccountId === null) {
         throw new Error("Missing the required parameter 'koronaAccountId' when calling deleteCommodityGroup");
       }
 
-      // verify the required parameter 'commodityGroupIdOrNumber' is set
-      if (commodityGroupIdOrNumber === undefined || commodityGroupIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'commodityGroupIdOrNumber' when calling deleteCommodityGroup");
-      }
-
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'commodityGroupIdOrNumber': commodityGroupIdOrNumber
+        'commodityGroupId': commodityGroupId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -149,7 +149,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/commodityGroups/{commodityGroupIdOrNumber}', 'DELETE',
+        '/accounts/{koronaAccountId}/commodityGroups/{commodityGroupId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -164,30 +164,30 @@
      */
 
     /**
-     * lists the commodity group
+     * returns the single commodity group
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} commodityGroupIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} commodityGroupId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CommodityGroupsApi~getCommodityGroupCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommodityGroup}
      */
-    this.getCommodityGroup = function(koronaAccountId, commodityGroupIdOrNumber, callback) {
+    this.getCommodityGroup = function(commodityGroupId, koronaAccountId, callback) {
       var postBody = null;
+
+      // verify the required parameter 'commodityGroupId' is set
+      if (commodityGroupId === undefined || commodityGroupId === null) {
+        throw new Error("Missing the required parameter 'commodityGroupId' when calling getCommodityGroup");
+      }
 
       // verify the required parameter 'koronaAccountId' is set
       if (koronaAccountId === undefined || koronaAccountId === null) {
         throw new Error("Missing the required parameter 'koronaAccountId' when calling getCommodityGroup");
       }
 
-      // verify the required parameter 'commodityGroupIdOrNumber' is set
-      if (commodityGroupIdOrNumber === undefined || commodityGroupIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'commodityGroupIdOrNumber' when calling getCommodityGroup");
-      }
-
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'commodityGroupIdOrNumber': commodityGroupIdOrNumber
+        'commodityGroupId': commodityGroupId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -204,7 +204,7 @@
       var returnType = CommodityGroup;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/commodityGroups/{commodityGroupIdOrNumber}', 'GET',
+        '/accounts/{koronaAccountId}/commodityGroups/{commodityGroupId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -221,7 +221,7 @@
     /**
      * lists all commodity groups
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -279,24 +279,19 @@
      */
 
     /**
-     * updates the commodity group
+     * updates the single commodity group
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} commodityGroupIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} commodityGroupId id of the related object (important: id should match the uuid-format)
      * @param {module:model/CommodityGroup} body the properties to update of the commodity group
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CommodityGroupsApi~updateCommodityGroupCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateCommodityGroup = function(koronaAccountId, commodityGroupIdOrNumber, body, callback) {
+    this.updateCommodityGroup = function(commodityGroupId, body, koronaAccountId, callback) {
       var postBody = body;
 
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCommodityGroup");
-      }
-
-      // verify the required parameter 'commodityGroupIdOrNumber' is set
-      if (commodityGroupIdOrNumber === undefined || commodityGroupIdOrNumber === null) {
-        throw new Error("Missing the required parameter 'commodityGroupIdOrNumber' when calling updateCommodityGroup");
+      // verify the required parameter 'commodityGroupId' is set
+      if (commodityGroupId === undefined || commodityGroupId === null) {
+        throw new Error("Missing the required parameter 'commodityGroupId' when calling updateCommodityGroup");
       }
 
       // verify the required parameter 'body' is set
@@ -304,10 +299,15 @@
         throw new Error("Missing the required parameter 'body' when calling updateCommodityGroup");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCommodityGroup");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'commodityGroupIdOrNumber': commodityGroupIdOrNumber
+        'commodityGroupId': commodityGroupId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -324,7 +324,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/accounts/{koronaAccountId}/commodityGroups/{commodityGroupIdOrNumber}', 'PATCH',
+        '/accounts/{koronaAccountId}/commodityGroups/{commodityGroupId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -339,24 +339,24 @@
      */
 
     /**
-     * changes a batch of commodity groups
+     * updates a batch of commodity groups
      * [number] must be set in the objects, otherwise the object cannot be updated
-     * @param {String} koronaAccountId the account id
      * @param {Array.<module:model/CommodityGroup>} body a array of existing commodity groups
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CommodityGroupsApi~updateCommodityGroupsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
      */
-    this.updateCommodityGroups = function(koronaAccountId, body, callback) {
+    this.updateCommodityGroups = function(body, koronaAccountId, callback) {
       var postBody = body;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCommodityGroups");
-      }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateCommodityGroups");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateCommodityGroups");
       }
 
 

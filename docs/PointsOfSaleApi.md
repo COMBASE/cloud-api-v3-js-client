@@ -1,22 +1,22 @@
-# KoronacloudApiV3.PointsOfSaleApi
+# CloudApiV3JsClient.PointsOfSaleApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addPointOfSaleEndOfDayStatements**](PointsOfSaleApi.md#addPointOfSaleEndOfDayStatements) | **POST** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/endOfDayStatements | adds a batch of point of sale-related end-of-day-statements
-[**addPointOfSaleReceipts**](PointsOfSaleApi.md#addPointOfSaleReceipts) | **POST** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/receipts | adds a batch of point of sale-related receipts
-[**getPointOfSale**](PointsOfSaleApi.md#getPointOfSale) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber} | lists the point of sale
-[**getPointOfSaleEndOfDayStatements**](PointsOfSaleApi.md#getPointOfSaleEndOfDayStatements) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/endOfDayStatements | lists all point of sale-related end-of-day-statements
-[**getPointOfSaleReceipt**](PointsOfSaleApi.md#getPointOfSaleReceipt) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/receipts/{receiptId} | lists a single point of sale-related receipt
-[**getPointOfSaleReceipts**](PointsOfSaleApi.md#getPointOfSaleReceipts) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber}/receipts | lists all point of sale-related receipts
-[**getPointsOfSale**](PointsOfSaleApi.md#getPointsOfSale) | **GET** /accounts/{koronaAccountId}/pointsOfSale | lists all point of sales
-[**updatePointOfSale**](PointsOfSaleApi.md#updatePointOfSale) | **PATCH** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleIdOrNumber} | updates a point of sale (works only for coupling (attribute &#39;couplingId&#39;) or updating device information (attribute &#39;deviceInformation&#39;))
+[**addPointOfSaleEndOfDayStatements**](PointsOfSaleApi.md#addPointOfSaleEndOfDayStatements) | **POST** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/endOfDayStatements | adds a batch of point of sale-related end-of-day-statements
+[**addPointOfSaleReceipts**](PointsOfSaleApi.md#addPointOfSaleReceipts) | **POST** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/receipts | adds a batch of point of sale-related receipts
+[**getPointOfSale**](PointsOfSaleApi.md#getPointOfSale) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId} | returns the single point of sale
+[**getPointOfSaleEndOfDayStatements**](PointsOfSaleApi.md#getPointOfSaleEndOfDayStatements) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/endOfDayStatements | lists all point of sale-related end-of-day-statements
+[**getPointOfSaleReceipt**](PointsOfSaleApi.md#getPointOfSaleReceipt) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/receipts/{receiptId} | returns the single point of sale-related receipt
+[**getPointOfSaleReceipts**](PointsOfSaleApi.md#getPointOfSaleReceipts) | **GET** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId}/receipts | lists all point of sale-related receipts
+[**getPointsOfSale**](PointsOfSaleApi.md#getPointsOfSale) | **GET** /accounts/{koronaAccountId}/pointsOfSale | lists all points of sale
+[**updatePointOfSale**](PointsOfSaleApi.md#updatePointOfSale) | **PATCH** /accounts/{koronaAccountId}/pointsOfSale/{pointOfSaleId} | updates a point of sale (works only for coupling (attribute &#39;couplingId&#39;) or updating device information (attribute &#39;deviceInformation&#39;))
 
 
 <a name="addPointOfSaleEndOfDayStatements"></a>
 # **addPointOfSaleEndOfDayStatements**
-> [AddOrUpdateResult] addPointOfSaleEndOfDayStatements(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts)
+> [AddOrUpdateResult] addPointOfSaleEndOfDayStatements(pointOfSaleId, couplingId, koronaAccountId, opts)
 
 adds a batch of point of sale-related end-of-day-statements
 
@@ -24,24 +24,24 @@ adds a batch of point of sale-related end-of-day-statements
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
-
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
+var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var couplingId = "couplingId_example"; // String | the coupling-id of the device
 
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
+
 var opts = { 
-  'body': [new KoronacloudApiV3.EndOfDayStatement()] // [EndOfDayStatement] | the end-of-day-statements to add
+  'body': [new CloudApiV3JsClient.EndOfDayStatement()] // [EndOfDayStatement] | the end-of-day-statements to add
 };
 
 var callback = function(error, data, response) {
@@ -51,16 +51,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addPointOfSaleEndOfDayStatements(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts, callback);
+apiInstance.addPointOfSaleEndOfDayStatements(pointOfSaleId, couplingId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **pointOfSaleId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **couplingId** | **String**| the coupling-id of the device | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **body** | [**[EndOfDayStatement]**](EndOfDayStatement.md)| the end-of-day-statements to add | [optional] 
 
 ### Return type
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 <a name="addPointOfSaleReceipts"></a>
 # **addPointOfSaleReceipts**
-> [AddOrUpdateResult] addPointOfSaleReceipts(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts)
+> [AddOrUpdateResult] addPointOfSaleReceipts(pointOfSaleId, couplingId, koronaAccountId, opts)
 
 adds a batch of point of sale-related receipts
 
@@ -86,24 +86,24 @@ adds a batch of point of sale-related receipts
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
-
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
+var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var couplingId = "couplingId_example"; // String | the coupling-id of the device
 
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
+
 var opts = { 
-  'body': [new KoronacloudApiV3.Receipt()] // [Receipt] | the receipts to add
+  'body': [new CloudApiV3JsClient.Receipt()] // [Receipt] | the receipts to add
 };
 
 var callback = function(error, data, response) {
@@ -113,16 +113,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addPointOfSaleReceipts(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts, callback);
+apiInstance.addPointOfSaleReceipts(pointOfSaleId, couplingId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **pointOfSaleId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **couplingId** | **String**| the coupling-id of the device | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **body** | [**[Receipt]**](Receipt.md)| the receipts to add | [optional] 
 
 ### Return type
@@ -140,27 +140,27 @@ Name | Type | Description  | Notes
 
 <a name="getPointOfSale"></a>
 # **getPointOfSale**
-> Pos getPointOfSale(koronaAccountId, pointOfSaleIdOrNumber, opts)
+> Pos getPointOfSale(pointOfSaleId, koronaAccountId, opts)
 
-lists the point of sale
+returns the single point of sale
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var pointOfSaleId = "pointOfSaleId_example"; // String | the number of the point of sale
 
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | the number of the point of sale
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'couplingId': "couplingId_example" // String | the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external).
@@ -173,15 +173,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPointOfSale(koronaAccountId, pointOfSaleIdOrNumber, opts, callback);
+apiInstance.getPointOfSale(pointOfSaleId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| the number of the point of sale | 
+ **pointOfSaleId** | **String**| the number of the point of sale | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **couplingId** | **String**| the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external). | [optional] 
 
 ### Return type
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 <a name="getPointOfSaleEndOfDayStatements"></a>
 # **getPointOfSaleEndOfDayStatements**
-> ResultListEndOfDayStatement getPointOfSaleEndOfDayStatements(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts)
+> ResultListEndOfDayStatement getPointOfSaleEndOfDayStatements(pointOfSaleId, couplingId, koronaAccountId, opts)
 
 lists all point of sale-related end-of-day-statements
 
@@ -207,21 +207,21 @@ lists all point of sale-related end-of-day-statements
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
-
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
+var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var couplingId = "couplingId_example"; // String | the coupling-id of the device
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -237,16 +237,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPointOfSaleEndOfDayStatements(koronaAccountId, pointOfSaleIdOrNumber, couplingId, opts, callback);
+apiInstance.getPointOfSaleEndOfDayStatements(pointOfSaleId, couplingId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **pointOfSaleId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **couplingId** | **String**| the coupling-id of the device | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -267,29 +267,29 @@ Name | Type | Description  | Notes
 
 <a name="getPointOfSaleReceipt"></a>
 # **getPointOfSaleReceipt**
-> Receipt getPointOfSaleReceipt(koronaAccountId, pointOfSaleIdOrNumber, receiptId, opts)
+> Receipt getPointOfSaleReceipt(pointOfSaleId, receiptId, koronaAccountId, opts)
 
-lists a single point of sale-related receipt
+returns the single point of sale-related receipt
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
-
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
+var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var receiptId = "receiptId_example"; // String | the id of the receipt
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'couplingId': "couplingId_example" // String | the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external).
@@ -302,16 +302,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPointOfSaleReceipt(koronaAccountId, pointOfSaleIdOrNumber, receiptId, opts, callback);
+apiInstance.getPointOfSaleReceipt(pointOfSaleId, receiptId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **pointOfSaleId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **receiptId** | **String**| the id of the receipt | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **couplingId** | **String**| the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external). | [optional] 
 
 ### Return type
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 <a name="getPointOfSaleReceipts"></a>
 # **getPointOfSaleReceipts**
-> ResultListReceipt getPointOfSaleReceipts(koronaAccountId, pointOfSaleIdOrNumber, opts)
+> ResultListReceipt getPointOfSaleReceipts(pointOfSaleId, koronaAccountId, opts)
 
 lists all point of sale-related receipts
 
@@ -337,19 +337,19 @@ lists all point of sale-related receipts
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'couplingId': "couplingId_example", // String | the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external).
@@ -369,15 +369,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPointOfSaleReceipts(koronaAccountId, pointOfSaleIdOrNumber, opts, callback);
+apiInstance.getPointOfSaleReceipts(pointOfSaleId, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **pointOfSaleId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **couplingId** | **String**| the coupling-id of the device. It can be set to check whether your coupling-id is correct or not (works only, if point of sale is external). | [optional] 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
@@ -404,23 +404,23 @@ Name | Type | Description  | Notes
 # **getPointsOfSale**
 > ResultListPos getPointsOfSale(koronaAccountId, opts)
 
-lists all point of sales
+lists all points of sale
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -444,7 +444,7 @@ apiInstance.getPointsOfSale(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePointOfSale"></a>
 # **updatePointOfSale**
-> updatePointOfSale(koronaAccountId, pointOfSaleIdOrNumber, body, opts)
+> updatePointOfSale(pointOfSaleId, body, koronaAccountId, opts)
 
 updates a point of sale (works only for coupling (attribute &#39;couplingId&#39;) or updating device information (attribute &#39;deviceInformation&#39;))
 
@@ -474,21 +474,21 @@ updates a point of sale (works only for coupling (attribute &#39;couplingId&#39;
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
+var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var pointOfSaleIdOrNumber = "pointOfSaleIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
+var body = new CloudApiV3JsClient.Pos(); // Pos | the properties to update of the point of sale ('couplingId' only)
 
-var body = new KoronacloudApiV3.Pos(); // Pos | the properties to update of the point of sale ('couplingId' only)
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'couplingId': "couplingId_example", // String | the coupling-id of the device (required if already coupled)
@@ -502,16 +502,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updatePointOfSale(koronaAccountId, pointOfSaleIdOrNumber, body, opts, callback);
+apiInstance.updatePointOfSale(pointOfSaleId, body, koronaAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
- **pointOfSaleIdOrNumber** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **pointOfSaleId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**Pos**](Pos.md)| the properties to update of the point of sale (&#39;couplingId&#39; only) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **couplingId** | **String**| the coupling-id of the device (required if already coupled) | [optional] 
  **decouple** | **Boolean**| executes uncoupling, if set to true, device will be uncoupled if point of sale is already coupled | [optional] 
 

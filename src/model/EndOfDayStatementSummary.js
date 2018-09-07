@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./AccountSummary'), require('./CashierSummary'), require('./CommodityGroupSummary'), require('./CustomerGroupSummary'), require('./PaymentSummary'), require('./TaxSummary'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.EndOfDayStatementSummary = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AccountSummary, root.KoronacloudApiV3.CashierSummary, root.KoronacloudApiV3.CommodityGroupSummary, root.KoronacloudApiV3.CustomerGroupSummary, root.KoronacloudApiV3.PaymentSummary, root.KoronacloudApiV3.TaxSummary);
+    root.CloudApiV3JsClient.EndOfDayStatementSummary = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AccountSummary, root.CloudApiV3JsClient.CashierSummary, root.CloudApiV3JsClient.CommodityGroupSummary, root.CloudApiV3JsClient.CustomerGroupSummary, root.CloudApiV3JsClient.PaymentSummary, root.CloudApiV3JsClient.TaxSummary);
   }
 }(this, function(ApiClient, AccountSummary, CashierSummary, CommodityGroupSummary, CustomerGroupSummary, PaymentSummary, TaxSummary) {
   'use strict';

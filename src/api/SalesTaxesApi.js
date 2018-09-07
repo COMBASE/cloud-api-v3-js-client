@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListSalesTax'), require('../model/SalesTax'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.SalesTaxesApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListSalesTax, root.KoronacloudApiV3.SalesTax, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.SalesTaxesApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListSalesTax, root.CloudApiV3JsClient.SalesTax, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, ResultListSalesTax, SalesTax, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the sales tax
+     * returns the single sales tax
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} salesTaxId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/SalesTaxesApi~getSalesTaxCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SalesTax}
      */
-    this.getSalesTax = function(koronaAccountId, salesTaxId, callback) {
+    this.getSalesTax = function(salesTaxId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getSalesTax");
-      }
 
       // verify the required parameter 'salesTaxId' is set
       if (salesTaxId === undefined || salesTaxId === null) {
         throw new Error("Missing the required parameter 'salesTaxId' when calling getSalesTax");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getSalesTax");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'salesTaxId': salesTaxId
+        'salesTaxId': salesTaxId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all sales taxes
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

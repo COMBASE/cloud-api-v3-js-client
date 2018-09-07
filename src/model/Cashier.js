@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.Cashier = factory(root.KoronacloudApiV3.ApiClient);
+    root.CloudApiV3JsClient.Cashier = factory(root.CloudApiV3JsClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('alias')) {
         obj['alias'] = ApiClient.convertToType(data['alias'], 'String');
+      }
+      if (data.hasOwnProperty('deactivated')) {
+        obj['deactivated'] = ApiClient.convertToType(data['deactivated'], 'Boolean');
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -140,6 +144,10 @@
    * @member {String} alias
    */
   exports.prototype['alias'] = undefined;
+  /**
+   * @member {Boolean} deactivated
+   */
+  exports.prototype['deactivated'] = undefined;
   /**
    * @member {String} email
    */
@@ -234,6 +242,11 @@
      * @const
      */
     "FOREIGN_RECEIPT": "FOREIGN_RECEIPT",
+    /**
+     * value: "MDE_ADMIN"
+     * @const
+     */
+    "MDE_ADMIN": "MDE_ADMIN",
     /**
      * value: "PRICE"
      * @const

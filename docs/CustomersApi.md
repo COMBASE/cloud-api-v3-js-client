@@ -1,20 +1,20 @@
-# KoronacloudApiV3.CustomersApi
+# CloudApiV3JsClient.CustomersApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCustomers**](CustomersApi.md#addCustomers) | **POST** /accounts/{koronaAccountId}/customers | adds a batch of new customers
-[**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /accounts/{koronaAccountId}/customers/{customerId} | deletes the customer
-[**getCustomer**](CustomersApi.md#getCustomer) | **GET** /accounts/{koronaAccountId}/customers/{customerId} | lists the customer
+[**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /accounts/{koronaAccountId}/customers/{customerId} | deletes the single customer
+[**getCustomer**](CustomersApi.md#getCustomer) | **GET** /accounts/{koronaAccountId}/customers/{customerId} | returns the single customer
 [**getCustomers**](CustomersApi.md#getCustomers) | **GET** /accounts/{koronaAccountId}/customers | lists all customers
-[**updateCustomer**](CustomersApi.md#updateCustomer) | **PATCH** /accounts/{koronaAccountId}/customers/{customerId} | updates the customer
-[**updateCustomers**](CustomersApi.md#updateCustomers) | **PATCH** /accounts/{koronaAccountId}/customers | changes a batch of customers
+[**updateCustomer**](CustomersApi.md#updateCustomer) | **PATCH** /accounts/{koronaAccountId}/customers/{customerId} | updates the single customer
+[**updateCustomers**](CustomersApi.md#updateCustomers) | **PATCH** /accounts/{koronaAccountId}/customers | updates a batch of customers
 
 
 <a name="addCustomers"></a>
 # **addCustomers**
-> [AddOrUpdateResult] addCustomers(koronaAccountId, body)
+> [AddOrUpdateResult] addCustomers(body, koronaAccountId)
 
 adds a batch of new customers
 
@@ -22,19 +22,19 @@ adds a batch of new customers
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CustomersApi();
+var apiInstance = new CloudApiV3JsClient.CustomersApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var body = [new CloudApiV3JsClient.Customer()]; // [Customer] | a array of new customers
 
-var body = [new KoronacloudApiV3.Customer()]; // [Customer] | a array of new customers
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -44,15 +44,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addCustomers(koronaAccountId, body, callback);
+apiInstance.addCustomers(body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **body** | [**[Customer]**](Customer.md)| a array of new customers | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -69,27 +69,27 @@ Name | Type | Description  | Notes
 
 <a name="deleteCustomer"></a>
 # **deleteCustomer**
-> deleteCustomer(koronaAccountId, customerId)
+> deleteCustomer(customerId, koronaAccountId)
 
-deletes the customer
+deletes the single customer
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CustomersApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.CustomersApi();
 
 var customerId = "customerId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -99,15 +99,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCustomer(koronaAccountId, customerId, callback);
+apiInstance.deleteCustomer(customerId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **customerId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -124,27 +124,27 @@ null (empty response body)
 
 <a name="getCustomer"></a>
 # **getCustomer**
-> Customer getCustomer(koronaAccountId, customerId)
+> Customer getCustomer(customerId, koronaAccountId)
 
-lists the customer
+returns the single customer
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CustomersApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.CustomersApi();
 
 var customerId = "customerId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -154,15 +154,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCustomer(koronaAccountId, customerId, callback);
+apiInstance.getCustomer(customerId, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **customerId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -187,17 +187,17 @@ lists all customers
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CustomersApi();
+var apiInstance = new CloudApiV3JsClient.CustomersApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -221,7 +221,7 @@ apiInstance.getCustomers(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -243,29 +243,29 @@ Name | Type | Description  | Notes
 
 <a name="updateCustomer"></a>
 # **updateCustomer**
-> updateCustomer(koronaAccountId, customerId, body)
+> updateCustomer(customerId, body, koronaAccountId)
 
-updates the customer
+updates the single customer
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CustomersApi();
-
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var apiInstance = new CloudApiV3JsClient.CustomersApi();
 
 var customerId = "customerId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new KoronacloudApiV3.Customer(); // Customer | the properties to update of the customer
+var body = new CloudApiV3JsClient.Customer(); // Customer | the properties to update of the customer
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -275,16 +275,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateCustomer(koronaAccountId, customerId, body, callback);
+apiInstance.updateCustomer(customerId, body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **customerId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **body** | [**Customer**](Customer.md)| the properties to update of the customer | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -301,27 +301,27 @@ null (empty response body)
 
 <a name="updateCustomers"></a>
 # **updateCustomers**
-> [AddOrUpdateResult] updateCustomers(koronaAccountId, body)
+> [AddOrUpdateResult] updateCustomers(body, koronaAccountId)
 
-changes a batch of customers
+updates a batch of customers
 
 [number] must be set in the objects, otherwise the object cannot be updated
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.CustomersApi();
+var apiInstance = new CloudApiV3JsClient.CustomersApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var body = [new CloudApiV3JsClient.Customer()]; // [Customer] | a array of existing customers
 
-var body = [new KoronacloudApiV3.Customer()]; // [Customer] | a array of existing customers
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -331,15 +331,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCustomers(koronaAccountId, body, callback);
+apiInstance.updateCustomers(body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
  **body** | [**[Customer]**](Customer.md)| a array of existing customers | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 

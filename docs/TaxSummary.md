@@ -1,4 +1,4 @@
-# KoronacloudApiV3.TaxSummary
+# CloudApiV3JsClient.TaxSummary
 
 ## Properties
 Name | Type | Description | Notes

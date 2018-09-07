@@ -1,36 +1,36 @@
-# KoronacloudApiV3.StatisticsApi
+# CloudApiV3JsClient.StatisticsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRevenue**](StatisticsApi.md#getRevenue) | **GET** /accounts/{koronaAccountId}/statistics/revenueData | lists information about the revenue in the given period
-[**getRevenueForCustomerGroups**](StatisticsApi.md#getRevenueForCustomerGroups) | **GET** /accounts/{koronaAccountId}/statistics/revenueDataForCustomerGroups | lists the turnover per customer group during the given period
-[**getRevenueHourly**](StatisticsApi.md#getRevenueHourly) | **GET** /accounts/{koronaAccountId}/statistics/revenueDataHourly | lists the turnover per hour during the given period
-[**getTopSeller**](StatisticsApi.md#getTopSeller) | **GET** /accounts/{koronaAccountId}/statistics/topSeller | lists the top-seller
+[**getRevenue**](StatisticsApi.md#getRevenue) | **GET** /accounts/{koronaAccountId}/statistics/revenueData | returns information about the revenue in the given period
+[**getRevenueForCustomerGroups**](StatisticsApi.md#getRevenueForCustomerGroups) | **GET** /accounts/{koronaAccountId}/statistics/revenueDataForCustomerGroups | returns the turnover per customer group during the given period
+[**getRevenueHourly**](StatisticsApi.md#getRevenueHourly) | **GET** /accounts/{koronaAccountId}/statistics/revenueDataHourly | returns the turnover per hour during the given period
+[**getTopSeller**](StatisticsApi.md#getTopSeller) | **GET** /accounts/{koronaAccountId}/statistics/topSeller | returns the top-seller
 
 
 <a name="getRevenue"></a>
 # **getRevenue**
 > StatisticRevenueData getRevenue(koronaAccountId, opts)
 
-lists information about the revenue in the given period
+returns information about the revenue in the given period
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.StatisticsApi();
+var apiInstance = new CloudApiV3JsClient.StatisticsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -51,7 +51,7 @@ apiInstance.getRevenue(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
 
@@ -72,23 +72,23 @@ Name | Type | Description  | Notes
 # **getRevenueForCustomerGroups**
 > StatisticMapStringRevenueData getRevenueForCustomerGroups(koronaAccountId, opts)
 
-lists the turnover per customer group during the given period
+returns the turnover per customer group during the given period
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.StatisticsApi();
+var apiInstance = new CloudApiV3JsClient.StatisticsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -109,7 +109,7 @@ apiInstance.getRevenueForCustomerGroups(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
 
@@ -130,23 +130,23 @@ Name | Type | Description  | Notes
 # **getRevenueHourly**
 > StatisticMapStringRevenueData getRevenueHourly(koronaAccountId, opts)
 
-lists the turnover per hour during the given period
+returns the turnover per hour during the given period
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.StatisticsApi();
+var apiInstance = new CloudApiV3JsClient.StatisticsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -167,7 +167,7 @@ apiInstance.getRevenueHourly(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
 
@@ -188,23 +188,23 @@ Name | Type | Description  | Notes
 # **getTopSeller**
 > StatisticListTopSeller getTopSeller(koronaAccountId, opts)
 
-lists the top-seller
+returns the top-seller
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.StatisticsApi();
+var apiInstance = new CloudApiV3JsClient.StatisticsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'organizationalUnit': "organizationalUnit_example", // String | number of the organizational unit
@@ -226,7 +226,7 @@ apiInstance.getTopSeller(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **organizationalUnit** | **String**| number of the organizational unit | [optional] 
  **period** | **String**| time period for comparison | [optional] 
  **limit** | **Number**| maximum number of products to show | [optional] 

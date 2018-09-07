@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Account
+# CloudApiV3JsClient.Account
 
 ## Properties
 Name | Type | Description | Notes

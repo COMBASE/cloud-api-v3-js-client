@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListEntryGate
+# CloudApiV3JsClient.ResultListEntryGate
 
 ## Properties
 Name | Type | Description | Notes

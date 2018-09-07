@@ -1,36 +1,40 @@
-# KoronacloudApiV3.TagsApi
+# CloudApiV3JsClient.TagsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTag**](TagsApi.md#getTag) | **GET** /accounts/{koronaAccountId}/tags/{tagId} | lists the info text
-[**getTags**](TagsApi.md#getTags) | **GET** /accounts/{koronaAccountId}/tags | lists all info texts
+[**addTags**](TagsApi.md#addTags) | **POST** /accounts/{koronaAccountId}/tags | adds a batch of new tags
+[**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /accounts/{koronaAccountId}/tags/{tagId} | deletes the single tag
+[**getTag**](TagsApi.md#getTag) | **GET** /accounts/{koronaAccountId}/tags/{tagId} | returns the single tag
+[**getTags**](TagsApi.md#getTags) | **GET** /accounts/{koronaAccountId}/tags | lists all tags
+[**updateTag**](TagsApi.md#updateTag) | **PATCH** /accounts/{koronaAccountId}/tags/{tagId} | updates the single tag
+[**updateTags**](TagsApi.md#updateTags) | **PATCH** /accounts/{koronaAccountId}/tags | updates a batch of tags
 
 
-<a name="getTag"></a>
-# **getTag**
-> Tag getTag(koronaAccountId, tagId)
+<a name="addTags"></a>
+# **addTags**
+> [AddOrUpdateResult] addTags(body, koronaAccountId)
 
-lists the info text
+adds a batch of new tags
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.TagsApi();
+var apiInstance = new CloudApiV3JsClient.TagsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var body = [new CloudApiV3JsClient.Tag()]; // [Tag] | array of new tags
 
-var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 
 var callback = function(error, data, response) {
@@ -40,15 +44,125 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTag(koronaAccountId, tagId, callback);
+apiInstance.addTags(body, koronaAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **body** | [**[Tag]**](Tag.md)| array of new tags | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
+
+### Return type
+
+[**[AddOrUpdateResult]**](AddOrUpdateResult.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteTag"></a>
+# **deleteTag**
+> deleteTag(tagId, koronaAccountId)
+
+deletes the single tag
+
+
+
+### Example
+```javascript
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+
+// Configure HTTP basic authorization: basicAuth
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+var apiInstance = new CloudApiV3JsClient.TagsApi();
+
+var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteTag(tagId, koronaAccountId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **tagId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTag"></a>
+# **getTag**
+> Tag getTag(tagId, koronaAccountId)
+
+returns the single tag
+
+
+
+### Example
+```javascript
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+
+// Configure HTTP basic authorization: basicAuth
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+var apiInstance = new CloudApiV3JsClient.TagsApi();
+
+var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTag(tagId, koronaAccountId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tagId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
 
@@ -67,23 +181,23 @@ Name | Type | Description  | Notes
 # **getTags**
 > ResultListTag getTags(koronaAccountId, opts)
 
-lists all info texts
+lists all tags
 
 
 
 ### Example
 ```javascript
-var KoronacloudApiV3 = require('koronacloud_api_v3');
-var defaultClient = KoronacloudApiV3.ApiClient.instance;
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new KoronacloudApiV3.TagsApi();
+var apiInstance = new CloudApiV3JsClient.TagsApi();
 
-var koronaAccountId = "koronaAccountId_example"; // String | the account id
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
   'page': 56, // Number | number of the page to fetch
@@ -107,7 +221,7 @@ apiInstance.getTags(koronaAccountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **koronaAccountId** | **String**| the account id | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
  **page** | **Number**| number of the page to fetch | [optional] 
  **size** | **Number**| amount of objects to return per page | [optional] 
  **sort** | **String**| attribute to sort by (multiple separated by comma; max. 5) | [optional] 
@@ -117,6 +231,119 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResultListTag**](ResultListTag.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateTag"></a>
+# **updateTag**
+> updateTag(tagId, body, koronaAccountId)
+
+updates the single tag
+
+
+
+### Example
+```javascript
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+
+// Configure HTTP basic authorization: basicAuth
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+var apiInstance = new CloudApiV3JsClient.TagsApi();
+
+var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
+
+var body = new CloudApiV3JsClient.Tag(); // Tag | the properties to update of the tag
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateTag(tagId, body, koronaAccountId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tagId** | **String**| id of the related object (important: id should match the uuid-format) | 
+ **body** | [**Tag**](Tag.md)| the properties to update of the tag | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateTags"></a>
+# **updateTags**
+> [AddOrUpdateResult] updateTags(body, koronaAccountId)
+
+updates a batch of tags
+
+[number] must be set in the objects, otherwise the object cannot be updated
+
+### Example
+```javascript
+var CloudApiV3JsClient = require('cloud-api-v3-js-client');
+var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+
+// Configure HTTP basic authorization: basicAuth
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+var apiInstance = new CloudApiV3JsClient.TagsApi();
+
+var body = [new CloudApiV3JsClient.Tag()]; // [Tag] | array of existing tags
+
+var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateTags(body, koronaAccountId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**[Tag]**](Tag.md)| array of existing tags | 
+ **koronaAccountId** | **String**| account id of the korona.cloud account | 
+
+### Return type
+
+[**[AddOrUpdateResult]**](AddOrUpdateResult.md)
 
 ### Authorization
 

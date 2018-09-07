@@ -1,4 +1,4 @@
-# KoronacloudApiV3.PeriodRevenueData
+# CloudApiV3JsClient.PeriodRevenueData
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Event
+# CloudApiV3JsClient.Event
 
 ## Properties
 Name | Type | Description | Notes

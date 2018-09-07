@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/Receipt'), require('../model/ResultListReceipt'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ReceiptsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.Receipt, root.KoronacloudApiV3.ResultListReceipt, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.ReceiptsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.Receipt, root.CloudApiV3JsClient.ResultListReceipt, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, Receipt, ResultListReceipt, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists a single receipt
+     * returns the single receipt
      * 
-     * @param {String} koronaAccountId the account id
-     * @param {String} receiptId the id of the receipt
+     * @param {String} receiptId id of the receipt
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/ReceiptsApi~getReceiptCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Receipt}
      */
-    this.getReceipt = function(koronaAccountId, receiptId, callback) {
+    this.getReceipt = function(receiptId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getReceipt");
-      }
 
       // verify the required parameter 'receiptId' is set
       if (receiptId === undefined || receiptId === null) {
         throw new Error("Missing the required parameter 'receiptId' when calling getReceipt");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getReceipt");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'receiptId': receiptId
+        'receiptId': receiptId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all receipts
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

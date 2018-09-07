@@ -1,4 +1,4 @@
-# KoronacloudApiV3.StockReceiptItemPurchasePrice
+# CloudApiV3JsClient.StockReceiptItemPurchasePrice
 
 ## Properties
 Name | Type | Description | Notes

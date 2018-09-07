@@ -1,4 +1,4 @@
-# KoronacloudApiV3.SupplierPaymentInformation
+# CloudApiV3JsClient.SupplierPaymentInformation
 
 ## Properties
 Name | Type | Description | Notes

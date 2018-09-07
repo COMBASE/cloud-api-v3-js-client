@@ -1,4 +1,4 @@
-# KoronacloudApiV3.PeriodObject
+# CloudApiV3JsClient.PeriodObject
 
 ## Properties
 Name | Type | Description | Notes

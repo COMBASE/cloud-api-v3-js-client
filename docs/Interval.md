@@ -1,4 +1,4 @@
-# KoronacloudApiV3.Interval
+# CloudApiV3JsClient.Interval
 
 ## Properties
 Name | Type | Description | Notes

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/EntryGate'), require('../model/Event'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListEntryGate'), require('../model/ResultListEvent'), require('../model/ResultListTicketDefinition'), require('../model/TicketDefinition'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.TicketingApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.EntryGate, root.KoronacloudApiV3.Event, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListEntryGate, root.KoronacloudApiV3.ResultListEvent, root.KoronacloudApiV3.ResultListTicketDefinition, root.KoronacloudApiV3.TicketDefinition, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.TicketingApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.EntryGate, root.CloudApiV3JsClient.Event, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListEntryGate, root.CloudApiV3JsClient.ResultListEvent, root.CloudApiV3JsClient.ResultListTicketDefinition, root.CloudApiV3JsClient.TicketDefinition, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, EntryGate, Event, ForbiddenError, NotFoundError, ResultListEntryGate, ResultListEvent, ResultListTicketDefinition, TicketDefinition, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the entry gate
+     * returns the single entry gate
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} entryGateId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/TicketingApi~getEntryGateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EntryGate}
      */
-    this.getEntryGate = function(koronaAccountId, entryGateId, callback) {
+    this.getEntryGate = function(entryGateId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getEntryGate");
-      }
 
       // verify the required parameter 'entryGateId' is set
       if (entryGateId === undefined || entryGateId === null) {
         throw new Error("Missing the required parameter 'entryGateId' when calling getEntryGate");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getEntryGate");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'entryGateId': entryGateId
+        'entryGateId': entryGateId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all entry gates
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -171,30 +171,30 @@
      */
 
     /**
-     * lists the event
+     * return the single event
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} eventId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/TicketingApi~getEventCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Event}
      */
-    this.getEvent = function(koronaAccountId, eventId, callback) {
+    this.getEvent = function(eventId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getEvent");
-      }
 
       // verify the required parameter 'eventId' is set
       if (eventId === undefined || eventId === null) {
         throw new Error("Missing the required parameter 'eventId' when calling getEvent");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getEvent");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'eventId': eventId
+        'eventId': eventId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -228,7 +228,7 @@
     /**
      * lists all events
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -286,30 +286,30 @@
      */
 
     /**
-     * lists the ticket definition
+     * returns the single ticket definition
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} ticketDefinitionId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/TicketingApi~getTicketDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TicketDefinition}
      */
-    this.getTicketDefinition = function(koronaAccountId, ticketDefinitionId, callback) {
+    this.getTicketDefinition = function(ticketDefinitionId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getTicketDefinition");
-      }
 
       // verify the required parameter 'ticketDefinitionId' is set
       if (ticketDefinitionId === undefined || ticketDefinitionId === null) {
         throw new Error("Missing the required parameter 'ticketDefinitionId' when calling getTicketDefinition");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getTicketDefinition");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'ticketDefinitionId': ticketDefinitionId
+        'ticketDefinitionId': ticketDefinitionId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -343,7 +343,7 @@
     /**
      * lists all ticket definitions
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

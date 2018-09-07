@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListSupplier'), require('../model/Supplier'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.SuppliersApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListSupplier, root.KoronacloudApiV3.Supplier, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.SuppliersApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListSupplier, root.CloudApiV3JsClient.Supplier, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, ResultListSupplier, Supplier, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the supplier
+     * returns the single supplier
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} supplierIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/SuppliersApi~getSupplierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Supplier}
      */
-    this.getSupplier = function(koronaAccountId, supplierIdOrNumber, callback) {
+    this.getSupplier = function(supplierIdOrNumber, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getSupplier");
-      }
 
       // verify the required parameter 'supplierIdOrNumber' is set
       if (supplierIdOrNumber === undefined || supplierIdOrNumber === null) {
         throw new Error("Missing the required parameter 'supplierIdOrNumber' when calling getSupplier");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getSupplier");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'supplierIdOrNumber': supplierIdOrNumber
+        'supplierIdOrNumber': supplierIdOrNumber,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all suppliers
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

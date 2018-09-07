@@ -1,4 +1,4 @@
-# KoronacloudApiV3.DayRating
+# CloudApiV3JsClient.DayRating
 
 ## Properties
 Name | Type | Description | Notes

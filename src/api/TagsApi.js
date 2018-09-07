@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BadRequestError', 'model/ForbiddenError', 'model/NotFoundError', 'model/ResultListTag', 'model/Tag', 'model/TooManyRequestsError'], factory);
+    define(['ApiClient', 'model/AddOrUpdateResult', 'model/BadRequestError', 'model/ForbiddenError', 'model/NotFoundError', 'model/ResultListTag', 'model/Tag', 'model/TooManyRequestsError'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListTag'), require('../model/Tag'), require('../model/TooManyRequestsError'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListTag'), require('../model/Tag'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.TagsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListTag, root.KoronacloudApiV3.Tag, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.TagsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListTag, root.CloudApiV3JsClient.Tag, root.CloudApiV3JsClient.TooManyRequestsError);
   }
-}(this, function(ApiClient, BadRequestError, ForbiddenError, NotFoundError, ResultListTag, Tag, TooManyRequestsError) {
+}(this, function(ApiClient, AddOrUpdateResult, BadRequestError, ForbiddenError, NotFoundError, ResultListTag, Tag, TooManyRequestsError) {
   'use strict';
 
   /**
@@ -48,6 +48,114 @@
 
 
     /**
+     * Callback function to receive the result of the addTags operation.
+     * @callback module:api/TagsApi~addTagsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/AddOrUpdateResult>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * adds a batch of new tags
+     * 
+     * @param {Array.<module:model/Tag>} body array of new tags
+     * @param {String} koronaAccountId account id of the korona.cloud account
+     * @param {module:api/TagsApi~addTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
+     */
+    this.addTags = function(body, koronaAccountId, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling addTags");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling addTags");
+      }
+
+
+      var pathParams = {
+        'koronaAccountId': koronaAccountId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['basicAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [AddOrUpdateResult];
+
+      return this.apiClient.callApi(
+        '/accounts/{koronaAccountId}/tags', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteTag operation.
+     * @callback module:api/TagsApi~deleteTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * deletes the single tag
+     * 
+     * @param {String} tagId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
+     * @param {module:api/TagsApi~deleteTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteTag = function(tagId, koronaAccountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'tagId' is set
+      if (tagId === undefined || tagId === null) {
+        throw new Error("Missing the required parameter 'tagId' when calling deleteTag");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling deleteTag");
+      }
+
+
+      var pathParams = {
+        'tagId': tagId,
+        'koronaAccountId': koronaAccountId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['basicAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/accounts/{koronaAccountId}/tags/{tagId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getTag operation.
      * @callback module:api/TagsApi~getTagCallback
      * @param {String} error Error message, if any.
@@ -56,30 +164,30 @@
      */
 
     /**
-     * lists the info text
+     * returns the single tag
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} tagId id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/TagsApi~getTagCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tag}
      */
-    this.getTag = function(koronaAccountId, tagId, callback) {
+    this.getTag = function(tagId, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getTag");
-      }
 
       // verify the required parameter 'tagId' is set
       if (tagId === undefined || tagId === null) {
         throw new Error("Missing the required parameter 'tagId' when calling getTag");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getTag");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'tagId': tagId
+        'tagId': tagId,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -111,9 +219,9 @@
      */
 
     /**
-     * lists all info texts
+     * lists all tags
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page
@@ -157,6 +265,120 @@
 
       return this.apiClient.callApi(
         '/accounts/{koronaAccountId}/tags', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateTag operation.
+     * @callback module:api/TagsApi~updateTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * updates the single tag
+     * 
+     * @param {String} tagId id of the related object (important: id should match the uuid-format)
+     * @param {module:model/Tag} body the properties to update of the tag
+     * @param {String} koronaAccountId account id of the korona.cloud account
+     * @param {module:api/TagsApi~updateTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateTag = function(tagId, body, koronaAccountId, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'tagId' is set
+      if (tagId === undefined || tagId === null) {
+        throw new Error("Missing the required parameter 'tagId' when calling updateTag");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateTag");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateTag");
+      }
+
+
+      var pathParams = {
+        'tagId': tagId,
+        'koronaAccountId': koronaAccountId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['basicAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/accounts/{koronaAccountId}/tags/{tagId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateTags operation.
+     * @callback module:api/TagsApi~updateTagsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/AddOrUpdateResult>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * updates a batch of tags
+     * [number] must be set in the objects, otherwise the object cannot be updated
+     * @param {Array.<module:model/Tag>} body array of existing tags
+     * @param {String} koronaAccountId account id of the korona.cloud account
+     * @param {module:api/TagsApi~updateTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
+     */
+    this.updateTags = function(body, koronaAccountId, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateTags");
+      }
+
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling updateTags");
+      }
+
+
+      var pathParams = {
+        'koronaAccountId': koronaAccountId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['basicAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [AddOrUpdateResult];
+
+      return this.apiClient.callApi(
+        '/accounts/{koronaAccountId}/tags', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

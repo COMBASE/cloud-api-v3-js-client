@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ForbiddenError
+# CloudApiV3JsClient.ForbiddenError
 
 ## Properties
 Name | Type | Description | Notes

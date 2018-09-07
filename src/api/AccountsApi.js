@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListAccount'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.AccountsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.Account, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListAccount, root.KoronacloudApiV3.TooManyRequestsError);
+    root.CloudApiV3JsClient.AccountsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.Account, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListAccount, root.CloudApiV3JsClient.TooManyRequestsError);
   }
 }(this, function(ApiClient, Account, BadRequestError, ForbiddenError, NotFoundError, ResultListAccount, TooManyRequestsError) {
   'use strict';
@@ -56,30 +56,30 @@
      */
 
     /**
-     * lists the account
+     * returns the single account
      * 
-     * @param {String} koronaAccountId the account id
      * @param {String} accountIdOrNumber id of the related object (important: id should match the uuid-format)
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/AccountsApi~getAccountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Account}
      */
-    this.getAccount = function(koronaAccountId, accountIdOrNumber, callback) {
+    this.getAccount = function(accountIdOrNumber, koronaAccountId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'koronaAccountId' is set
-      if (koronaAccountId === undefined || koronaAccountId === null) {
-        throw new Error("Missing the required parameter 'koronaAccountId' when calling getAccount");
-      }
 
       // verify the required parameter 'accountIdOrNumber' is set
       if (accountIdOrNumber === undefined || accountIdOrNumber === null) {
         throw new Error("Missing the required parameter 'accountIdOrNumber' when calling getAccount");
       }
 
+      // verify the required parameter 'koronaAccountId' is set
+      if (koronaAccountId === undefined || koronaAccountId === null) {
+        throw new Error("Missing the required parameter 'koronaAccountId' when calling getAccount");
+      }
+
 
       var pathParams = {
-        'koronaAccountId': koronaAccountId,
-        'accountIdOrNumber': accountIdOrNumber
+        'accountIdOrNumber': accountIdOrNumber,
+        'koronaAccountId': koronaAccountId
       };
       var queryParams = {
       };
@@ -113,7 +113,7 @@
     /**
      * lists all accounts
      * 
-     * @param {String} koronaAccountId the account id
+     * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page number of the page to fetch
      * @param {Number} opts.size amount of objects to return per page

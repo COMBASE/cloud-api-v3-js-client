@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ModelReference
+# CloudApiV3JsClient.ModelReference
 
 ## Properties
 Name | Type | Description | Notes

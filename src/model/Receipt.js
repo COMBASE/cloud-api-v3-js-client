@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountTransaction', 'model/GeoLocation', 'model/ModelReference', 'model/Payment', 'model/ReceiptItem'], factory);
+    define(['ApiClient', 'model/AccountTransaction', 'model/AdditionalInfo', 'model/GeoLocation', 'model/ModelReference', 'model/Payment', 'model/ReceiptItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountTransaction'), require('./GeoLocation'), require('./ModelReference'), require('./Payment'), require('./ReceiptItem'));
+    module.exports = factory(require('../ApiClient'), require('./AccountTransaction'), require('./AdditionalInfo'), require('./GeoLocation'), require('./ModelReference'), require('./Payment'), require('./ReceiptItem'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.Receipt = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AccountTransaction, root.KoronacloudApiV3.GeoLocation, root.KoronacloudApiV3.ModelReference, root.KoronacloudApiV3.Payment, root.KoronacloudApiV3.ReceiptItem);
+    root.CloudApiV3JsClient.Receipt = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AccountTransaction, root.CloudApiV3JsClient.AdditionalInfo, root.CloudApiV3JsClient.GeoLocation, root.CloudApiV3JsClient.ModelReference, root.CloudApiV3JsClient.Payment, root.CloudApiV3JsClient.ReceiptItem);
   }
-}(this, function(ApiClient, AccountTransaction, GeoLocation, ModelReference, Payment, ReceiptItem) {
+}(this, function(ApiClient, AccountTransaction, AdditionalInfo, GeoLocation, ModelReference, Payment, ReceiptItem) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('accountTransactions')) {
         obj['accountTransactions'] = ApiClient.convertToType(data['accountTransactions'], [AccountTransaction]);
+      }
+      if (data.hasOwnProperty('additionalInfo')) {
+        obj['additionalInfo'] = ApiClient.convertToType(data['additionalInfo'], [AdditionalInfo]);
       }
       if (data.hasOwnProperty('bookingTime')) {
         obj['bookingTime'] = ApiClient.convertToType(data['bookingTime'], 'Date');
@@ -172,6 +176,10 @@
    * @member {Array.<module:model/AccountTransaction>} accountTransactions
    */
   exports.prototype['accountTransactions'] = undefined;
+  /**
+   * @member {Array.<module:model/AdditionalInfo>} additionalInfo
+   */
+  exports.prototype['additionalInfo'] = undefined;
   /**
    * @member {Date} bookingTime
    */

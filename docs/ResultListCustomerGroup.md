@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ResultListCustomerGroup
+# CloudApiV3JsClient.ResultListCustomerGroup
 
 ## Properties
 Name | Type | Description | Notes

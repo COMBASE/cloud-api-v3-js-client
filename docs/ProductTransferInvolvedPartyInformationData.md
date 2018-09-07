@@ -1,4 +1,4 @@
-# KoronacloudApiV3.ProductTransferInvolvedPartyInformationData
+# CloudApiV3JsClient.ProductTransferInvolvedPartyInformationData
 
 ## Properties
 Name | Type | Description | Notes

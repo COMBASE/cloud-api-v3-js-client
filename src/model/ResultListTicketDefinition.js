@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./TicketDefinition'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ResultListTicketDefinition = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.TicketDefinition);
+    root.CloudApiV3JsClient.ResultListTicketDefinition = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.TicketDefinition);
   }
 }(this, function(ApiClient, TicketDefinition) {
   'use strict';

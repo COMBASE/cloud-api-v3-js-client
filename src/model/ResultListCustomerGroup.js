@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./CustomerGroup'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ResultListCustomerGroup = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.CustomerGroup);
+    root.CloudApiV3JsClient.ResultListCustomerGroup = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.CustomerGroup);
   }
 }(this, function(ApiClient, CustomerGroup) {
   'use strict';

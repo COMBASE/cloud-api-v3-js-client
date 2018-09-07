@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./Currency'));
   } else {
     // Browser globals (root is window)
-    if (!root.KoronacloudApiV3) {
-      root.KoronacloudApiV3 = {};
+    if (!root.CloudApiV3JsClient) {
+      root.CloudApiV3JsClient = {};
     }
-    root.KoronacloudApiV3.ResultListCurrency = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.Currency);
+    root.CloudApiV3JsClient.ResultListCurrency = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.Currency);
   }
 }(this, function(ApiClient, Currency) {
   'use strict';
