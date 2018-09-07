@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/Inventory'), require('../model/InventoryList'), require('../model/InventoryListItem'), require('../model/MethodNotAllowedError'), require('../model/NotFoundError'), require('../model/ResultListInventory'), require('../model/ResultListInventoryList'), require('../model/ResultListInventoryListItem'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.InventoriesApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.Inventory, root.CloudApiV3JsClient.InventoryList, root.CloudApiV3JsClient.InventoryListItem, root.CloudApiV3JsClient.MethodNotAllowedError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListInventory, root.CloudApiV3JsClient.ResultListInventoryList, root.CloudApiV3JsClient.ResultListInventoryListItem, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.InventoriesApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.Inventory, root.KoronacloudApiV3.InventoryList, root.KoronacloudApiV3.InventoryListItem, root.KoronacloudApiV3.MethodNotAllowedError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListInventory, root.KoronacloudApiV3.ResultListInventoryList, root.KoronacloudApiV3.ResultListInventoryListItem, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, ForbiddenError, Inventory, InventoryList, InventoryListItem, MethodNotAllowedError, NotFoundError, ResultListInventory, ResultListInventoryList, ResultListInventoryListItem, TooManyRequestsError) {
   'use strict';

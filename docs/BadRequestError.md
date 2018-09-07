@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.BadRequestError
+# KoronacloudApiV3.BadRequestError
 
 ## Properties
 Name | Type | Description | Notes

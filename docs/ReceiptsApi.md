@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.ReceiptsApi
+# KoronacloudApiV3.ReceiptsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -18,15 +18,15 @@ returns the single receipt
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.ReceiptsApi();
+var apiInstance = new KoronacloudApiV3.ReceiptsApi();
 
 var receiptId = "receiptId_example"; // String | id of the receipt
 
@@ -73,15 +73,15 @@ lists all receipts
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.ReceiptsApi();
+var apiInstance = new KoronacloudApiV3.ReceiptsApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

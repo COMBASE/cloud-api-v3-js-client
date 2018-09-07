@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.Category
+# KoronacloudApiV3.Category
 
 ## Properties
 Name | Type | Description | Notes

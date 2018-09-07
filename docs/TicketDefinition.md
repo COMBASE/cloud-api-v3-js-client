@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.TicketDefinition
+# KoronacloudApiV3.TicketDefinition
 
 ## Properties
 Name | Type | Description | Notes

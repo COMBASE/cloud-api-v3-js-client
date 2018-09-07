@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.CloudSubscription
+# KoronacloudApiV3.CloudSubscription
 
 ## Properties
 Name | Type | Description | Notes

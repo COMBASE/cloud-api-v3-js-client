@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.CustomerData
+# KoronacloudApiV3.CustomerData
 
 ## Properties
 Name | Type | Description | Notes

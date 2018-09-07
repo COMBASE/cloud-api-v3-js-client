@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.StockReceiptsApi
+# KoronacloudApiV3.StockReceiptsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -26,19 +26,19 @@ adds stock-receipt items
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new CloudApiV3JsClient.StockReceiptItem()]; // [StockReceiptItem] | data to add
+var body = [new KoronacloudApiV3.StockReceiptItem()]; // [StockReceiptItem] | data to add
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -84,17 +84,17 @@ adds stock-receipts
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
-var body = [new CloudApiV3JsClient.StockReceipt()]; // [StockReceipt] | data to add
+var body = [new KoronacloudApiV3.StockReceipt()]; // [StockReceipt] | data to add
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -139,15 +139,15 @@ deletes the single stock-receipt item
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -197,15 +197,15 @@ returns the single stock-receipt
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -252,15 +252,15 @@ returns the single stock-receipt item
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -310,15 +310,15 @@ lists all stock-receipt items
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -375,15 +375,15 @@ lists all stock-receipts
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -453,19 +453,19 @@ updates the single stock-receipt
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new CloudApiV3JsClient.StockReceipt(); // StockReceipt | data to update
+var body = new KoronacloudApiV3.StockReceipt(); // StockReceipt | data to update
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -511,21 +511,21 @@ updates the single stock-receipt item
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var productIdOrNumber = "productIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new CloudApiV3JsClient.StockReceiptItem(); // StockReceiptItem | data to update
+var body = new KoronacloudApiV3.StockReceiptItem(); // StockReceiptItem | data to update
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -572,19 +572,19 @@ updates stock-receipt items
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.StockReceiptsApi();
+var apiInstance = new KoronacloudApiV3.StockReceiptsApi();
 
 var stockReceiptIdOrNumber = "stockReceiptIdOrNumber_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new CloudApiV3JsClient.StockReceiptItem()]; // [StockReceiptItem] | data to update
+var body = [new KoronacloudApiV3.StockReceiptItem()]; // [StockReceiptItem] | data to update
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

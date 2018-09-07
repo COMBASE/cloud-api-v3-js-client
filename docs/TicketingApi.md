@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.TicketingApi
+# KoronacloudApiV3.TicketingApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -22,15 +22,15 @@ returns the single entry gate
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TicketingApi();
+var apiInstance = new KoronacloudApiV3.TicketingApi();
 
 var entryGateId = "entryGateId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -77,15 +77,15 @@ lists all entry gates
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TicketingApi();
+var apiInstance = new KoronacloudApiV3.TicketingApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -141,15 +141,15 @@ return the single event
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TicketingApi();
+var apiInstance = new KoronacloudApiV3.TicketingApi();
 
 var eventId = "eventId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -196,15 +196,15 @@ lists all events
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TicketingApi();
+var apiInstance = new KoronacloudApiV3.TicketingApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -260,15 +260,15 @@ returns the single ticket definition
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TicketingApi();
+var apiInstance = new KoronacloudApiV3.TicketingApi();
 
 var ticketDefinitionId = "ticketDefinitionId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -315,15 +315,15 @@ lists all ticket definitions
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TicketingApi();
+var apiInstance = new KoronacloudApiV3.TicketingApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

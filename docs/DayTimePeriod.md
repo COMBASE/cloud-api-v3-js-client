@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.DayTimePeriod
+# KoronacloudApiV3.DayTimePeriod
 
 ## Properties
 Name | Type | Description | Notes

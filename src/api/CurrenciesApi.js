@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/Currency'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCurrency'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.CurrenciesApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.Currency, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCurrency, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.CurrenciesApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.Currency, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCurrency, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, Currency, ForbiddenError, NotFoundError, ResultListCurrency, TooManyRequestsError) {
   'use strict';

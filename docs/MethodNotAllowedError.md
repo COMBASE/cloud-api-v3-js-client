@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.MethodNotAllowedError
+# KoronacloudApiV3.MethodNotAllowedError
 
 ## Properties
 Name | Type | Description | Notes

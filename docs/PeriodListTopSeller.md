@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.PeriodListTopSeller
+# KoronacloudApiV3.PeriodListTopSeller
 
 ## Properties
 Name | Type | Description | Notes

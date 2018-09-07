@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/Cashier'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCashier'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.CashiersApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.Cashier, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCashier, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.CashiersApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.Cashier, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCashier, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, Cashier, ForbiddenError, NotFoundError, ResultListCashier, TooManyRequestsError) {
   'use strict';

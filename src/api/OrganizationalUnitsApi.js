@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/DayRating'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/OrganizationalUnit'), require('../model/ResultListDayRating'), require('../model/ResultListInventoryList'), require('../model/ResultListOrganizationalUnit'), require('../model/ResultListProductStock'), require('../model/ResultListStockReceipt'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.OrganizationalUnitsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.DayRating, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.OrganizationalUnit, root.CloudApiV3JsClient.ResultListDayRating, root.CloudApiV3JsClient.ResultListInventoryList, root.CloudApiV3JsClient.ResultListOrganizationalUnit, root.CloudApiV3JsClient.ResultListProductStock, root.CloudApiV3JsClient.ResultListStockReceipt, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.OrganizationalUnitsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.DayRating, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.OrganizationalUnit, root.KoronacloudApiV3.ResultListDayRating, root.KoronacloudApiV3.ResultListInventoryList, root.KoronacloudApiV3.ResultListOrganizationalUnit, root.KoronacloudApiV3.ResultListProductStock, root.KoronacloudApiV3.ResultListStockReceipt, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, DayRating, ForbiddenError, NotFoundError, OrganizationalUnit, ResultListDayRating, ResultListInventoryList, ResultListOrganizationalUnit, ResultListProductStock, ResultListStockReceipt, TooManyRequestsError) {
   'use strict';

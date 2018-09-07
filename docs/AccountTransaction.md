@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.AccountTransaction
+# KoronacloudApiV3.AccountTransaction
 
 ## Properties
 Name | Type | Description | Notes

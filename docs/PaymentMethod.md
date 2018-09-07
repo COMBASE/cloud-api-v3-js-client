@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.PaymentMethod
+# KoronacloudApiV3.PaymentMethod
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.Tag
+# KoronacloudApiV3.Tag
 
 ## Properties
 Name | Type | Description | Notes

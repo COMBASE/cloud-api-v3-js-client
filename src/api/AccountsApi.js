@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/BadRequestError'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListAccount'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.AccountsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.Account, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListAccount, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.AccountsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.Account, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListAccount, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, Account, BadRequestError, ForbiddenError, NotFoundError, ResultListAccount, TooManyRequestsError) {
   'use strict';

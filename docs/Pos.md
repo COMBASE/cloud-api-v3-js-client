@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.Pos
+# KoronacloudApiV3.Pos
 
 ## Properties
 Name | Type | Description | Notes

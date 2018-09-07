@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.AddOrUpdateResult
+# KoronacloudApiV3.AddOrUpdateResult
 
 ## Properties
 Name | Type | Description | Notes

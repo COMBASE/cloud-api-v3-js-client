@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.CommodityGroupsApi
+# KoronacloudApiV3.CommodityGroupsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -22,17 +22,17 @@ adds a batch of new commodity groups
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CommodityGroupsApi();
+var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
-var body = [new CloudApiV3JsClient.CommodityGroup()]; // [CommodityGroup] | a array of new commodity groups
+var body = [new KoronacloudApiV3.CommodityGroup()]; // [CommodityGroup] | a array of new commodity groups
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -77,15 +77,15 @@ deletes the single commodity group
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CommodityGroupsApi();
+var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
 var commodityGroupId = "commodityGroupId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -132,15 +132,15 @@ returns the single commodity group
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CommodityGroupsApi();
+var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
 var commodityGroupId = "commodityGroupId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -187,15 +187,15 @@ lists all commodity groups
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CommodityGroupsApi();
+var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -251,19 +251,19 @@ updates the single commodity group
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CommodityGroupsApi();
+var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
 var commodityGroupId = "commodityGroupId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new CloudApiV3JsClient.CommodityGroup(); // CommodityGroup | the properties to update of the commodity group
+var body = new KoronacloudApiV3.CommodityGroup(); // CommodityGroup | the properties to update of the commodity group
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -309,17 +309,17 @@ updates a batch of commodity groups
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CommodityGroupsApi();
+var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
-var body = [new CloudApiV3JsClient.CommodityGroup()]; // [CommodityGroup] | a array of existing commodity groups
+var body = [new KoronacloudApiV3.CommodityGroup()]; // [CommodityGroup] | a array of existing commodity groups
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

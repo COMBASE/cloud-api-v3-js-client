@@ -30,9 +30,9 @@
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
    * <pre>
-   * var CloudApiV3JsClient = require('index'); // See note below*.
-   * var xxxSvc = new CloudApiV3JsClient.XxxApi(); // Allocate the API class we're going to use.
-   * var yyyModel = new CloudApiV3JsClient.Yyy(); // Construct a model instance.
+   * var KoronacloudApiV3 = require('index'); // See note below*.
+   * var xxxSvc = new KoronacloudApiV3.XxxApi(); // Allocate the API class we're going to use.
+   * var yyyModel = new KoronacloudApiV3.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
    * ...
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -44,8 +44,8 @@
    * <p>
    * A non-AMD browser application (discouraged) might do something like this:
    * <pre>
-   * var xxxSvc = new CloudApiV3JsClient.XxxApi(); // Allocate the API class we're going to use.
-   * var yyy = new CloudApiV3JsClient.Yyy(); // Construct a model instance.
+   * var xxxSvc = new KoronacloudApiV3.XxxApi(); // Allocate the API class we're going to use.
+   * var yyy = new KoronacloudApiV3.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
    * ...
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.

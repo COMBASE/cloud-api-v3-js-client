@@ -1,4 +1,5 @@
 {
 	"projectName" : "cloud-api-v3-js-client",
+	"moduleName" : "KoronacloudApiV3",
 	"useES6" : false
 }

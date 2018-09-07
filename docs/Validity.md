@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.Validity
+# KoronacloudApiV3.Validity
 
 ## Properties
 Name | Type | Description | Notes

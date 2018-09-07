@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.InfoTextsApi
+# KoronacloudApiV3.InfoTextsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -18,15 +18,15 @@ returns the single info text
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.InfoTextsApi();
+var apiInstance = new KoronacloudApiV3.InfoTextsApi();
 
 var infoTextId = "infoTextId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -73,15 +73,15 @@ lists all info texts
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.InfoTextsApi();
+var apiInstance = new KoronacloudApiV3.InfoTextsApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

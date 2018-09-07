@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.TimePeriod
+# KoronacloudApiV3.TimePeriod
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.CustomerOrdersApi
+# KoronacloudApiV3.CustomerOrdersApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -22,17 +22,17 @@ adds a batch of new customer orders
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CustomerOrdersApi();
+var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var body = [new CloudApiV3JsClient.CustomerOrder()]; // [CustomerOrder] | a array of new customer orders
+var body = [new KoronacloudApiV3.CustomerOrder()]; // [CustomerOrder] | a array of new customer orders
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -77,15 +77,15 @@ deletes the single customer order
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CustomerOrdersApi();
+var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
 var customerOrderId = "customerOrderId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -136,15 +136,15 @@ returns the single customer order
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CustomerOrdersApi();
+var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
 var customerOrderId = "customerOrderId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -191,15 +191,15 @@ lists all customer orders
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CustomerOrdersApi();
+var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -263,19 +263,19 @@ updates the single customer order
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CustomerOrdersApi();
+var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
 var customerOrderId = "customerOrderId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new CloudApiV3JsClient.CustomerOrder(); // CustomerOrder | the properties to update of the customer order
+var body = new KoronacloudApiV3.CustomerOrder(); // CustomerOrder | the properties to update of the customer order
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -321,17 +321,17 @@ updates a batch of customer orders
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.CustomerOrdersApi();
+var apiInstance = new KoronacloudApiV3.CustomerOrdersApi();
 
-var body = [new CloudApiV3JsClient.CustomerOrder()]; // [CustomerOrder] | a array of existing customer orders
+var body = [new KoronacloudApiV3.CustomerOrder()]; // [CustomerOrder] | a array of existing customer orders
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

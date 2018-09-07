@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./EndOfDayStatementSummary'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.EndOfDayStatement = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.EndOfDayStatementSummary);
+    root.KoronacloudApiV3.EndOfDayStatement = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.EndOfDayStatementSummary);
   }
 }(this, function(ApiClient, EndOfDayStatementSummary) {
   'use strict';

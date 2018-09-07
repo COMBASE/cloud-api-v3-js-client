@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.CompanyIdentification
+# KoronacloudApiV3.CompanyIdentification
 
 ## Properties
 Name | Type | Description | Notes

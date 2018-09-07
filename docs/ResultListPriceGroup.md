@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.ResultListPriceGroup
+# KoronacloudApiV3.ResultListPriceGroup
 
 ## Properties
 Name | Type | Description | Notes

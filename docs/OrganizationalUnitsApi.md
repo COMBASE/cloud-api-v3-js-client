@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.OrganizationalUnitsApi
+# KoronacloudApiV3.OrganizationalUnitsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -27,19 +27,19 @@ adds a batch of new day ratings
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new CloudApiV3JsClient.DayRating()]; // [DayRating] | a array of new day ratings
+var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -85,15 +85,15 @@ deletes the single day rating by its id or date
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -143,15 +143,15 @@ returns the single organizational unit
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -198,15 +198,15 @@ returns the single day rating by its id or date
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -256,15 +256,15 @@ lists all organizational unit related day ratings
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -319,15 +319,15 @@ lists the inventory lists belonging to the organizational unit (KORONA.retail re
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -396,15 +396,15 @@ lists the product stocks of the organizational unit, in case it contains a wareh
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -461,15 +461,15 @@ lists the stock receipts belonging to the organizational unit (KORONA.retail req
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -540,15 +540,15 @@ lists all organizational units
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -604,21 +604,21 @@ updates the day rating by its id or date
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
 var dayRatingIdOrDate = "dayRatingIdOrDate_example"; // String | the id or date (YYYY-MM-DD) of the day rating
 
-var body = new CloudApiV3JsClient.DayRating(); // DayRating | the properties to update of the day rating
+var body = new KoronacloudApiV3.DayRating(); // DayRating | the properties to update of the day rating
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -665,19 +665,19 @@ updates a batch of day ratings
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.OrganizationalUnitsApi();
+var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new CloudApiV3JsClient.DayRating()]; // [DayRating] | a array of new day ratings
+var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

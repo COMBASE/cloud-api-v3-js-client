@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.AddressInformation
+# KoronacloudApiV3.AddressInformation
 
 ## Properties
 Name | Type | Description | Notes

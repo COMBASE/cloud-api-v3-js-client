@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./CustomerData'), require('./ModelReference'), require('./ReceiptItem'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.CustomerOrder = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.CustomerData, root.CloudApiV3JsClient.ModelReference, root.CloudApiV3JsClient.ReceiptItem);
+    root.KoronacloudApiV3.CustomerOrder = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.CustomerData, root.KoronacloudApiV3.ModelReference, root.KoronacloudApiV3.ReceiptItem);
   }
 }(this, function(ApiClient, CustomerData, ModelReference, ReceiptItem) {
   'use strict';

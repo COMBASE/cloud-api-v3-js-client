@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.ResultListCashier
+# KoronacloudApiV3.ResultListCashier
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.Rating
+# KoronacloudApiV3.Rating
 
 ## Properties
 Name | Type | Description | Notes

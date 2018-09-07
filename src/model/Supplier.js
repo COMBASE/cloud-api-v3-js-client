@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./ProductTransferInvolvedPartyInformationData'), require('./SupplierContact'), require('./SupplierContactPerson'), require('./SupplierPaymentInformation'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.Supplier = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.ProductTransferInvolvedPartyInformationData, root.CloudApiV3JsClient.SupplierContact, root.CloudApiV3JsClient.SupplierContactPerson, root.CloudApiV3JsClient.SupplierPaymentInformation);
+    root.KoronacloudApiV3.Supplier = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.ProductTransferInvolvedPartyInformationData, root.KoronacloudApiV3.SupplierContact, root.KoronacloudApiV3.SupplierContactPerson, root.KoronacloudApiV3.SupplierPaymentInformation);
   }
 }(this, function(ApiClient, ProductTransferInvolvedPartyInformationData, SupplierContact, SupplierContactPerson, SupplierPaymentInformation) {
   'use strict';

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./Event'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.ResultListEvent = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.Event);
+    root.KoronacloudApiV3.ResultListEvent = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.Event);
   }
 }(this, function(ApiClient, Event) {
   'use strict';

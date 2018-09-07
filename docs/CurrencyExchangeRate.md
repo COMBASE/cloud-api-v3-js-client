@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.CurrencyExchangeRate
+# KoronacloudApiV3.CurrencyExchangeRate
 
 ## Properties
 Name | Type | Description | Notes

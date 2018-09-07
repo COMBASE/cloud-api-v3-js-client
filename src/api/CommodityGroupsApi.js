@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/CommodityGroup'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListCommodityGroup'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.CommodityGroupsApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.CommodityGroup, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListCommodityGroup, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.CommodityGroupsApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.CommodityGroup, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListCommodityGroup, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, CommodityGroup, ForbiddenError, NotFoundError, ResultListCommodityGroup, TooManyRequestsError) {
   'use strict';

@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.PointsOfSaleApi
+# KoronacloudApiV3.PointsOfSaleApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -24,15 +24,15 @@ adds a batch of point of sale-related end-of-day-statements
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -41,7 +41,7 @@ var couplingId = "couplingId_example"; // String | the coupling-id of the device
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
-  'body': [new CloudApiV3JsClient.EndOfDayStatement()] // [EndOfDayStatement] | the end-of-day-statements to add
+  'body': [new KoronacloudApiV3.EndOfDayStatement()] // [EndOfDayStatement] | the end-of-day-statements to add
 };
 
 var callback = function(error, data, response) {
@@ -86,15 +86,15 @@ adds a batch of point of sale-related receipts
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -103,7 +103,7 @@ var couplingId = "couplingId_example"; // String | the coupling-id of the device
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
 var opts = { 
-  'body': [new CloudApiV3JsClient.Receipt()] // [Receipt] | the receipts to add
+  'body': [new KoronacloudApiV3.Receipt()] // [Receipt] | the receipts to add
 };
 
 var callback = function(error, data, response) {
@@ -148,15 +148,15 @@ returns the single point of sale
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | the number of the point of sale
 
@@ -207,15 +207,15 @@ lists all point of sale-related end-of-day-statements
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -275,15 +275,15 @@ returns the single point of sale-related receipt
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -337,15 +337,15 @@ lists all point of sale-related receipts
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -410,15 +410,15 @@ lists all points of sale
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -474,19 +474,19 @@ updates a point of sale (works only for coupling (attribute &#39;couplingId&#39;
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.PointsOfSaleApi();
+var apiInstance = new KoronacloudApiV3.PointsOfSaleApi();
 
 var pointOfSaleId = "pointOfSaleId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new CloudApiV3JsClient.Pos(); // Pos | the properties to update of the point of sale ('couplingId' only)
+var body = new KoronacloudApiV3.Pos(); // Pos | the properties to update of the point of sale ('couplingId' only)
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.AdditionalReceiptInfoType
+# KoronacloudApiV3.AdditionalReceiptInfoType
 
 ## Properties
 Name | Type | Description | Notes

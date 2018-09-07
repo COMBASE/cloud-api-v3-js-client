@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BadRequestError'), require('../model/EntryGate'), require('../model/Event'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/ResultListEntryGate'), require('../model/ResultListEvent'), require('../model/ResultListTicketDefinition'), require('../model/TicketDefinition'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.TicketingApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.EntryGate, root.CloudApiV3JsClient.Event, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.ResultListEntryGate, root.CloudApiV3JsClient.ResultListEvent, root.CloudApiV3JsClient.ResultListTicketDefinition, root.CloudApiV3JsClient.TicketDefinition, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.TicketingApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.EntryGate, root.KoronacloudApiV3.Event, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.ResultListEntryGate, root.KoronacloudApiV3.ResultListEvent, root.KoronacloudApiV3.ResultListTicketDefinition, root.KoronacloudApiV3.TicketDefinition, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, BadRequestError, EntryGate, Event, ForbiddenError, NotFoundError, ResultListEntryGate, ResultListEvent, ResultListTicketDefinition, TicketDefinition, TooManyRequestsError) {
   'use strict';

@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./ModelReference'), require('./StockReceiptItemAmount'), require('./StockReceiptItemIdentification'), require('./StockReceiptItemPurchasePrice'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.StockReceiptItem = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.ModelReference, root.CloudApiV3JsClient.StockReceiptItemAmount, root.CloudApiV3JsClient.StockReceiptItemIdentification, root.CloudApiV3JsClient.StockReceiptItemPurchasePrice);
+    root.KoronacloudApiV3.StockReceiptItem = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.ModelReference, root.KoronacloudApiV3.StockReceiptItemAmount, root.KoronacloudApiV3.StockReceiptItemIdentification, root.KoronacloudApiV3.StockReceiptItemPurchasePrice);
   }
 }(this, function(ApiClient, ModelReference, StockReceiptItemAmount, StockReceiptItemIdentification, StockReceiptItemPurchasePrice) {
   'use strict';

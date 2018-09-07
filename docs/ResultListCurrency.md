@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.ResultListCurrency
+# KoronacloudApiV3.ResultListCurrency
 
 ## Properties
 Name | Type | Description | Notes

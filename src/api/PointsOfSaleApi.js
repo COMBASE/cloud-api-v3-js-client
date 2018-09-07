@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AddOrUpdateResult'), require('../model/BadRequestError'), require('../model/EndOfDayStatement'), require('../model/ForbiddenError'), require('../model/NotFoundError'), require('../model/Pos'), require('../model/Receipt'), require('../model/ResultListEndOfDayStatement'), require('../model/ResultListPos'), require('../model/ResultListReceipt'), require('../model/TooManyRequestsError'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.PointsOfSaleApi = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AddOrUpdateResult, root.CloudApiV3JsClient.BadRequestError, root.CloudApiV3JsClient.EndOfDayStatement, root.CloudApiV3JsClient.ForbiddenError, root.CloudApiV3JsClient.NotFoundError, root.CloudApiV3JsClient.Pos, root.CloudApiV3JsClient.Receipt, root.CloudApiV3JsClient.ResultListEndOfDayStatement, root.CloudApiV3JsClient.ResultListPos, root.CloudApiV3JsClient.ResultListReceipt, root.CloudApiV3JsClient.TooManyRequestsError);
+    root.KoronacloudApiV3.PointsOfSaleApi = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AddOrUpdateResult, root.KoronacloudApiV3.BadRequestError, root.KoronacloudApiV3.EndOfDayStatement, root.KoronacloudApiV3.ForbiddenError, root.KoronacloudApiV3.NotFoundError, root.KoronacloudApiV3.Pos, root.KoronacloudApiV3.Receipt, root.KoronacloudApiV3.ResultListEndOfDayStatement, root.KoronacloudApiV3.ResultListPos, root.KoronacloudApiV3.ResultListReceipt, root.KoronacloudApiV3.TooManyRequestsError);
   }
 }(this, function(ApiClient, AddOrUpdateResult, BadRequestError, EndOfDayStatement, ForbiddenError, NotFoundError, Pos, Receipt, ResultListEndOfDayStatement, ResultListPos, ResultListReceipt, TooManyRequestsError) {
   'use strict';

@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.OrganizationalUnit
+# KoronacloudApiV3.OrganizationalUnit
 
 ## Properties
 Name | Type | Description | Notes

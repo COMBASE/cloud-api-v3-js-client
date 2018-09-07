@@ -22,10 +22,10 @@
     module.exports = factory(require('../ApiClient'), require('./AccountTransaction'), require('./AdditionalInfo'), require('./GeoLocation'), require('./ModelReference'), require('./Payment'), require('./ReceiptItem'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudApiV3JsClient) {
-      root.CloudApiV3JsClient = {};
+    if (!root.KoronacloudApiV3) {
+      root.KoronacloudApiV3 = {};
     }
-    root.CloudApiV3JsClient.Receipt = factory(root.CloudApiV3JsClient.ApiClient, root.CloudApiV3JsClient.AccountTransaction, root.CloudApiV3JsClient.AdditionalInfo, root.CloudApiV3JsClient.GeoLocation, root.CloudApiV3JsClient.ModelReference, root.CloudApiV3JsClient.Payment, root.CloudApiV3JsClient.ReceiptItem);
+    root.KoronacloudApiV3.Receipt = factory(root.KoronacloudApiV3.ApiClient, root.KoronacloudApiV3.AccountTransaction, root.KoronacloudApiV3.AdditionalInfo, root.KoronacloudApiV3.GeoLocation, root.KoronacloudApiV3.ModelReference, root.KoronacloudApiV3.Payment, root.KoronacloudApiV3.ReceiptItem);
   }
 }(this, function(ApiClient, AccountTransaction, AdditionalInfo, GeoLocation, ModelReference, Payment, ReceiptItem) {
   'use strict';

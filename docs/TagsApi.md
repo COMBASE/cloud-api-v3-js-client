@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.TagsApi
+# KoronacloudApiV3.TagsApi
 
 All URIs are relative to *https://www.koronacloud.com/web/api/v3*
 
@@ -22,17 +22,17 @@ adds a batch of new tags
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TagsApi();
+var apiInstance = new KoronacloudApiV3.TagsApi();
 
-var body = [new CloudApiV3JsClient.Tag()]; // [Tag] | array of new tags
+var body = [new KoronacloudApiV3.Tag()]; // [Tag] | array of new tags
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -77,15 +77,15 @@ deletes the single tag
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TagsApi();
+var apiInstance = new KoronacloudApiV3.TagsApi();
 
 var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -132,15 +132,15 @@ returns the single tag
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TagsApi();
+var apiInstance = new KoronacloudApiV3.TagsApi();
 
 var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
 
@@ -187,15 +187,15 @@ lists all tags
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TagsApi();
+var apiInstance = new KoronacloudApiV3.TagsApi();
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -251,19 +251,19 @@ updates the single tag
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TagsApi();
+var apiInstance = new KoronacloudApiV3.TagsApi();
 
 var tagId = "tagId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = new CloudApiV3JsClient.Tag(); // Tag | the properties to update of the tag
+var body = new KoronacloudApiV3.Tag(); // Tag | the properties to update of the tag
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -309,17 +309,17 @@ updates a batch of tags
 
 ### Example
 ```javascript
-var CloudApiV3JsClient = require('cloud-api-v3-js-client');
-var defaultClient = CloudApiV3JsClient.ApiClient.instance;
+var KoronacloudApiV3 = require('cloud-api-v3-js-client');
+var defaultClient = KoronacloudApiV3.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
 var basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-var apiInstance = new CloudApiV3JsClient.TagsApi();
+var apiInstance = new KoronacloudApiV3.TagsApi();
 
-var body = [new CloudApiV3JsClient.Tag()]; // [Tag] | array of existing tags
+var body = [new KoronacloudApiV3.Tag()]; // [Tag] | array of existing tags
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 

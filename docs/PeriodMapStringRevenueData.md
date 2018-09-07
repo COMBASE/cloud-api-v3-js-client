@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.PeriodMapStringRevenueData
+# KoronacloudApiV3.PeriodMapStringRevenueData
 
 ## Properties
 Name | Type | Description | Notes

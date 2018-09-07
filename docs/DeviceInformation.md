@@ -1,4 +1,4 @@
-# CloudApiV3JsClient.DeviceInformation
+# KoronacloudApiV3.DeviceInformation
 
 ## Properties
 Name | Type | Description | Notes
