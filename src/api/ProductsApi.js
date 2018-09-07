@@ -414,7 +414,7 @@
     /**
      * updates a batch of products
      * [number] must be set in the objects, otherwise the object cannot be updated
-     * @param {Array.<module:model/Product>} body a array of existing products
+     * @param {Array.<module:model/Product>} body an array of existing products
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/ProductsApi~updateProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}

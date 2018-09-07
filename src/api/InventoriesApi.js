@@ -58,7 +58,7 @@
     /**
      * adds a batch of new inventories
      * 
-     * @param {Array.<module:model/Inventory>} body a array of new inventories
+     * @param {Array.<module:model/Inventory>} body an array of new inventories
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/InventoriesApi~addInventoriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
@@ -900,7 +900,7 @@
      * 
      * @param {String} inventoryId id of the related object (important: id should match the uuid-format)
      * @param {String} inventoryListId id of the related object (important: id should match the uuid-format)
-     * @param {Array.<module:model/InventoryListItem>} body a array of inventory list items to update
+     * @param {Array.<module:model/InventoryListItem>} body an array of inventory list items to update
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/InventoriesApi~updateInventoryInventoryListItemsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}

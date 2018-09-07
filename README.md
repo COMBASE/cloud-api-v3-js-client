@@ -158,6 +158,12 @@ Class | Method | HTTP request | Description
 *KoronacloudApiV3.CustomersApi* | [**updateCustomers**](docs/CustomersApi.md#updateCustomers) | **PATCH** /accounts/{koronaAccountId}/customers | updates a batch of customers
 *KoronacloudApiV3.EconomicZonesApi* | [**getEconomicZone**](docs/EconomicZonesApi.md#getEconomicZone) | **GET** /accounts/{koronaAccountId}/economicZones/{economicZoneId} | returns the single economic zone
 *KoronacloudApiV3.EconomicZonesApi* | [**getEconomicZones**](docs/EconomicZonesApi.md#getEconomicZones) | **GET** /accounts/{koronaAccountId}/economicZones | lists all economic zones
+*KoronacloudApiV3.ExternalSystemCallsApi* | [**addExternalSystemCalls**](docs/ExternalSystemCallsApi.md#addExternalSystemCalls) | **POST** /accounts/{koronaAccountId}/externalSystemCalls | adds a batch of new external system calls
+*KoronacloudApiV3.ExternalSystemCallsApi* | [**deleteExternalSystemCall**](docs/ExternalSystemCallsApi.md#deleteExternalSystemCall) | **DELETE** /accounts/{koronaAccountId}/externalSystemCalls/{externalSystemCallId} | deletes a single external system call
+*KoronacloudApiV3.ExternalSystemCallsApi* | [**getExternalSystemCall**](docs/ExternalSystemCallsApi.md#getExternalSystemCall) | **GET** /accounts/{koronaAccountId}/externalSystemCalls/{externalSystemCallId} | returns a single external system call
+*KoronacloudApiV3.ExternalSystemCallsApi* | [**getExternalSystemCalls**](docs/ExternalSystemCallsApi.md#getExternalSystemCalls) | **GET** /accounts/{koronaAccountId}/externalSystemCalls | lists all external system calls
+*KoronacloudApiV3.ExternalSystemCallsApi* | [**updateExternalSystemCall**](docs/ExternalSystemCallsApi.md#updateExternalSystemCall) | **PATCH** /accounts/{koronaAccountId}/externalSystemCalls/{externalSystemCallId} | updates the single external system call
+*KoronacloudApiV3.ExternalSystemCallsApi* | [**updateExternalSystemCalls**](docs/ExternalSystemCallsApi.md#updateExternalSystemCalls) | **PATCH** /accounts/{koronaAccountId}/externalSystemCalls | updates a batch of external system calls
 *KoronacloudApiV3.ImagesApi* | [**getImage**](docs/ImagesApi.md#getImage) | **GET** /accounts/{koronaAccountId}/images/{imageId} | displays the image
 *KoronacloudApiV3.InfoTextsApi* | [**getInfoText**](docs/InfoTextsApi.md#getInfoText) | **GET** /accounts/{koronaAccountId}/infoTexts/{infoTextId} | returns the single info text
 *KoronacloudApiV3.InfoTextsApi* | [**getInfoTexts**](docs/InfoTextsApi.md#getInfoTexts) | **GET** /accounts/{koronaAccountId}/infoTexts | lists all info texts
@@ -282,6 +288,7 @@ Class | Method | HTTP request | Description
  - [KoronacloudApiV3.EndOfDayStatementSummary](docs/EndOfDayStatementSummary.md)
  - [KoronacloudApiV3.EntryGate](docs/EntryGate.md)
  - [KoronacloudApiV3.Event](docs/Event.md)
+ - [KoronacloudApiV3.ExternalSystemCall](docs/ExternalSystemCall.md)
  - [KoronacloudApiV3.ForbiddenError](docs/ForbiddenError.md)
  - [KoronacloudApiV3.GeoLocation](docs/GeoLocation.md)
  - [KoronacloudApiV3.InfoText](docs/InfoText.md)
@@ -332,6 +339,7 @@ Class | Method | HTTP request | Description
  - [KoronacloudApiV3.ResultListEndOfDayStatement](docs/ResultListEndOfDayStatement.md)
  - [KoronacloudApiV3.ResultListEntryGate](docs/ResultListEntryGate.md)
  - [KoronacloudApiV3.ResultListEvent](docs/ResultListEvent.md)
+ - [KoronacloudApiV3.ResultListExternalSystemCall](docs/ResultListExternalSystemCall.md)
  - [KoronacloudApiV3.ResultListInfoText](docs/ResultListInfoText.md)
  - [KoronacloudApiV3.ResultListInventory](docs/ResultListInventory.md)
  - [KoronacloudApiV3.ResultListInventoryList](docs/ResultListInventoryList.md)

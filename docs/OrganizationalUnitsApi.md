@@ -39,7 +39,7 @@ var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
+var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | an array of new day ratings
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -59,7 +59,7 @@ apiInstance.addOrganizationalUnitDayRatings(organizationalUnitId, body, koronaAc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
- **body** | [**[DayRating]**](DayRating.md)| a array of new day ratings | 
+ **body** | [**[DayRating]**](DayRating.md)| an array of new day ratings | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
@@ -677,7 +677,7 @@ var apiInstance = new KoronacloudApiV3.OrganizationalUnitsApi();
 
 var organizationalUnitId = "organizationalUnitId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | a array of new day ratings
+var body = [new KoronacloudApiV3.DayRating()]; // [DayRating] | an array of new day ratings
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -697,7 +697,7 @@ apiInstance.updateOrganizationalUnitDayRatings(organizationalUnitId, body, koron
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationalUnitId** | **String**| id of the related object (important: id should match the uuid-format) | 
- **body** | [**[DayRating]**](DayRating.md)| a array of new day ratings | 
+ **body** | [**[DayRating]**](DayRating.md)| an array of new day ratings | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type

@@ -58,7 +58,7 @@
     /**
      * adds a batch of new customer orders
      * 
-     * @param {Array.<module:model/CustomerOrder>} body a array of new customer orders
+     * @param {Array.<module:model/CustomerOrder>} body an array of new customer orders
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerOrdersApi~addCustomerOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
@@ -353,7 +353,7 @@
     /**
      * updates a batch of customer orders
      * [number] must be set in the objects, otherwise the object cannot be updated
-     * @param {Array.<module:model/CustomerOrder>} body a array of existing customer orders
+     * @param {Array.<module:model/CustomerOrder>} body an array of existing customer orders
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/CustomerOrdersApi~updateCustomerOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}

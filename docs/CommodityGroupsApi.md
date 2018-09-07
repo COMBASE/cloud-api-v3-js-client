@@ -32,7 +32,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
-var body = [new KoronacloudApiV3.CommodityGroup()]; // [CommodityGroup] | a array of new commodity groups
+var body = [new KoronacloudApiV3.CommodityGroup()]; // [CommodityGroup] | an array of new commodity groups
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -51,7 +51,7 @@ apiInstance.addCommodityGroups(body, koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[CommodityGroup]**](CommodityGroup.md)| a array of new commodity groups | 
+ **body** | [**[CommodityGroup]**](CommodityGroup.md)| an array of new commodity groups | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
@@ -319,7 +319,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CommodityGroupsApi();
 
-var body = [new KoronacloudApiV3.CommodityGroup()]; // [CommodityGroup] | a array of existing commodity groups
+var body = [new KoronacloudApiV3.CommodityGroup()]; // [CommodityGroup] | an array of existing commodity groups
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -338,7 +338,7 @@ apiInstance.updateCommodityGroups(body, koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[CommodityGroup]**](CommodityGroup.md)| a array of existing commodity groups | 
+ **body** | [**[CommodityGroup]**](CommodityGroup.md)| an array of existing commodity groups | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type

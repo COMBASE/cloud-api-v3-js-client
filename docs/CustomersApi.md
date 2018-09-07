@@ -32,7 +32,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var body = [new KoronacloudApiV3.Customer()]; // [Customer] | a array of new customers
+var body = [new KoronacloudApiV3.Customer()]; // [Customer] | an array of new customers
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -51,7 +51,7 @@ apiInstance.addCustomers(body, koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[Customer]**](Customer.md)| a array of new customers | 
+ **body** | [**[Customer]**](Customer.md)| an array of new customers | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
@@ -319,7 +319,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.CustomersApi();
 
-var body = [new KoronacloudApiV3.Customer()]; // [Customer] | a array of existing customers
+var body = [new KoronacloudApiV3.Customer()]; // [Customer] | an array of existing customers
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -338,7 +338,7 @@ apiInstance.updateCustomers(body, koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[Customer]**](Customer.md)| a array of existing customers | 
+ **body** | [**[Customer]**](Customer.md)| an array of existing customers | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type

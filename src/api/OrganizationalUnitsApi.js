@@ -59,7 +59,7 @@
      * adds a batch of new day ratings
      * 
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
-     * @param {Array.<module:model/DayRating>} body a array of new day ratings
+     * @param {Array.<module:model/DayRating>} body an array of new day ratings
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~addOrganizationalUnitDayRatingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}
@@ -709,7 +709,7 @@
      * updates a batch of day ratings
      * 
      * @param {String} organizationalUnitId id of the related object (important: id should match the uuid-format)
-     * @param {Array.<module:model/DayRating>} body a array of new day ratings
+     * @param {Array.<module:model/DayRating>} body an array of new day ratings
      * @param {String} koronaAccountId account id of the korona.cloud account
      * @param {module:api/OrganizationalUnitsApi~updateOrganizationalUnitDayRatingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/AddOrUpdateResult>}

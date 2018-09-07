@@ -40,7 +40,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.InventoriesApi();
 
-var body = [new KoronacloudApiV3.Inventory()]; // [Inventory] | a array of new inventories
+var body = [new KoronacloudApiV3.Inventory()]; // [Inventory] | an array of new inventories
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -59,7 +59,7 @@ apiInstance.addInventories(body, koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[Inventory]**](Inventory.md)| a array of new inventories | 
+ **body** | [**[Inventory]**](Inventory.md)| an array of new inventories | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
@@ -842,7 +842,7 @@ var inventoryId = "inventoryId_example"; // String | id of the related object (i
 
 var inventoryListId = "inventoryListId_example"; // String | id of the related object (important: id should match the uuid-format)
 
-var body = [new KoronacloudApiV3.InventoryListItem()]; // [InventoryListItem] | a array of inventory list items to update
+var body = [new KoronacloudApiV3.InventoryListItem()]; // [InventoryListItem] | an array of inventory list items to update
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inventoryId** | **String**| id of the related object (important: id should match the uuid-format) | 
  **inventoryListId** | **String**| id of the related object (important: id should match the uuid-format) | 
- **body** | [**[InventoryListItem]**](InventoryListItem.md)| a array of inventory list items to update | 
+ **body** | [**[InventoryListItem]**](InventoryListItem.md)| an array of inventory list items to update | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type

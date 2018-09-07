@@ -393,7 +393,7 @@ basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new KoronacloudApiV3.ProductsApi();
 
-var body = [new KoronacloudApiV3.Product()]; // [Product] | a array of existing products
+var body = [new KoronacloudApiV3.Product()]; // [Product] | an array of existing products
 
 var koronaAccountId = "koronaAccountId_example"; // String | account id of the korona.cloud account
 
@@ -412,7 +412,7 @@ apiInstance.updateProducts(body, koronaAccountId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[Product]**](Product.md)| a array of existing products | 
+ **body** | [**[Product]**](Product.md)| an array of existing products | 
  **koronaAccountId** | **String**| account id of the korona.cloud account | 
 
 ### Return type
