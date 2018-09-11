@@ -4,6 +4,5 @@ Run
 
 ```shell
 sh generate-api-code.sh
-grunt bump --setversion=3.x.x
- 
+grunt bump --setversion=1.x.x
 ```
